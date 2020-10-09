@@ -1,19 +1,27 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://sprites/Palanca.png" type="Texture" id=1]
 [ext_resource path="res://palaca.gd" type="Script" id=2]
 
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 8.51367
+height = 0.0
+
 [node name="Node" type="Node"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 99.5109, 19.0638 )
-scale = Vector2( 2.1743, 1.99338 )
+position = Vector2( 99.1959, 19.5363 )
+scale = Vector2( 2.1323, 1.93433 )
 texture = ExtResource( 1 )
 hframes = 5
 frame = 2
 script = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="Sprite"]
+position = Vector2( -1.30085, 1.06418 )
 scale = Vector2( 1, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
+position = Vector2( 0.0142708, 0.454743 )
+shape = SubResource( 1 )
+[connection signal="body_entered" from="Sprite/Area2D" to="Sprite" method="_on_Area2D_body_entered"]
