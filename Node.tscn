@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/Palanca.png" type="Texture" id=1]
+[ext_resource path="res://palaca.gd" type="Script" id=2]
+
+[node name="Node" type="Node"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 99.5109, 19.0638 )
+scale = Vector2( 2.1743, 1.99338 )
+texture = ExtResource( 1 )
+hframes = 5
+frame = 2
+script = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Sprite"]
+scale = Vector2( 1, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
