@@ -7,6 +7,8 @@ onready var player_spr = $jugador_col/jugador_spr
 
 func get_input():
 	velocity = Vector2()
+	if !is_on_floor():
+		velocity.y += 1
 	if Input.is_action_pressed('ui_right'):
 		velocity.x += 1
 		player_spr.play("movimiento_horizontal")
