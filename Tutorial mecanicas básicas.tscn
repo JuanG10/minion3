@@ -348,4 +348,4 @@ zoom = Vector2( 0.23, 0.23 )
 position = Vector2( 88.3769, -8.35324 )
 
 [node name="CadenaYGancho" parent="." instance=ExtResource( 3 )]
-position = Vector2( 90.527, -102.397 )
+position = Vector2( 81.527, -62.897 )
