@@ -1,6 +1,6 @@
 extends Sprite
 
-var velocidad = 1000
+var velocidad = 800
 
 func _physics_process(delta):
 	print(delta)
