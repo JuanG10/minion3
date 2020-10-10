@@ -4,6 +4,6 @@
 [ext_resource path="res://Cadena.gd" type="Script" id=2]
 
 [node name="Cadena" type="Sprite"]
-position = Vector2( 40.9635, 35.1225 )
+position = Vector2( 41.5029, 40.8793 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
