@@ -15,11 +15,13 @@ func get_input():
 		velocity.x -= 1
 		player_spr.play("movimiento_horizontal")
 		player_spr.flip_h = true
-	if Input.is_action_just_released("ui_right") or Input.is_action_just_released("ui_left"):
+	if _input_release():
 		player_spr.play("idle")
-		player_spr.stop()
 	velocity = velocity.normalized() * speed
 
 func _physics_process(delta):
 	get_input()
 	move_and_slide(velocity)
+
+func _input_release():
+	return Input.is_action_just_released("ui_right") or Input.is_action_just_released("ui_left")
