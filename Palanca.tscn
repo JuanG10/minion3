@@ -7,3 +7,5 @@ position = Vector2( 62.5268, 99.0599 )
 texture = ExtResource( 1 )
 hframes = 5
 frame = 2
+region_enabled = true
+region_rect = Rect2( 0, 0, 74, 32 )
