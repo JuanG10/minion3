@@ -10,8 +10,12 @@ script = ExtResource( 3 )
 cadena_escena = ExtResource( 1 )
 
 [node name="Cadena" parent="." instance=ExtResource( 1 )]
-position = Vector2( -0.923508, 0.574181 )
+position = Vector2( -0.923508, 0.240093 )
+scale = Vector2( 1, 0.958239 )
 
 [node name="Sprite" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1.0674, 12.2593 )
 scale = Vector2( 1, 1 )
+
+[node name="Timer" type="Timer" parent="."]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
