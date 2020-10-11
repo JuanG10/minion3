@@ -1,6 +1,7 @@
 extends Sprite
 
 var bajo_cadena = false
+signal accionar 
 
 func _physics_process(delta):
 	if frame == 1:
