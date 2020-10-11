@@ -22,3 +22,4 @@ script = ExtResource( 2 )
 position = Vector2( -0.749153, 1.31101 )
 shape = SubResource( 1 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

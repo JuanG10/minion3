@@ -7,14 +7,23 @@ var esta_subiendo = false
 
 var aceleracion = 0
 
+var bajar_cadena = 350
+
+var subir_cadena = 350
+
+
 func _physics_process(delta):
 	aceleracion = velocidad * delta
-	if Input.is_action_pressed("ui_down"):
+	if bajar_cadena > 0 && esta_bajando:
 		subirBajar()
 		velocidad += 10
-	if Input.is_action_pressed("ui_up"):
+		bajar_cadena -= 1
+	if subir_cadena > 0 && esta_subiendo:
+		print('hola')
 		subirBajar()
 		velocidad -= 10
+		bajar_cadena += 1
+		subir_cadena -= 1
 
 func subirBajar():
 	region_rect = Rect2(0,0,region_rect.size.x, aceleracion)
@@ -22,7 +31,9 @@ func subirBajar():
 	
 func bajar_Cadena():
 	esta_bajando = true 
+	esta_subiendo = false
 	
 func subir_Cadena():
 	esta_subiendo = true
+	esta_bajando = false
 
