@@ -9,3 +9,9 @@ func _physics_process(delta):
 	elif frame == 2:
 		#subirCadena
 		pass
+
+
+func _on_Area2D_body_entered(body):
+	if(body.get_name() == "Jugador"):
+		pass
+	
