@@ -20,8 +20,6 @@ func subirBajar():
 	region_rect = Rect2(0,0,region_rect.size.x, aceleracion)
 	set_offset(Vector2(get_offset().x,aceleracion / 2))
 	
-	
-	
 func bajar_Cadena():
 	esta_bajando = true 
 	

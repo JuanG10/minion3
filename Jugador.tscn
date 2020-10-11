@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/jugador.gd" type="Script" id=1]
-[ext_resource path="res://sprites/jugador_mov/jugador_sprite_mov_5.png" type="Texture" id=2]
-[ext_resource path="res://sprites/jugador_mov/jugador_sprite_mov_1.png" type="Texture" id=3]
-[ext_resource path="res://sprites/jugador_mov/idle_0.png" type="Texture" id=4]
-[ext_resource path="res://sprites/jugador_mov/jugador_sprite_mov_3.png" type="Texture" id=5]
-[ext_resource path="res://sprites/jugador_mov/jugador_sprite_mov_2.png" type="Texture" id=6]
+[ext_resource path="res://sprites/jugador_mov/jugador_sprite_mov_3.png" type="Texture" id=2]
+[ext_resource path="res://sprites/jugador_mov/idle_0.png" type="Texture" id=3]
+[ext_resource path="res://sprites/jugador_mov/jugador_sprite_mov_2.png" type="Texture" id=4]
+[ext_resource path="res://sprites/jugador_mov/jugador_sprite_mov_5.png" type="Texture" id=5]
+[ext_resource path="res://sprites/jugador_mov/jugador_sprite_mov_1.png" type="Texture" id=6]
 [ext_resource path="res://sprites/jugador_mov/jugador_sprite_mov_4.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=10]
@@ -17,12 +17,12 @@ load_path = "res://.import/idle_1.png-4c89fc2afff5ad6adf3aa376ec7db838.stex"
 
 [sub_resource type="SpriteFrames" id=12]
 animations = [ {
-"frames": [ ExtResource( 4 ), SubResource( 11 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 3 ), SubResource( 11 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "idle",
 "speed": 1.5
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "movimiento_horizontal",
 "speed": 5.0
