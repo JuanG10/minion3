@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/idle_1.png-4c89fc2afff5ad6adf3aa376ec7db838.stex"
+path="res://.import/Cadena.png-ed13675e3ab811f1d4b4aa5ad2c24068.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/jugador_mov/idle_1.png"
-dest_files=[ "res://.import/idle_1.png-4c89fc2afff5ad6adf3aa376ec7db838.stex" ]
+source_file="res://sprites/Cadena.png"
+dest_files=[ "res://.import/Cadena.png-ed13675e3ab811f1d4b4aa5ad2c24068.stex" ]
 
 [params]
 

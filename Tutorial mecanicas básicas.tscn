@@ -1,12 +1,14 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=1]
 [ext_resource path="res://sprites/jugador_mov/jugador_sprite_mov_3.png" type="Texture" id=2]
 [ext_resource path="res://scripts/jugador.gd" type="Script" id=3]
 [ext_resource path="res://sprites/jugador_mov/idle_0.png" type="Texture" id=4]
 [ext_resource path="res://sprites/jugador_mov/jugador_sprite_mov_5.png" type="Texture" id=5]
+[ext_resource path="res://scripts/Sprite.gd" type="Script" id=6]
 [ext_resource path="res://sprites/jugador_mov/jugador_sprite_mov_2.png" type="Texture" id=7]
 [ext_resource path="res://sprites/jugador_mov/jugador_sprite_mov_1.png" type="Texture" id=8]
+[ext_resource path="res://sprites/Cadena.png" type="Texture" id=9]
 [ext_resource path="res://sprites/jugador_mov/jugador_sprite_mov_4.png" type="Texture" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -340,7 +342,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 extents = Vector2( 6.12752, 7.73519 )
 
 [sub_resource type="StreamTexture" id=11]
-flags = 4
+flags = 6
 load_path = "res://.import/idle_1.png-4c89fc2afff5ad6adf3aa376ec7db838.stex"
 
 [sub_resource type="SpriteFrames" id=12]
@@ -384,6 +386,12 @@ shape = SubResource( 10 )
 position = Vector2( -0.0155888, -0.134804 )
 frames = SubResource( 12 )
 animation = "idle"
-frame = 1
+frame = 2
 speed_scale = 2.0
-playing = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 56.5461, -37.0126 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 3, 16 )
+script = ExtResource( 6 )
