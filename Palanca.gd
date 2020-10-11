@@ -14,7 +14,8 @@ func _physics_process(delta):
 		frame = 4	
 		get_parent().get_node("CadenaYGancho").get_child(0).subir_Cadena()
 	elif Input.is_action_just_pressed("abrir_puerta") && puede_abrir_puerta:
-		get_parent().get_node("Puerta").puerta_abierta()	
+		get_parent().get_node("Puerta").puerta_abierta()
+		frame = 0	
 
 
 func _on_Area2D_body_entered(body):

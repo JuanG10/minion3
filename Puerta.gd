@@ -1,16 +1,18 @@
 extends Sprite
 
 var puerta_abierta = false
-var n = 1
+var puerta_cerrada = false
 
 
 func _physics_process(delta):
 	if puerta_abierta:
 		$AnimatedSprite.play()
-	elif Input.is_action_just_pressed("ui_down"):
-		puerta_abierta = false
+	elif puerta_cerrada:
 		$AnimatedSprite.play("",true)
 
 func puerta_abierta():
 	puerta_abierta = true
 
+func puerta_cerrada():
+	puerta_abierta = false 
+	puerta_cerrada = true
