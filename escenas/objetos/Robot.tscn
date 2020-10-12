@@ -15,10 +15,10 @@ extents = Vector2( 5.82694, 7.92849 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "idle",
-"speed": 1.9
+"speed": 1.6
 }, {
 "frames": [ ExtResource( 5 ) ],
 "loop": false,
@@ -44,5 +44,3 @@ shape = SubResource( 1 )
 [node name="character_spr" type="AnimatedSprite" parent="character_col"]
 frames = SubResource( 2 )
 animation = "idle"
-frame = 1
-playing = true

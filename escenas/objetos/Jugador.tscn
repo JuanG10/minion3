@@ -42,4 +42,3 @@ frames = SubResource( 3 )
 animation = "idle"
 frame = 1
 speed_scale = 2.0
-playing = true
