@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/idle_0.png-b4d18ae98ffd9f662202cfc3627821fe.stex"
+path="res://.import/robot_mov_4.png-c05634b6c28462518cbde5c280dbfbbd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/jugador_mov/idle_0.png"
-dest_files=[ "res://.import/idle_0.png-b4d18ae98ffd9f662202cfc3627821fe.stex" ]
+source_file="res://sprites/Robot/robot_mov_4.png"
+dest_files=[ "res://.import/robot_mov_4.png-c05634b6c28462518cbde5c280dbfbbd.stex" ]
 
 [params]
 

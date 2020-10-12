@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/idle_1.png-4c89fc2afff5ad6adf3aa376ec7db838.stex"
+path="res://.import/robot_idle_1.png-5c59cf326bb7ad801b8d543596bc5987.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/jugador_mov/idle_1.png"
-dest_files=[ "res://.import/idle_1.png-4c89fc2afff5ad6adf3aa376ec7db838.stex" ]
+source_file="res://escenas/niveles/robot_mov/robot_idle_1.png"
+dest_files=[ "res://.import/robot_idle_1.png-5c59cf326bb7ad801b8d543596bc5987.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false

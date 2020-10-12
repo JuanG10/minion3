@@ -3,9 +3,12 @@ extends KinematicBody2D
 var speed = 100
 var velocity = Vector2()
 
-onready var player_spr = $jugador_col/jugador_spr
+onready var player_spr = $character_col/character_spr
 
 var can_climb = false
+
+func _ready():
+	player_spr.play("idle")
 
 func _physics_process(delta):
 	get_input()

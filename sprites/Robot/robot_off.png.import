@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/jugador_sprite_mov_3.png-d70cf0a7b872070bbd8e8293c846c47d.stex"
+path="res://.import/robot_off.png-b658582212a6dab3246cd6b9fd8b2385.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/jugador_mov/jugador_sprite_mov_3.png"
-dest_files=[ "res://.import/jugador_sprite_mov_3.png-d70cf0a7b872070bbd8e8293c846c47d.stex" ]
+source_file="res://sprites/Robot/robot_off.png"
+dest_files=[ "res://.import/robot_off.png-b658582212a6dab3246cd6b9fd8b2385.stex" ]
 
 [params]
 
