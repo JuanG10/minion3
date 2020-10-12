@@ -17,6 +17,10 @@ _global_script_class_icons={
 
 config/name="Minion 3"
 
+[autoload]
+
+Accionar="*res://scripts/Accionar.gd"
+
 [input]
 
 bajar_cadena={
@@ -32,6 +36,11 @@ subir_cadena={
 abrir_puerta={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":86,"unicode":0,"echo":false,"script":null)
+ ]
+}
+Accionar_palanca={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":66,"unicode":0,"echo":false,"script":null)
  ]
 }
 
