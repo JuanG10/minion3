@@ -1,6 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=1]
+[ext_resource path="res://escenas/objetos/Plataforma_de_salto.tscn" type="PackedScene" id=2]
+[ext_resource path="res://escenas/objetos/Jugador.tscn" type="PackedScene" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 4.51554, 0, 4.51554 )
@@ -335,7 +337,17 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 tile_set = SubResource( 9 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -393203, 11, 0, -327669, 7, 0, -262144, 1, 2, -262143, 1, 2, -262142, 1, 2, -262141, 1, 2, -262140, 1, 2, -262139, 1, 2, -262138, 1, 2, -262137, 16, 0, -262136, 16, 0, -262135, 16, 0, -262134, 16, 0, -262133, 1, 2, -262132, 1, 2, -262131, 1, 2, -65536, 15, 0, -65535, 2, 131072, -65531, 7, 0, -65523, 7, 0, 0, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 2, 5, 1, 2, 6, 0, 0, 7, 1, 2, 8, 1, 2, 9, 1, 2, 10, 1, 2, 11, 1, 2, 12, 1, 2, 13, 1, 2 )
+tile_data = PoolIntArray( -393203, 11, 0, -327669, 7, 0, -262144, 1, 2, -262143, 1, 2, -262142, 1, 2, -262141, 1, 2, -262140, 1, 2, -262139, 1, 2, -262138, 1, 2, -262137, 16, 0, -262136, 16, 0, -262135, 16, 0, -262134, 16, 0, -262133, 1, 2, -262132, 1, 2, -262131, 1, 2, -65535, 2, 131072, -65531, 7, 0, -65523, 7, 0, 0, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 2, 5, 1, 2, 7, 1, 2, 8, 1, 2, 9, 1, 2, 10, 1, 2, 11, 1, 2, 12, 1, 2, 13, 1, 2 )
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="Jugador" parent="." instance=ExtResource( 3 )]
+
+[node name="Plataforma_de_salto" parent="." instance=ExtResource( 2 )]
+position = Vector2( 103.672, 7.10664 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 122.293, -43.6535 )
+current = true
+zoom = Vector2( 0.23, 0.23 )

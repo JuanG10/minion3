@@ -14,10 +14,10 @@ func _ready():
 	
 	
 func _physics_process(delta):
-	print(escena_actual)
 	if puedo_accionar(1):
 		escena_actual.activar()
 		desactivado +=1
+		$AnimatedSprite.frame = 0
 	elif puedo_accionar(0):
 		escena_actual.desactivar()
 		desactivado +=1

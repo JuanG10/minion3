@@ -7,9 +7,22 @@ onready var player_spr = $jugador_col/jugador_spr
 
 var can_climb = false
 
+#
+var velocidad_salto = -3000
+
+var gravity = 200
+var JUMP_POWER = -5000
+var impulso   = false
+
+	
+
 func _physics_process(delta):
 	get_input()
 	move_and_slide(velocity)
+	velocity.x = 0
+	velocity.y += gravity * delta
+	
+
 
 func get_input():
 	velocity = Vector2()
@@ -26,6 +39,14 @@ func get_input():
 	if _input_release():
 		player_spr.play("idle")
 	velocity = velocity.normalized() * speed
+	if impulso || Input.is_action_just_pressed("ui_up"):
+		
+		impulso = false
+		
+		
+func impulso():
+	velocity.y = velocidad_salto
+	impulso = true
 
 func _input_release():
 	return Input.is_action_just_released("ui_right") or Input.is_action_just_released("ui_left")
