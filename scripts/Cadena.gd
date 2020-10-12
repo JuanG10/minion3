@@ -11,6 +11,7 @@ var bajar_cadena = 350
 
 var subir_cadena = 350
 
+onready var jugador = get_parent().get_parent().get_node("Jugador")
 
 func _physics_process(delta):
 	aceleracion = velocidad * delta
@@ -18,12 +19,13 @@ func _physics_process(delta):
 		subirBajar()
 		velocidad += 10
 		bajar_cadena -= 1
+		jugador.can_climb_up(position.y)
 	if subir_cadena > 0 && esta_subiendo:
 		subirBajar()
 		velocidad -= 10
 		bajar_cadena += 1
 		subir_cadena -= 1
-
+		jugador.can_climb_up(position.y)
 
 func activar():
 	region_rect = Rect2(0,0,region_rect.size.x, aceleracion)

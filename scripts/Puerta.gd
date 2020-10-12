@@ -3,7 +3,6 @@ extends Sprite
 var puerta_abierta = false
 var puerta_cerrada = false
 
-
 func _physics_process(delta):
 	if puerta_abierta:
 		$AnimatedSprite.play()

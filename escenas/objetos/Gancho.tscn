@@ -3,6 +3,6 @@
 [ext_resource path="res://sprites/Gancho.png" type="Texture" id=1]
 
 [node name="Sprite" type="Sprite"]
-position = Vector2( 43.4416, 31.6982 )
+position = Vector2( 43.442, -68.979 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )

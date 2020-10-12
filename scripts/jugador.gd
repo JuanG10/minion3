@@ -23,11 +23,16 @@ func get_input():
 		velocity.x -= 1
 		player_spr.play("movimiento_horizontal")
 		player_spr.flip_h = true
-	if Input.is_action_pressed("ui_up") && can_climb:
-		velocity.y -= 1
 	if _input_release():
 		player_spr.play("idle")
 	velocity = velocity.normalized() * speed
 
 func _input_release():
 	return Input.is_action_just_released("ui_right") or Input.is_action_just_released("ui_left")
+
+func _input_up():
+	return Input.is_action_pressed("ui_up") && can_climb
+
+func can_climb_up(cadena_pos):
+	if _input_up():
+		position.y -= 1
