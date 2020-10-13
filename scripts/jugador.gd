@@ -24,11 +24,11 @@ func _physics_process(delta):
 func initialize_character(): # Asigna el control inicial de los personajes.
 	if name == "Jugador": # El primero en ser controlado debe ser el jugador.
 		control_switch = true
-	position_in_main = main.append_and_return_position(name, control_switch)
+	position_in_main = main.append_and_return_position(name)
 
 func get_input(): # Obtiene el input para moverse o caer.
+	velocity = Vector2()
 	if control_switch:
-		velocity = Vector2()
 		if !is_on_floor() && !can_climb:
 			velocity.y += 1
 		if Input.is_action_pressed('ui_right'):
@@ -54,11 +54,10 @@ func _move_right():
 	player_spr.flip_h = true
 
 func change_control_to_next(): # Cambia de personaje si se pulsa Tab.
-	print(name, " ", control_switch)
+	print(name, " ", Input.is_action_just_pressed("ui_focus_next") && control_switch)
 	if Input.is_action_just_pressed("ui_focus_next") && control_switch:
 		control_switch = false
 		main.change_control(position_in_main)
-		velocity = Vector2() # Detiene al personaje.
 		player_spr.play("idle")
 
 func can_climb_up():
