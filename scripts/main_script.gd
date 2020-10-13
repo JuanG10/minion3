@@ -19,8 +19,8 @@ func change_control(position_in_arr):
 	print("Entra en main: ", controllable_characters)
 	controllable_characters[position_in_arr][control_pos] = false
 	_select_next(position_in_arr)
-	print("Despues del select_next ", controllable_characters[position_in_arr], controllable_characters[position_in_arr + 1])
 	next_in_main[control_pos] = true
+	print("Despues del select_next: ", controllable_characters[position_in_arr], next_in_main)
 	get_node(next_in_main[name_pos]).control_switch = true
 
 func _select_next(position_in_arr):
