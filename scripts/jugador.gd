@@ -54,6 +54,7 @@ func _move_right():
 	player_spr.flip_h = true
 
 func change_control_to_next(): # Cambia de personaje si se pulsa Tab.
+	print(name, " ", control_switch)
 	if Input.is_action_just_pressed("ui_focus_next") && control_switch:
 		control_switch = false
 		main.change_control(position_in_main)
