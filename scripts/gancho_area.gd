@@ -8,4 +8,3 @@ func _on_jugador_area_body_entered(body):
 func _on_jugador_area_body_exited(body):
 	if body.get_name() == "Jugador":
 		body.can_climb = false
-		print(false)

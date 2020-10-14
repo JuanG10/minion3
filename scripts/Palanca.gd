@@ -1,41 +1,26 @@
-extends Sprite
+extends "res://scripts/gamehadler.gd"
 
 
 var puedo_accionar = false
 
-export (String) var acciono
-
-var escenas_a_accionar 
 
 var puedo_desactivar = false
 
 func _ready():
-	
 	escenas_a_accionar = get_tree().get_nodes_in_group(acciono)
  
 func _physics_process(delta):
-	if puedo_accionar && Input.is_action_just_pressed("Accionar_palanca") :
+	if puedo_accionar && !puedo_desactivar && Input.is_action_just_pressed("Accionar_palanca") :
 		$AnimatedSprite.play()
-		
 		activar_plataformas()
 		puedo_desactivar = true
-		puedo_accionar = false
 		stop_animation(2)
 	elif puedo_desactivar && Input.is_action_just_pressed("Accionar_palanca"):
 		$AnimatedSprite.play("",true)
 		desactivar_plataformas()
-		puedo_accionar = true 
-		puedo_desactivar = false
 		stop_animation(0)
+		puedo_desactivar = false
 		
-
-
-
-
-func stop_animation(n):
-	if $AnimatedSprite.frame == n:
-		$AnimatedSprite.stop()
-
 
 
 func _on_Area2D_body_entered(body):
@@ -44,15 +29,7 @@ func _on_Area2D_body_entered(body):
 
 func _on_Area2D_body_exited(body):
 	 puedo_accionar = false
+	 puedo_desactivar = false
 
-
-func activar_plataformas():
-	for escena in escenas_a_accionar:
-		escena.activar()
-
-func desactivar_plataformas():
-	for escena in escenas_a_accionar:
-		escena.desactivar()
-	
 
 

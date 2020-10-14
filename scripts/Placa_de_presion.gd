@@ -2,12 +2,12 @@ extends Sprite
 
 var puede_accionar = false 
 
-export (PackedScene) var scene
+export (String) var accionar 
 
 var  escena_actual 
 
 func _ready():
-	escena_actual = get_parent().get_node(scene.instance().get_name())
+	escena_actual = get_tree().get_nodes_in_group(accionar)[0]
 
 func _physics_process(delta):
 	if puede_accionar:

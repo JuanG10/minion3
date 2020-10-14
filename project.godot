@@ -20,6 +20,7 @@ config/name="Minion 3"
 [autoload]
 
 Accionar="*res://scripts/Accionar.gd"
+Gamehadler="*res://scripts/gamehadler.gd"
 
 [input]
 

@@ -349,7 +349,7 @@ __meta__ = {
 
 [node name="Placa_de_presion" parent="." instance=ExtResource( 2 )]
 position = Vector2( 174.73, -1.94247 )
-scene = ExtResource( 6 )
+accionar = "Cadena"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 174.63, -83.2353 )
@@ -364,3 +364,4 @@ position = Vector2( 95.4228, -90.4748 )
 
 [node name="Palanca" parent="." instance=ExtResource( 4 )]
 position = Vector2( 250.273, -7.36509 )
+acciono = "Puerta"

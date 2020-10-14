@@ -366,7 +366,7 @@ position = Vector2( 136.218, -56.7134 )
 position = Vector2( 152.414, -56.7582 )
 
 [node name="Rejilla4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 168.687, -56.7134 )
+position = Vector2( 168.569, -56.7134 )
 
 [node name="Palanca" parent="." instance=ExtResource( 5 )]
 position = Vector2( 74.2071, -11.452 )
