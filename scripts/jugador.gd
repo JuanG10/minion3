@@ -5,6 +5,8 @@ const speed = 100
 var velocity = Vector2()
 var can_climb = false
 
+var trepo = false
+
 # Obtención de otros Nodos.
 onready var player_spr = $character_col/character_spr
 onready var main = get_parent()
@@ -58,7 +60,3 @@ func change_control_to_next(): # Cambia de personaje si se pulsa Tab.
 		control_switch = false
 		main.change_control(position_in_main)
 		player_spr.play("idle")
-
-func can_climb_up():
-	if Input.is_action_pressed("ui_up") && can_climb:
-		position.y -= 1

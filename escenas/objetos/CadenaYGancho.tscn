@@ -2,15 +2,15 @@
 
 [ext_resource path="res://escenas/objetos/Cadena.tscn" type="PackedScene" id=1]
 [ext_resource path="res://escenas/objetos/Gancho.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scripts/gancho_area.gd" type="Script" id=3]
+[ext_resource path="res://sprites/plataforma_gancho.png" type="Texture" id=3]
 [ext_resource path="res://sprites/Caja.jpg" type="Texture" id=4]
 [ext_resource path="res://scripts/Gancho.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.75842, 4.43558 )
+extents = Vector2( 20.9434, 1.76563 )
 
 [node name="CadenaYGancho" type="Node2D"]
-position = Vector2( 64.892, -68.979 )
+position = Vector2( 61.1165, -105.79 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -19,21 +19,19 @@ __meta__ = {
 position = Vector2( -1.53746, -13.2332 )
 
 [node name="Gancho" parent="." instance=ExtResource( 2 )]
-position = Vector2( -1.96745, -1.54761 )
-scale = Vector2( 0.870076, 0.696847 )
+position = Vector2( -1.65716, -4.34177 )
+scale = Vector2( 0.829816, 1.03055 )
+texture = ExtResource( 3 )
 script = ExtResource( 5 )
 
-[node name="gancho_area" type="Area2D" parent="Gancho"]
-position = Vector2( 2.26125, 2.22087 )
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Gancho"]
+position = Vector2( 2.80367, 1.205 )
 scale = Vector2( 1.14932, 1.43504 )
-script = ExtResource( 3 )
 
-[node name="gancho_col" type="CollisionShape2D" parent="Gancho/gancho_area"]
-position = Vector2( -1.5749, -1.25993 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gancho/KinematicBody2D"]
+position = Vector2( -2.45562, -0.437607 )
 shape = SubResource( 1 )
 
 [node name="Base_Cadena" type="Sprite" parent="."]
 position = Vector2( -0.529724, -29.665 )
 texture = ExtResource( 4 )
-[connection signal="body_entered" from="Gancho/gancho_area" to="Gancho/gancho_area" method="_on_jugador_area_body_entered"]
-[connection signal="body_exited" from="Gancho/gancho_area" to="Gancho/gancho_area" method="_on_jugador_area_body_exited"]
