@@ -15,14 +15,28 @@ func _ready():
  
 func _physics_process(delta):
 	if puedo_accionar && Input.is_action_just_pressed("Accionar_palanca") :
+		$AnimatedSprite.play()
+		
 		activar_plataformas()
 		puedo_desactivar = true
 		puedo_accionar = false
+		stop_animation(2)
 	elif puedo_desactivar && Input.is_action_just_pressed("Accionar_palanca"):
+		$AnimatedSprite.play("",true)
 		desactivar_plataformas()
 		puedo_accionar = true 
 		puedo_desactivar = false
+		stop_animation(0)
 		
+
+
+
+
+func stop_animation(n):
+	if $AnimatedSprite.frame == n:
+		$AnimatedSprite.stop()
+
+
 
 func _on_Area2D_body_entered(body):
 	if(body.get_name() == "Jugador"):

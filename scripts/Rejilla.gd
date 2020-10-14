@@ -12,7 +12,6 @@ func _physics_process(delta):
 		$AnimatedSprite.play("",true)
 		$CollisionShape2D.disabled = true
 		stop_animation(0)
-		print(1)
 		
 		
 		
