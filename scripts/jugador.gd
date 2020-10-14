@@ -1,62 +1,62 @@
 extends KinematicBody2D
 
-# Variables internas.
-const speed = 100
-var velocity = Vector2()
-var can_climb = false
+export (int) var id
 
-var trepo = false
+# Variables internas.
+const speed:int = 100
+var velocity:Vector2
 
 # Obtención de otros Nodos.
-onready var player_spr = $character_col/character_spr
-onready var main = get_parent()
+onready var player_spr:AnimatedSprite = $character_col/character_spr
 
-# Relacionado al control.
+# Para cambio de personajes.
+onready var next_character_id = id + 1
 var control_switch = false
-var position_in_main
 
 func _ready():
-	initialize_character()
+	add_to_group("characters")
+	if id == 0: control_switch = true
+	print(name, " = id: ", id, "; control_switch: ", control_switch, "; next_character_id: ", next_character_id)
 	player_spr.play("idle")
 
 func _physics_process(delta):
-	get_input()
+	_get_input()
 	move_and_slide(velocity)
 
-func initialize_character(): # Asigna el control inicial de los personajes.
-	if name == "Jugador": # El primero en ser controlado debe ser el jugador.
-		control_switch = true
-	position_in_main = main.append_and_return_position(name)
-
-func get_input(): # Obtiene el input para moverse o caer.
+func _get_input()->void: # Obtiene el input para moverse o caer.
 	velocity = Vector2()
+	if !is_on_floor(): velocity.y += 1
 	if control_switch:
-		if !is_on_floor() && !can_climb:
-			velocity.y += 1
-		if Input.is_action_pressed('ui_right'):
-			_move_left()
-		if Input.is_action_pressed('ui_left'):
-			_move_right()
-		if _input_release():
-			player_spr.play("idle")
-		change_control_to_next()
-		velocity = velocity.normalized() * speed
+		if Input.is_action_pressed('ui_right'): _move_left()
+		if Input.is_action_pressed('ui_left'): _move_right()
+		if _input_release(): player_spr.play("idle")
+	velocity = velocity.normalized() * speed
 
-func _input_release(): # Chequea si se sueltan teclas direccionales.
-	return Input.is_action_just_released("ui_right") or Input.is_action_just_released("ui_left") or Input.is_action_just_released("ui_up")
+func _input_release()->bool: # Chequea si se sueltan teclas direccionales.
+	return Input.is_action_just_released("ui_right") or Input.is_action_just_released("ui_left")
 
-func _move_left():
+func _move_left()->void:
 	velocity.x += 1
 	player_spr.play("movimiento_horizontal")
 	player_spr.flip_h = false
 	
-func _move_right():
+func _move_right()->void:
 	velocity.x -= 1
 	player_spr.play("movimiento_horizontal")
 	player_spr.flip_h = true
 
-func change_control_to_next(): # Cambia de personaje si se pulsa Tab.
-	if Input.is_action_just_pressed("ui_focus_next") && control_switch:
-		control_switch = false
-		main.change_control(position_in_main)
+func _unhandled_input(event)->void: # Atrapa TAB y ve si cambia personajes.
+	if event is InputEventKey && event.is_action_pressed("ui_focus_next") && control_switch:
+		_check_if_can_change()
 		player_spr.play("idle")
+
+func _check_if_can_change()->void: # Pasa el control al siguiente personaje.
+	var characters_group = get_tree().get_nodes_in_group("characters")
+	control_switch = false
+	if next_character_id == characters_group.size():
+		get_tree().call_group("characters","change_control", 0)
+	else:
+		get_tree().call_group("characters","change_control", next_character_id)
+
+func change_control(next_id:int)->void: # Si es el siguiente se controla.
+	if id == next_id: control_switch = true
