@@ -4,7 +4,6 @@ var velocidad = 800
 
 var aceleracion = 0
 
-
 onready var jugador = get_parent().get_parent().get_node("Jugador")
 
 var activado	 = false
@@ -31,7 +30,10 @@ func movimiento_cadena(n):
 	set_offset(Vector2(get_offset().x,aceleracion / 2))
 	velocidad += n
 	jugador.can_climb_up(position.y)
-	
+
+
+
+
 func activar():
 	activado	= true
 

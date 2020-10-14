@@ -9,7 +9,9 @@ extents = Vector2( 8.07241, 8.43641 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 7.98402, 8.17124 )
 
-[node name="Plataforma_de_salto" type="StaticBody2D"]
+[node name="Plataforma_de_salto" type="StaticBody2D" groups=[
+"Plataforma_de_salto",
+]]
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )

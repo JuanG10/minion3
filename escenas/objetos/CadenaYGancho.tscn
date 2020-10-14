@@ -10,7 +10,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.75842, 4.43558 )
 
-[node name="CadenaYGancho" type="Node2D"]
+[node name="CadenaYGancho" type="Node2D" groups=[
+"Cadena",
+]]
 position = Vector2( 64.892, -68.979 )
 script = ExtResource( 6 )
 __meta__ = {

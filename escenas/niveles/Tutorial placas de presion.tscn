@@ -364,4 +364,3 @@ position = Vector2( 95.4228, -90.4748 )
 
 [node name="Palanca" parent="." instance=ExtResource( 4 )]
 position = Vector2( 250.273, -7.36509 )
-scene = ExtResource( 5 )
