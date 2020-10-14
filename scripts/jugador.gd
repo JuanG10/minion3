@@ -11,12 +11,14 @@ onready var player_spr:AnimatedSprite = $character_col/character_spr
 
 # Para cambio de personajes.
 onready var next_character_id = id + 1
+var is_active = false
 var control_switch = false
 
 func _ready():
 	add_to_group("characters")
-	if id == 0: control_switch = true
-	print(name, " = id: ", id, "; control_switch: ", control_switch, "; next_character_id: ", next_character_id)
+	if id == 0: 
+		control_switch = true
+		is_active = true
 	player_spr.play("idle")
 
 func _physics_process(delta):
@@ -60,3 +62,8 @@ func _check_if_can_change()->void: # Pasa el control al siguiente personaje.
 
 func change_control(next_id:int)->void: # Si es el siguiente se controla.
 	if id == next_id: control_switch = true
+
+func activate(id_list:Array)->void:
+	print("Antes: ", name, " id: ", id, " is_active: ", is_active)
+	if id_list.has(id): is_active = true;
+	print("Despues: ", name, " id: ", id, " is_active: ", is_active)
