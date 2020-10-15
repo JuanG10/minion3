@@ -360,5 +360,5 @@ position = Vector2( 106.828, -68.9786 )
 position = Vector2( 177.57, -71.1156 )
 acciono = "Puerta"
 
-[node name="Puerta 2" parent="." instance=ExtResource( 5 )]
+[node name="Puerta" parent="." instance=ExtResource( 5 )]
 position = Vector2( 215.675, -79.3809 )

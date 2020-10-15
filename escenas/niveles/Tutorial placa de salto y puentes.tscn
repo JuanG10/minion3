@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=1]
 [ext_resource path="res://escenas/objetos/Plataforma_de_salto.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://escenas/objetos/Rejilla.tscn" type="PackedScene" id=4]
 [ext_resource path="res://escenas/objetos/Palanca.tscn" type="PackedScene" id=5]
 [ext_resource path="res://escenas/objetos/Puerta.tscn" type="PackedScene" id=6]
+[ext_resource path="res://escenas/objetos/Suelo.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 4.51554, 0, 4.51554 )
@@ -340,13 +341,13 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 tile_set = SubResource( 9 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -262144, 1, 2, -262143, 1, 2, -262142, 1, 2, -262141, 1, 2, -262140, 1, 2, -262139, 1, 2, -262138, 1, 2, -262133, 1, 2, -262132, 1, 2, -262131, 1, 2, -65535, 2, 131072, 0, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 2, 5, 1, 2, 7, 1, 2, 8, 1, 2, 9, 1, 2, 10, 1, 2, 11, 1, 2, 12, 1, 2, 13, 1, 2 )
+tile_data = PoolIntArray( -262133, 1, 2, -262132, 1, 2, -262131, 1, 2, -65535, 2, 131072, 0, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 2, 5, 1, 2, 7, 1, 2, 8, 1, 2, 9, 1, 2, 10, 1, 2, 11, 1, 2, 12, 1, 2, 13, 1, 2 )
 __meta__ = {
 "_editor_description_": ""
 }
 
 [node name="Jugador" parent="." instance=ExtResource( 3 )]
-position = Vector2( 59.7088, -76.4108 )
+position = Vector2( 57.3491, -82.546 )
 
 [node name="Plataforma_de_salto" parent="." instance=ExtResource( 2 )]
 position = Vector2( 103.672, 7.10664 )
@@ -382,3 +383,6 @@ acciono = "Puerta"
 
 [node name="Puerta" parent="." instance=ExtResource( 6 )]
 position = Vector2( 216.391, -79.69 )
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( -19.3494, -52.857 )

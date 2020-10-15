@@ -16,10 +16,10 @@ _global_script_class_icons={
 [application]
 
 config/name="Minion 3"
+run/main_scene="res://escenas/niveles/Tutorial_mecanicas_basicas.tscn"
 
 [autoload]
 
-Accionar="*res://scripts/Accionar.gd"
 Gamehadler="*res://scripts/gamehadler.gd"
 
 [input]

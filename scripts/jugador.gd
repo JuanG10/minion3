@@ -8,45 +8,45 @@ onready var player_spr = $jugador_col/jugador_spr
 var can_climb = false
 
 #
-var velocidad_salto = -3000
+var GRAVEDAD = 50
+var vel_salto = 200
+var impulso = false
+var walk   = 100
 
-var gravity = 200
-var JUMP_POWER = -5000
-var impulso   = false
-
-	
+func _ready():
+	set_physics_process(true)	
 
 func _physics_process(delta):
-	get_input()
-	move_and_slide(velocity)
 	velocity.x = 0
-	velocity.y += gravity * delta
+	velocity.y += GRAVEDAD * delta
+	get_input()
+	move_and_slide(velocity,Vector2(0,-1))
+
 	
 
 
 func get_input():
-	velocity = Vector2()
-	if !is_on_floor() && !can_climb:
-		velocity.y += 1
 	if Input.is_action_pressed('ui_right'):
-		velocity.x += 1
+		velocity.x += walk
 		player_spr.play("movimiento_horizontal")
 		player_spr.flip_h = false
 	if Input.is_action_pressed('ui_left'):
-		velocity.x -= 1
+		velocity.x -= walk
 		player_spr.play("movimiento_horizontal")
 		player_spr.flip_h = true
 	if _input_release():
 		player_spr.play("idle")
-	velocity = velocity.normalized() * speed
-	if impulso || Input.is_action_just_pressed("ui_up"):
 		
-		impulso = false
-		
-		
+	if impulso:
+		if(is_on_floor()):
+			velocity.y -= vel_salto
+			impulso = false
+
+
+
 func impulso():
-	velocity.y = velocidad_salto
 	impulso = true
+
 
 func _input_release():
 	return Input.is_action_just_released("ui_right") or Input.is_action_just_released("ui_left")
