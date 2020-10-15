@@ -348,7 +348,7 @@ __meta__ = {
 }
 
 [node name="Jugador" parent="." instance=ExtResource( 3 )]
-position = Vector2( 213.365, -11.6477 )
+position = Vector2( 44.7035, -25.9343 )
 
 [node name="Placa_de_presion" parent="." instance=ExtResource( 2 )]
 position = Vector2( 174.73, -1.94247 )
@@ -363,15 +363,16 @@ zoom = Vector2( 0.4, 0.4 )
 position = Vector2( 249.278, -110.422 )
 
 [node name="CadenaYGancho" parent="." instance=ExtResource( 5 )]
-position = Vector2( 91.887, -89.6158 )
+position = Vector2( 92.0413, -106.31 )
+limite_bajada = 600
 
 [node name="Palanca" parent="." instance=ExtResource( 4 )]
-position = Vector2( 250.273, -7.36509 )
+position = Vector2( 11.7658, -7.36509 )
 acciono = "Puerta"
 
 [node name="Robot" parent="." instance=ExtResource( 8 )]
-position = Vector2( 27.7043, -8.47783 )
+position = Vector2( 222.558, -8.08098 )
 id = 1
 
 [node name="Robot_station" parent="." instance=ExtResource( 7 )]
-position = Vector2( 141.038, -18.8995 )
+position = Vector2( 134.292, -16.5184 )

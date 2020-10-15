@@ -1,11 +1,10 @@
 extends Node2D
 
-var cadena 
-
-func _ready():
-	cadena = get_child(0)
+onready var cadena = $Cadena
+export (int) var limite_bajada
 
 func activar():
+	cadena.set_limite_bajada(limite_bajada)
 	cadena.activar()
 	
 
