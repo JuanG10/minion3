@@ -8,8 +8,8 @@ onready var player_spr = $jugador_col/jugador_spr
 var can_climb = false
 
 #
-var GRAVEDAD = 50
-var vel_salto = 200
+var GRAVEDAD = 100
+var vel_salto = 130
 var impulso = false
 var walk   = 100
 
@@ -26,6 +26,7 @@ func _physics_process(delta):
 
 
 func get_input():
+
 	if Input.is_action_pressed('ui_right'):
 		velocity.x += walk
 		player_spr.play("movimiento_horizontal")
@@ -36,15 +37,18 @@ func get_input():
 		player_spr.flip_h = true
 	if _input_release():
 		player_spr.play("idle")
-		
-	if impulso:
-			velocity.y -= vel_salto
-			impulso = false
+	if impulso :
+		velocity.y -= vel_salto
+		impulso = false
 
 
 
 func impulso():
-	impulso = true
+	print("antes")
+	print(velocity.y)
+	velocity.y = -vel_salto
+	print("despues")
+	print(velocity.y)
 
 
 func _input_release():

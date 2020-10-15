@@ -29,7 +29,7 @@ animations = [ {
 } ]
 
 [node name="Jugador" type="KinematicBody2D"]
-position = Vector2( 7.56807, -8.19874 )
+position = Vector2( 6.56807, -9.69874 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
