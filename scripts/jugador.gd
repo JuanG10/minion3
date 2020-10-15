@@ -11,14 +11,13 @@ onready var player_spr:AnimatedSprite = $character_col/character_spr
 
 # Para cambio de personajes.
 onready var next_character_id = id + 1
-var is_active = false
 var control_switch = false
 
 func _ready():
 	add_to_group("characters")
 	if id == 0:
+		add_to_group("controllable_characters") # Solo se agrega Jugador.
 		control_switch = true
-		is_active = true
 		player_spr.play("idle")
 	else:
 		player_spr.play("off")
@@ -55,15 +54,15 @@ func _unhandled_input(event)->void: # Atrapa TAB y ve si cambia personajes.
 		player_spr.play("idle")
 
 func _check_if_can_change()->void: # Pasa el control al siguiente personaje.
-	var characters_group = get_tree().get_nodes_in_group("characters")
+	var characters_group = get_tree().get_nodes_in_group("controllable_characters")
 	control_switch = false
-	if next_character_id == characters_group.size() - 1:
-		get_tree().call_group("characters","change_control", 0)
+	if next_character_id >= characters_group.size() - 1:
+		get_tree().call_group("controllable_characters","change_control", 0)
 	else:
-		get_tree().call_group("characters","change_control", next_character_id)
+		get_tree().call_group("controllable_characters","change_control", next_character_id)
 
 func change_control(next_id:int)->void: # Si es el siguiente se controla.
 	if id == next_id: control_switch = true
 
 func activate(id_list:Array)->void:
-	if id_list.has(id): is_active = true;
+	if id_list.has(id): add_to_group("controllable_characters")

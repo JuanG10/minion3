@@ -395,10 +395,11 @@ character_id_to_activate = [ 1, 1 ]
 shape = SubResource( 10 )
 
 [node name="Robot_station_animation" type="AnimatedSprite" parent="Robot_station/Robot_station_col"]
+z_index = -1
 frames = SubResource( 11 )
 animation = "activation"
 
 [node name="Robot_station_spr" type="Sprite" parent="Robot_station/Robot_station_col"]
-z_index = -1
+z_index = -2
 texture = ExtResource( 5 )
 [connection signal="body_entered" from="Robot_station" to="Robot_station" method="_on_Robot_station_body_entered"]
