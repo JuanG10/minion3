@@ -1,0 +1,46 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scripts/jugador.gd" type="Script" id=1]
+[ext_resource path="res://sprites/Robot/robot_mov_0.png" type="Texture" id=2]
+[ext_resource path="res://sprites/Robot/robot_mov_3.png" type="Texture" id=3]
+[ext_resource path="res://sprites/Robot/robot_mov_4.png" type="Texture" id=4]
+[ext_resource path="res://sprites/Robot/robot_off.png" type="Texture" id=5]
+[ext_resource path="res://sprites/Robot/robot_idle_1.png" type="Texture" id=6]
+[ext_resource path="res://sprites/Robot/robot_mov_2.png" type="Texture" id=7]
+[ext_resource path="res://sprites/Robot/robot_idle_0.png" type="Texture" id=8]
+[ext_resource path="res://sprites/Robot/robot_mov_1.png" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.82694, 7.92849 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "idle",
+"speed": 1.6
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": false,
+"name": "off",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "movimiento_horizontal",
+"speed": 6.0
+} ]
+
+[node name="Robot" type="KinematicBody2D"]
+position = Vector2( 57.168, -67.2456 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="character_col" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="character_spr" type="AnimatedSprite" parent="character_col"]
+frames = SubResource( 2 )
+animation = "idle"

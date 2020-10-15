@@ -1,6 +1,13 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=1]
+[ext_resource path="res://escenas/objetos/Jugador.tscn" type="PackedScene" id=2]
+[ext_resource path="res://escenas/objetos/Robot.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sprites/Robot_station/robot_station_2.png" type="Texture" id=4]
+[ext_resource path="res://sprites/Robot_station/robot_station_off.png" type="Texture" id=5]
+[ext_resource path="res://sprites/Robot_station/robot_station_0.png" type="Texture" id=6]
+[ext_resource path="res://sprites/Robot_station/robot_station_1.png" type="Texture" id=7]
+[ext_resource path="res://scripts/Robot_station.gd" type="Script" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 4.51554, 0, 4.51554 )
@@ -329,13 +336,69 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 18/shapes = [  ]
 18/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 17.9302, 17.8796 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "activation",
+"speed": 5.5
+} ]
+
 [node name="Main" type="Node"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 153.053, -18.2025 )
+current = true
+zoom = Vector2( 0.25, 0.25 )
+
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 43, 38 )
 tile_set = SubResource( 9 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -458752, 14, 0, -458743, 7, 0, -393216, 1, 2, -393215, 1, 2, -393214, 1, 2, -393213, 1, 2, -393212, 1, 2, -393211, 1, 2, -393210, 1, 2, -393209, 1, 2, -393208, 1, 2, -393207, 1, 2, -393206, 1, 2, -393205, 1, 2, -393204, 1, 2, -393203, 1, 2, -131068, 12, 0, -131059, 11, 0, -65536, 15, 0, -65534, 2, 1, 0, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 2, 5, 1, 2, 6, 1, 2, 7, 1, 2, 8, 1, 2, 9, 1, 2, 10, 1, 2, 11, 1, 2, 12, 1, 2, 13, 1, 2 )
+tile_data = PoolIntArray( -458743, 7, 0, -393216, 1, 2, -393215, 1, 2, -393214, 1, 2, -393213, 1, 2, -393212, 1, 2, -393211, 1, 2, -393210, 1, 2, -393209, 1, 2, -393208, 1, 2, -393207, 1, 2, -393206, 1, 2, -393205, 1, 2, -393204, 1, 2, -393203, 1, 2, -131059, 11, 0, -65534, 2, 1, 0, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 2, 5, 1, 2, 6, 1, 2, 7, 1, 2, 8, 1, 2, 9, 1, 2, 10, 1, 2, 11, 1, 2, 12, 1, 2, 13, 1, 2 )
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="Jugador" parent="." instance=ExtResource( 2 )]
+position = Vector2( 57.1949, 28.9727 )
+
+[node name="Robot" parent="." instance=ExtResource( 3 )]
+position = Vector2( 57.168, -66.626 )
+id = 1
+
+[node name="Robot2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 132.805, -74.6466 )
+id = 1
+
+[node name="Robot3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 196.389, 19.6889 )
+id = 2
+
+[node name="Robot4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 242.288, -70.8752 )
+id = 3
+
+[node name="Robot_station" type="Area2D" parent="."]
+position = Vector2( 123.085, 20.3683 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+character_id_to_activate = [ 1, 1 ]
+
+[node name="Robot_station_col" type="CollisionShape2D" parent="Robot_station"]
+shape = SubResource( 10 )
+
+[node name="Robot_station_animation" type="AnimatedSprite" parent="Robot_station/Robot_station_col"]
+frames = SubResource( 11 )
+animation = "activation"
+
+[node name="Robot_station_spr" type="Sprite" parent="Robot_station/Robot_station_col"]
+z_index = -1
+texture = ExtResource( 5 )
+[connection signal="body_entered" from="Robot_station" to="Robot_station" method="_on_Robot_station_body_entered"]

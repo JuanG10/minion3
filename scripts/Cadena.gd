@@ -4,14 +4,14 @@ var velocidad = 800
 
 var aceleracion = 0
 
+
 onready var jugador = get_parent().get_parent().get_node("Jugador")
 
 var activado	 = false
 
-var limite_bajada = 350 
+var limite_bajada = 450 
 
 var limite_subida = 0  
-
 
 func _physics_process(delta):
 	aceleracion = velocidad * delta
