@@ -72,4 +72,6 @@ func change_control(next_id:int)->void: # Si es el siguiente se controla.
 	if id == next_id: control_switch = true
 
 func activate(id_list:Array)->void: # Agrega al grupo de controlables si puede.
-	if id_list.has(id): add_to_group("controllable_characters")
+	if id_list.has(id): 
+		add_to_group("controllable_characters")
+		player_spr.play("idle")

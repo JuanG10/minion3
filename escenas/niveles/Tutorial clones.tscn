@@ -1,13 +1,9 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=1]
 [ext_resource path="res://escenas/objetos/Jugador.tscn" type="PackedScene" id=2]
 [ext_resource path="res://escenas/objetos/Robot.tscn" type="PackedScene" id=3]
-[ext_resource path="res://sprites/Robot_station/robot_station_2.png" type="Texture" id=4]
-[ext_resource path="res://sprites/Robot_station/robot_station_off.png" type="Texture" id=5]
-[ext_resource path="res://sprites/Robot_station/robot_station_0.png" type="Texture" id=6]
-[ext_resource path="res://sprites/Robot_station/robot_station_1.png" type="Texture" id=7]
-[ext_resource path="res://scripts/Robot_station.gd" type="Script" id=8]
+[ext_resource path="res://escenas/objetos/Robot_station.tscn" type="PackedScene" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 4.51554, 0, 4.51554 )
@@ -336,17 +332,6 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 18/shapes = [  ]
 18/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 17.9302, 17.8796 )
-
-[sub_resource type="SpriteFrames" id=11]
-animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 4 ) ],
-"loop": false,
-"name": "activation",
-"speed": 5.5
-} ]
-
 [node name="Main" type="Node"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -359,7 +344,7 @@ position = Vector2( 43, 38 )
 tile_set = SubResource( 9 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -458743, 7, 0, -393216, 1, 2, -393215, 1, 2, -393214, 1, 2, -393213, 1, 2, -393212, 1, 2, -393211, 1, 2, -393210, 1, 2, -393209, 1, 2, -393208, 1, 2, -393207, 1, 2, -393206, 1, 2, -393205, 1, 2, -393204, 1, 2, -393203, 1, 2, -131059, 11, 0, -65534, 2, 1, 0, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 2, 5, 1, 2, 6, 1, 2, 7, 1, 2, 8, 1, 2, 9, 1, 2, 10, 1, 2, 11, 1, 2, 12, 1, 2, 13, 1, 2 )
+tile_data = PoolIntArray( -393216, 1, 2, -393215, 1, 2, -393214, 1, 2, -393213, 1, 2, -393212, 1, 2, -393211, 1, 2, -393210, 1, 2, -393209, 1, 2, -393208, 1, 2, -393207, 1, 2, -393206, 1, 2, -393205, 1, 2, -393204, 1, 2, -393203, 1, 2, -131059, 11, 0, -65534, 2, 1, 0, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 2, 5, 1, 2, 6, 1, 2, 7, 1, 2, 8, 1, 2, 9, 1, 2, 10, 1, 2, 11, 1, 2, 12, 1, 2, 13, 1, 2 )
 __meta__ = {
 "_editor_description_": ""
 }
@@ -368,34 +353,27 @@ __meta__ = {
 position = Vector2( 57.1949, 28.9727 )
 
 [node name="Robot" parent="." instance=ExtResource( 3 )]
-position = Vector2( 109.983, -70.7463 )
+position = Vector2( 66.711, -69.8258 )
 id = 1
 
 [node name="Robot2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 225.7, -69.4025 )
+position = Vector2( 172.715, 25.3701 )
 id = 1
 
 [node name="Robot3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 193.767, 24.5584 )
+position = Vector2( 178.976, -68.6653 )
 id = 2
 
-[node name="Robot_station" type="Area2D" parent="."]
-position = Vector2( 123.085, 20.3683 )
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
-character_id_to_activate = [ 1, 1 ]
+[node name="Robot4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 235.194, 25.971 )
+id = 3
 
-[node name="Robot_station_col" type="CollisionShape2D" parent="Robot_station"]
-shape = SubResource( 10 )
+[node name="Robot_station" parent="." instance=ExtResource( 4 )]
 
-[node name="Robot_station_animation" type="AnimatedSprite" parent="Robot_station/Robot_station_col"]
-z_index = -1
-frames = SubResource( 11 )
-animation = "activation"
+[node name="Robot_station2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 113.346, -74.7742 )
+character_id_to_activate = [ 2 ]
 
-[node name="Robot_station_spr" type="Sprite" parent="Robot_station/Robot_station_col"]
-z_index = -2
-texture = ExtResource( 5 )
-[connection signal="body_entered" from="Robot_station" to="Robot_station" method="_on_Robot_station_body_entered"]
+[node name="Robot_station3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 226.725, -75.2402 )
+character_id_to_activate = [ 3 ]
