@@ -7,9 +7,9 @@ var esta_subiendo = false
 
 var aceleracion = 0
 
-var bajar_cadena = 425
+var bajar_cadena = 389
 
-var subir_cadena = 425
+var subir_cadena = 389
 
 onready var jugador = get_parent().get_parent().get_node("Jugador")
 

@@ -15,8 +15,8 @@ var control_switch = false
 
 func _ready():
 	add_to_group("characters")
-	if id == 0:
-		add_to_group("controllable_characters") # Solo se agrega Jugador.
+	if id == 0: # Solo se agrega Jugador.
+		add_to_group("controllable_characters")
 		control_switch = true
 		player_spr.play("idle")
 	else:
@@ -48,14 +48,21 @@ func _move_right()->void:
 	player_spr.play("movimiento_horizontal")
 	player_spr.flip_h = true
 
-func _unhandled_input(event)->void: # Atrapa TAB y ve si cambia personajes.
-	if event is InputEventKey && event.is_action_pressed("ui_focus_next") && control_switch:
-		_check_if_can_change()
-		player_spr.play("idle")
+func _unhandled_input(event)->void: # Atrapa el input y ve si cambia personajes.
+	if _press_next(event):
+		var characters_group = get_tree().get_nodes_in_group("controllable_characters")
+		if characters_group.size() <= 1: return # Que no ejecute todo si solo esta el jugador.
+		_state_change()
+		_check_change_control(characters_group)
 
-func _check_if_can_change()->void: # Pasa el control al siguiente personaje.
-	var characters_group = get_tree().get_nodes_in_group("controllable_characters")
+func _press_next(event)->bool: # Chequea input y variables de cambio de personaje.
+	return event is InputEventKey && event.is_action_pressed("ui_focus_next") && control_switch
+
+func _state_change(): # Cambia variables del personaje.
 	control_switch = false
+	player_spr.play("idle")
+
+func _check_change_control(characters_group:Array)->void: # Revisa a quien darle el control.
 	if next_character_id >= characters_group.size() - 1:
 		get_tree().call_group("controllable_characters","change_control", 0)
 	else:
@@ -64,5 +71,5 @@ func _check_if_can_change()->void: # Pasa el control al siguiente personaje.
 func change_control(next_id:int)->void: # Si es el siguiente se controla.
 	if id == next_id: control_switch = true
 
-func activate(id_list:Array)->void:
+func activate(id_list:Array)->void: # Agrega al grupo de controlables si puede.
 	if id_list.has(id): add_to_group("controllable_characters")

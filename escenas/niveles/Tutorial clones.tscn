@@ -368,20 +368,16 @@ __meta__ = {
 position = Vector2( 57.1949, 28.9727 )
 
 [node name="Robot" parent="." instance=ExtResource( 3 )]
-position = Vector2( 57.168, -66.626 )
+position = Vector2( 109.983, -70.7463 )
 id = 1
 
 [node name="Robot2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 132.805, -74.6466 )
+position = Vector2( 225.7, -69.4025 )
 id = 1
 
 [node name="Robot3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 196.389, 19.6889 )
+position = Vector2( 193.767, 24.5584 )
 id = 2
-
-[node name="Robot4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 242.288, -70.8752 )
-id = 3
 
 [node name="Robot_station" type="Area2D" parent="."]
 position = Vector2( 123.085, 20.3683 )

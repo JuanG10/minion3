@@ -20,7 +20,7 @@ position = Vector2( -1.53746, -13.2332 )
 
 [node name="Cadena_plataforma_spr" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1.65716, -4.34177 )
-scale = Vector2( 0.829816, 1.03055 )
+scale = Vector2( 0.9, 1.031 )
 texture = ExtResource( 3 )
 script = ExtResource( 5 )
 
