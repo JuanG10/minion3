@@ -16,10 +16,12 @@ var control_switch = false
 
 func _ready():
 	add_to_group("characters")
-	if id == 0: 
+	if id == 0:
 		control_switch = true
 		is_active = true
-	player_spr.play("idle")
+		player_spr.play("idle")
+	else:
+		player_spr.play("off")
 
 func _physics_process(delta):
 	_get_input()
@@ -55,7 +57,6 @@ func _unhandled_input(event)->void: # Atrapa TAB y ve si cambia personajes.
 func _check_if_can_change()->void: # Pasa el control al siguiente personaje.
 	var characters_group = get_tree().get_nodes_in_group("characters")
 	control_switch = false
-	print(name, " next_id: ", next_character_id, " size: ", characters_group.size())
 	if next_character_id == characters_group.size() - 1:
 		get_tree().call_group("characters","change_control", 0)
 	else:
