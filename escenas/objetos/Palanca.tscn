@@ -30,7 +30,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.530331, 0.353546 )
 frames = SubResource( 1 )
-frame = 4
+frame = 2
 speed_scale = 2.0
 
 [node name="Area2D" type="Area2D" parent="."]

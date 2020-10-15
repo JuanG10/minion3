@@ -357,7 +357,7 @@ acciono = "Cadena"
 position = Vector2( 106.828, -68.9786 )
 
 [node name="Palanca 2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 177.57, -72.1077 )
+position = Vector2( 177.57, -71.1156 )
 acciono = "Puerta"
 
 [node name="Puerta 2" parent="." instance=ExtResource( 5 )]

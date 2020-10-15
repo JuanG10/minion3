@@ -11,12 +11,13 @@ func _ready():
  
 func _physics_process(delta):
 	if puedo_accionar && !puedo_desactivar && Input.is_action_just_pressed("Accionar_palanca") :
-		$AnimatedSprite.play()
+		$AnimatedSprite.frame = 4
 		activar_plataformas()
 		puedo_desactivar = true
 		stop_animation(2)
+		$AnimatedSprite.frame = 2
 	elif puedo_desactivar && Input.is_action_just_pressed("Accionar_palanca"):
-		$AnimatedSprite.play("",true)
+		$AnimatedSprite.frame = 1
 		desactivar_plataformas()
 		stop_animation(0)
 		puedo_desactivar = false
