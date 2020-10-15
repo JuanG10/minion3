@@ -38,7 +38,6 @@ func get_input():
 		player_spr.play("idle")
 		
 	if impulso:
-		if(is_on_floor()):
 			velocity.y -= vel_salto
 			impulso = false
 

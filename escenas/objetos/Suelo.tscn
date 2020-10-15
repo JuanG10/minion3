@@ -3,7 +3,7 @@
 [ext_resource path="res://sprites/Suelo/Suelo.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 47.5772, 2.08432 )
+extents = Vector2( 9.04001, 2.26107 )
 
 [node name="StaticBody2D" type="StaticBody2D"]
 
