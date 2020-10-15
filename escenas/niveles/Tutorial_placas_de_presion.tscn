@@ -1,6 +1,13 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=1]
+[ext_resource path="res://escenas/objetos/Placa_de_presion.tscn" type="PackedScene" id=2]
+[ext_resource path="res://escenas/objetos/Jugador.tscn" type="PackedScene" id=3]
+[ext_resource path="res://escenas/objetos/Palanca.tscn" type="PackedScene" id=4]
+[ext_resource path="res://escenas/objetos/CadenaYGancho.tscn" type="PackedScene" id=5]
+[ext_resource path="res://escenas/objetos/Puerta.tscn" type="PackedScene" id=6]
+[ext_resource path="res://escenas/objetos/Robot_station.tscn" type="PackedScene" id=7]
+[ext_resource path="res://escenas/objetos/Robot.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 4.51554, 0, 4.51554 )
@@ -335,7 +342,37 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 tile_set = SubResource( 9 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -589818, 18, 0, -524282, 18, 0, -524273, 11, 0, -458746, 18, 0, -393210, 9, 0, -393209, 1, 2, -393208, 1, 2, -393207, 1, 2, -393206, 1, 2, -393205, 1, 2, -393204, 1, 2, -393203, 1, 2, -393202, 1, 2, -393201, 1, 2, -131065, 12, 0, -65536, 15, 0, -65532, 14, 0, -65525, 17, 0, -65521, 7, 0, 0, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 2, 5, 1, 2, 6, 1, 2, 7, 1, 2, 8, 1, 2, 9, 1, 2, 10, 1, 2, 11, 1, 2, 12, 1, 2, 13, 1, 2, 14, 1, 2, 15, 1, 2 )
+tile_data = PoolIntArray( -393209, 1, 2, -393208, 1, 2, -393207, 1, 2, -393206, 1, 2, -393205, 1, 2, -393204, 1, 2, -393203, 1, 2, -393202, 1, 2, -393201, 1, 2, 0, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 2, 5, 1, 2, 6, 1, 2, 7, 1, 2, 8, 1, 2, 9, 1, 2, 10, 1, 2, 11, 1, 2, 12, 1, 2, 13, 1, 2, 14, 1, 2, 15, 1, 2 )
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="Jugador" parent="." instance=ExtResource( 3 )]
+position = Vector2( 44.7035, -25.9343 )
+
+[node name="Placa_de_presion" parent="." instance=ExtResource( 2 )]
+position = Vector2( 174.73, -1.94247 )
+accionar = "Cadena"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 174.63, -83.2353 )
+current = true
+zoom = Vector2( 0.4, 0.4 )
+
+[node name="Puerta" parent="." instance=ExtResource( 6 )]
+position = Vector2( 249.278, -110.422 )
+
+[node name="CadenaYGancho" parent="." instance=ExtResource( 5 )]
+position = Vector2( 92.0413, -106.31 )
+limite_bajada = 600
+
+[node name="Palanca" parent="." instance=ExtResource( 4 )]
+position = Vector2( 11.7658, -7.36509 )
+acciono = "Puerta"
+
+[node name="Robot" parent="." instance=ExtResource( 8 )]
+position = Vector2( 222.558, -8.08098 )
+id = 1
+
+[node name="Robot_station" parent="." instance=ExtResource( 7 )]
+position = Vector2( 134.292, -16.5184 )

@@ -351,6 +351,7 @@ position = Vector2( 8.69053, -8.33905 )
 
 [node name="Palanca" parent="." instance=ExtResource( 6 )]
 position = Vector2( 56.1212, -7.72186 )
+acciono = "Cadena"
 
 [node name="CadenaYGancho" parent="." instance=ExtResource( 3 )]
 position = Vector2( 90, -63 )
@@ -360,3 +361,4 @@ position = Vector2( 216.149, -79.6176 )
 
 [node name="Sprite" parent="." instance=ExtResource( 6 )]
 position = Vector2( 177.57, -72.1077 )
+acciono = "Puerta"

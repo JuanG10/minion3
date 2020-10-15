@@ -1,30 +1,36 @@
-extends Sprite
+extends "res://scripts/gamehadler.gd"
 
-var bajo_cadena = false
-signal accionar 
-var puedo_bajar_cadena = false
-var puede_subir_cadena = false
-var puede_abrir_puerta = false
 
+var puedo_accionar = false
+
+
+var puedo_desactivar = false
+
+func _ready():
+	escenas_a_accionar = get_tree().get_nodes_in_group(acciono)
+ 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("bajar_cadena") && puedo_bajar_cadena:
-		frame = 0
-		get_parent().get_node("CadenaYGancho").get_child(0).bajar_Cadena()
-	elif Input.is_action_just_pressed("subir_cadena") && puede_subir_cadena:
-		frame = 4	
-		get_parent().get_node("CadenaYGancho").get_child(0).subir_Cadena()
-	elif Input.is_action_just_pressed("abrir_puerta") && puede_abrir_puerta:
-		get_parent().get_node("Puerta").puerta_abierta()
-		frame = 0	
+	if puedo_accionar && !puedo_desactivar && Input.is_action_just_pressed("Accionar_palanca") :
+		$AnimatedSprite.frame = 4
+		activar_plataformas()
+		puedo_desactivar = true
+		stop_animation(2)
+		$AnimatedSprite.frame = 2
+	elif puedo_desactivar && Input.is_action_just_pressed("Accionar_palanca"):
+		$AnimatedSprite.frame = 1
+		desactivar_plataformas()
+		stop_animation(0)
+		puedo_desactivar = false
+		
 
 
 func _on_Area2D_body_entered(body):
 	if(body.get_name() == "Jugador"):
-		puedo_bajar_cadena = true	
-		puede_subir_cadena = true
-		puede_abrir_puerta = true
+		puedo_accionar = true
 
 func _on_Area2D_body_exited(body):
-	 puedo_bajar_cadena = false
-	 puede_subir_cadena = false
-	 puede_abrir_puerta = false
+	 puedo_accionar = false
+	 puedo_desactivar = false
+
+
+

@@ -1,16 +1,20 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://escenas/objetos/Cadena.tscn" type="PackedScene" id=1]
 [ext_resource path="res://escenas/objetos/Gancho.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprites/plataforma_gancho.png" type="Texture" id=3]
 [ext_resource path="res://sprites/Caja.jpg" type="Texture" id=4]
 [ext_resource path="res://scripts/Gancho.gd" type="Script" id=5]
+[ext_resource path="res://scripts/CadenaYGancho.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20.9434, 1.76563 )
 
-[node name="CadenaYGancho" type="Node2D"]
+[node name="CadenaYGancho" type="Node2D" groups=[
+"Cadena",
+]]
 position = Vector2( 61.1165, -105.79 )
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
