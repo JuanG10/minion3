@@ -55,7 +55,8 @@ func _unhandled_input(event)->void: # Atrapa TAB y ve si cambia personajes.
 func _check_if_can_change()->void: # Pasa el control al siguiente personaje.
 	var characters_group = get_tree().get_nodes_in_group("characters")
 	control_switch = false
-	if next_character_id == characters_group.size():
+	print(name, " next_id: ", next_character_id, " size: ", characters_group.size())
+	if next_character_id == characters_group.size() - 1:
 		get_tree().call_group("characters","change_control", 0)
 	else:
 		get_tree().call_group("characters","change_control", next_character_id)
