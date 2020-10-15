@@ -3,7 +3,7 @@ extends KinematicBody2D
 export (int) var id
 
 # Variables internas.
-const speed:int = 100
+const SPEED:int = 100
 var velocity:Vector2
 
 # Obtención de otros Nodos.
@@ -33,7 +33,7 @@ func _get_input()->void: # Obtiene el input para moverse o caer.
 		if Input.is_action_pressed('ui_right'): _move_left()
 		if Input.is_action_pressed('ui_left'): _move_right()
 		if _input_release(): player_spr.play("idle")
-	velocity = velocity.normalized() * speed
+	velocity = velocity.normalized() * SPEED
 
 func _input_release()->bool: # Chequea si se sueltan teclas direccionales.
 	return Input.is_action_just_released("ui_right") or Input.is_action_just_released("ui_left")
@@ -69,9 +69,59 @@ func _check_change_control(characters_group:Array)->void: # Revisa a quien darle
 		get_tree().call_group("controllable_characters","change_control", next_character_id)
 
 func change_control(next_id:int)->void: # Si es el siguiente se controla.
-	if id == next_id: control_switch = true
+	var new_timer_name = "timer" + name
+	var new_mark_name = "mark" + name
+	if id == next_id:
+		control_switch = true
+		if !get_tree().get_root().has_node(new_timer_name) && !get_tree().get_root().has_node(new_mark_name):
+			start_exclamation_mark(position)
 
 func activate(id_list:Array)->void: # Agrega al grupo de controlables si puede.
 	if id_list.has(id): 
 		add_to_group("controllable_characters")
+		start_question_mark(position)
 		player_spr.play("idle")
+
+## Quiero separar este código
+onready var exclamation = preload("res://sprites/exclamation.png")
+onready var question = preload("res://sprites/question.png")
+
+const START_HEIGHT:Vector2 = Vector2(0,12)
+
+func start_question_mark(pos:Vector2)->void:
+	_create_mark(pos,question)
+
+func start_exclamation_mark(pos:Vector2)->void:
+	_create_mark(pos,exclamation)
+
+func _create_mark(pos:Vector2, image)->void:
+	var root = get_tree().get_root()
+	var timer:Timer = _create_timer()
+	var new_mark = _create_sprite(image)
+	root.add_child(new_mark)
+	root.add_child(timer)
+	timer.start()
+	new_mark.position = pos - START_HEIGHT
+
+func _create_timer()->Timer:
+	var new_name = "timer" + name
+	var new_timer:Timer = Timer.new()
+	new_timer.set_one_shot(true)
+	new_timer.set_wait_time(0.4)
+	new_timer.connect("timeout",self,"_on_timer_timeout")
+	new_timer.set_name(new_name)
+	return new_timer
+
+func _create_sprite(image)->Sprite:
+	var new_name = "mark" + name
+	var new_mark = Sprite.new()
+	new_mark.texture = image
+	new_mark.set_name(new_name)
+	return new_mark
+
+func _on_timer_timeout()->void:
+	var mark_name = "mark" + name
+	var timer_name = "timer" + name
+	var root = get_tree().get_root()
+	root.get_node(mark_name).queue_free()
+	root.get_node(timer_name).queue_free()
