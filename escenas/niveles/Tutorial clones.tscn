@@ -344,7 +344,7 @@ animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 4 ) ],
 "loop": false,
 "name": "activation",
-"speed": 5.0
+"speed": 5.5
 } ]
 
 [node name="Main" type="Node"]
@@ -394,12 +394,11 @@ character_id_to_activate = [ 1, 1 ]
 [node name="Robot_station_col" type="CollisionShape2D" parent="Robot_station"]
 shape = SubResource( 10 )
 
-[node name="Robot_station_spr" type="Sprite" parent="Robot_station/Robot_station_col"]
-texture = ExtResource( 5 )
-
 [node name="Robot_station_animation" type="AnimatedSprite" parent="Robot_station/Robot_station_col"]
 frames = SubResource( 11 )
 animation = "activation"
-frame = 2
-playing = true
+
+[node name="Robot_station_spr" type="Sprite" parent="Robot_station/Robot_station_col"]
+z_index = -1
+texture = ExtResource( 5 )
 [connection signal="body_entered" from="Robot_station" to="Robot_station" method="_on_Robot_station_body_entered"]

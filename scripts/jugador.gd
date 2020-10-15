@@ -64,6 +64,4 @@ func change_control(next_id:int)->void: # Si es el siguiente se controla.
 	if id == next_id: control_switch = true
 
 func activate(id_list:Array)->void:
-	print("Antes: ", name, " id: ", id, " is_active: ", is_active)
 	if id_list.has(id): is_active = true;
-	print("Despues: ", name, " id: ", id, " is_active: ", is_active)
