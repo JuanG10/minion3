@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/Robot_station.gd" type="Script" id=1]
+[ext_resource path="res://sprites/Robot_station/robot_station_1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/Robot_station/robot_station_2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/Robot_station/robot_station_off.png" type="Texture" id=4]
+[ext_resource path="res://sprites/Robot_station/robot_station_0.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 17.9302, 17.8796 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "activation",
+"speed": 5.5
+} ]
+
+[node name="Robot_station" type="Area2D"]
+position = Vector2( 123.085, 20.3683 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+character_id_to_activate = [ 1 ]
+
+[node name="Robot_station_col" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Robot_station_animation" type="AnimatedSprite" parent="Robot_station_col"]
+z_index = -1
+frames = SubResource( 2 )
+animation = "activation"
+
+[node name="Robot_station_spr" type="Sprite" parent="Robot_station_col"]
+z_index = -2
+texture = ExtResource( 4 )
+[connection signal="body_entered" from="." to="." method="_on_Robot_station_body_entered"]
