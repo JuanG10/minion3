@@ -37,18 +37,11 @@ func get_input():
 		player_spr.flip_h = true
 	if _input_release():
 		player_spr.play("idle")
-	if impulso :
-		velocity.y -= vel_salto
-		impulso = false
 
 
 
 func impulso():
-	print("antes")
-	print(velocity.y)
 	velocity.y = -vel_salto
-	print("despues")
-	print(velocity.y)
 
 
 func _input_release():
