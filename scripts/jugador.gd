@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends "res://scripts/Signs.gd"
 
 export (int) var id
 
@@ -12,9 +12,11 @@ var impulso = false
 onready var player_spr:AnimatedSprite = $character_col/character_spr
 
 # Para cambio de personajes.
-const ID_JUGADOR = 0
-onready var next_character_id = id + 1
-var control_switch = false
+const ID_JUGADOR:int = 0
+onready var next_character_id:int = id + 1
+var control_switch:bool = false
+onready var _sign_name:String = "sign" + name
+onready var _timer_name:String = "timer" + name
 
 func _ready():
 	add_to_group("characters")
@@ -37,7 +39,7 @@ func _get_input()->void: # Obtiene el input para moverse o caer.
 		if Input.is_action_pressed('ui_left'): _move_right()
 		if _input_release(): player_spr.play("idle")
 
-func impulso()->void:
+func impulso()->void: # Lo llama la plataforma de salto.
 	velocity.y = -vel_salto
 
 func _input_release()->bool: # Chequea si se sueltan teclas direccionales.
@@ -63,7 +65,7 @@ func _unhandled_input(event)->void: # Atrapa el input y ve si cambia personajes.
 func _press_next(event)->bool: # Chequea input y variables de cambio de personaje.
 	return event is InputEventKey && event.is_action_pressed("ui_focus_next") && control_switch
 
-func _state_change(): # Cambia variables del personaje.
+func _state_change()->void: # Cambia variables del personaje.
 	control_switch = false
 	player_spr.play("idle")
 
@@ -79,59 +81,14 @@ func _exist_id_in(group:Array,next_id:int)->bool: # Busca el id en el grupo.
 	return boolean
 
 func change_control(next_id:int)->void: # Si es el siguiente se controla.
-	var new_timer_name = "timer" + name
-	var new_mark_name = "mark" + name
+	var root:Node = get_tree().get_root()
 	if id == next_id:
 		control_switch = true
-		if !get_tree().get_root().has_node(new_timer_name) && !get_tree().get_root().has_node(new_mark_name):
-			start_exclamation_mark(position)
+		if !root.has_node(_sign_name):
+			start_exclamation_sign(position, _timer_name, _sign_name)
 
 func activate(id_list:Array)->void: # Agrega al grupo de controlables si puede.
 	if id_list.has(id): 
 		add_to_group("controllable_characters")
-		start_question_mark(position)
+		start_question_sign(position, _timer_name, _sign_name)
 		player_spr.play("idle")
-
-## Quiero separar este código
-onready var exclamation = preload("res://sprites/exclamation.png")
-onready var question = preload("res://sprites/question.png")
-
-const START_HEIGHT:Vector2 = Vector2(0,12)
-
-func start_question_mark(pos:Vector2)->void:
-	_create_mark(pos,question)
-
-func start_exclamation_mark(pos:Vector2)->void:
-	_create_mark(pos,exclamation)
-
-func _create_mark(pos:Vector2, image)->void:
-	var root = get_tree().get_root()
-	var timer:Timer = _create_timer()
-	var new_mark = _create_sprite(image)
-	root.add_child(new_mark)
-	root.add_child(timer)
-	timer.start()
-	new_mark.position = pos - START_HEIGHT
-
-func _create_timer()->Timer:
-	var new_name = "timer" + name
-	var new_timer:Timer = Timer.new()
-	new_timer.set_one_shot(true)
-	new_timer.set_wait_time(0.4)
-	new_timer.connect("timeout",self,"_on_timer_timeout")
-	new_timer.set_name(new_name)
-	return new_timer
-
-func _create_sprite(image)->Sprite:
-	var new_name = "mark" + name
-	var new_mark = Sprite.new()
-	new_mark.texture = image
-	new_mark.set_name(new_name)
-	return new_mark
-
-func _on_timer_timeout()->void:
-	var mark_name = "mark" + name
-	var timer_name = "timer" + name
-	var root = get_tree().get_root()
-	root.get_node(mark_name).queue_free()
-	root.get_node(timer_name).queue_free()
