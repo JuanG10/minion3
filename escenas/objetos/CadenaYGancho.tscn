@@ -15,9 +15,6 @@ extents = Vector2( 20.9434, 1.76563 )
 ]]
 position = Vector2( 61.1165, -105.79 )
 script = ExtResource( 6 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Cadena" parent="." instance=ExtResource( 1 )]
 position = Vector2( -1.53746, -13.2332 )

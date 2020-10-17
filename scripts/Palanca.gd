@@ -25,12 +25,13 @@ func _physics_process(delta):
 
 
 func _on_Area2D_body_entered(body):
-	if(body.get_name() == "Jugador"):
+	if(get_tree().get_nodes_in_group("characters").has(body)):
 		puedo_accionar = true
 
 func _on_Area2D_body_exited(body):
-	 puedo_accionar = false
-	 puedo_desactivar = false
+	if(get_tree().get_nodes_in_group("characters").has(body)):
+		 puedo_accionar = false
+		 puedo_desactivar = false
 
 
 

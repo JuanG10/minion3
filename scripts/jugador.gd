@@ -7,6 +7,7 @@ const SPEED:int = 100
 const vel_salto = 120
 var velocity:Vector2
 var impulso = false
+var plataforma_de_salto 
 
 # Obtención de otros Nodos.
 onready var player_spr:AnimatedSprite = $character_col/character_spr
@@ -32,6 +33,10 @@ func _physics_process(delta):
 	velocity.y += SPEED * delta
 	_get_input()
 	move_and_slide(velocity,Vector2(0,-1))
+	if(Input.is_action_just_pressed("Impulso")) && impulso:
+		velocity.y = -vel_salto
+		plataforma_de_salto.cambiar_frame()
+		
 
 func _get_input()->void: # Obtiene el input para moverse o caer.
 	if control_switch:
@@ -39,8 +44,9 @@ func _get_input()->void: # Obtiene el input para moverse o caer.
 		if Input.is_action_pressed('ui_left'): _move_right()
 		if _input_release(): player_spr.play("idle")
 
-func impulso()->void: # Lo llama la plataforma de salto.
-	velocity.y = -vel_salto
+func impulso(plataforma)->void: # Lo llama la plataforma de salto.
+	impulso = true
+	plataforma_de_salto = plataforma
 
 func _input_release()->bool: # Chequea si se sueltan teclas direccionales.
 	return Input.is_action_just_released("ui_right") or Input.is_action_just_released("ui_left")

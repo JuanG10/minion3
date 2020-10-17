@@ -3,7 +3,7 @@
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=1]
 [ext_resource path="res://escenas/objetos/Jugador.tscn" type="PackedScene" id=2]
 [ext_resource path="res://escenas/objetos/CadenaYGancho.tscn" type="PackedScene" id=3]
-[ext_resource path="res://escenas/objetos/Puerta.tscn" type="PackedScene" id=4]
+[ext_resource path="res://escenas/objetos/Puerta.tscn" type="PackedScene" id=5]
 [ext_resource path="res://escenas/objetos/Palanca.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -339,7 +339,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 tile_set = SubResource( 9 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -589818, 10, 0, -524282, 10, 0, -262137, 1, 2, -262136, 1, 2, -262135, 1, 2, -262134, 1, 2, -262133, 1, 2, -262132, 1, 2, -262131, 1, 2, -65534, 2, 131072, 0, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2 )
+tile_data = PoolIntArray( -589818, 10, 0, -524282, 10, 0, -262137, 1, 2, -262136, 1, 2, -262135, 1, 2, -262134, 1, 2, -262133, 1, 2, -262132, 1, 2, -262131, 1, 2, -65534, 2, 131072, 0, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 2, 5, 1, 2, 6, 1, 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 105.697, -43.7154 )
@@ -347,18 +347,19 @@ current = true
 zoom = Vector2( 0.23, 0.23 )
 
 [node name="Jugador" parent="." instance=ExtResource( 2 )]
-position = Vector2( 8.69053, -8.33905 )
+position = Vector2( 44.3864, -23.8898 )
 
 [node name="Palanca" parent="." instance=ExtResource( 6 )]
-position = Vector2( 56.1212, -7.72186 )
+position = Vector2( 92.0452, -8.77631 )
 acciono = "Cadena"
 
 [node name="CadenaYGancho" parent="." instance=ExtResource( 3 )]
-position = Vector2( 90, -63 )
+position = Vector2( 88.588, -67.0143 )
+limite_bajada = 450
 
-[node name="Puerta" parent="." instance=ExtResource( 4 )]
-position = Vector2( 216.149, -79.6176 )
-
-[node name="Sprite" parent="." instance=ExtResource( 6 )]
-position = Vector2( 177.57, -72.1077 )
+[node name="Palanca 2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 177.57, -71.1156 )
 acciono = "Puerta"
+
+[node name="Puerta" parent="." instance=ExtResource( 5 )]
+position = Vector2( 215.675, -79.3809 )

@@ -33,6 +33,7 @@ func set_limite_bajada(limite:int)->void: limite_bajada = limite
 
 
 func activar():
+	print("buenaassss")
 	activado    = true
 
 func  desactivar():

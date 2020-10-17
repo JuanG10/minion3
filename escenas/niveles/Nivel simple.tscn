@@ -379,7 +379,7 @@ current = true
 zoom = Vector2( 0.4, 0.5 )
 
 [node name="Jugador" parent="." instance=ExtResource( 7 )]
-position = Vector2( 14.2423, -10.201 )
+position = Vector2( 198.606, -140.126 )
 
 [node name="Robot" parent="." instance=ExtResource( 8 )]
 position = Vector2( 51.1612, -138.66 )
