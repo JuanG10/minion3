@@ -36,6 +36,7 @@ func _physics_process(delta):
 	if(Input.is_action_just_pressed("Impulso")) && impulso:
 		velocity.y = -vel_salto
 		plataforma_de_salto.cambiar_frame()
+		impulso = false
 		
 
 func _get_input()->void: # Obtiene el input para moverse o caer.
