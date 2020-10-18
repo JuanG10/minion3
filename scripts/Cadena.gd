@@ -10,14 +10,14 @@ var activado
 
 var puede_subir = false
 
-var cant_bajada:int = 0
+var cant_bajada = 0
 
 func _physics_process(delta):
 	aceleracion = velocidad * delta
 	if activado && !puede_subir:
 		cant_bajada += 1
 		movimiento_cadena(10)
-	elif !activado && cant_bajada > 0 && puede_subir:
+	elif !activado && cant_bajada > 0:
 		cant_bajada -= 1
 		movimiento_cadena(-10)
 
