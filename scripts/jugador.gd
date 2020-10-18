@@ -29,10 +29,14 @@ func _ready():
 		player_spr.play("off")
 
 func _physics_process(delta):
+	if !is_on_floor() && !impulso:
+		velocity = Vector2()
+		velocity.y +=SPEED
 	velocity.x = 0
-	velocity.y += SPEED * delta
+	if is_on_floor():
+		velocity.y += SPEED * delta
 	_get_input()
-	move_and_slide(velocity)
+	move_and_slide(velocity,Vector2(0,-1))
 	if(Input.is_action_just_pressed("Impulso")) && impulso:
 		velocity.y = -vel_salto
 		plataforma_de_salto.cambiar_frame()
@@ -44,6 +48,7 @@ func _get_input()->void: # Obtiene el input para moverse o caer.
 		if Input.is_action_pressed('ui_right'): _move_left()
 		if Input.is_action_pressed('ui_left'): _move_right()
 		if _input_release(): player_spr.play("idle")
+
 
 func impulso(plataforma)->void: # Lo llama la plataforma de salto.
 	impulso = true
