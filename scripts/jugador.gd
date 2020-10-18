@@ -28,22 +28,20 @@ func _ready():
 	else:
 		player_spr.play("off")
 
-func _physics_process(delta):
-	if !is_on_floor() && !impulso:
-		velocity = Vector2()
-		velocity.y +=SPEED
+func _physics_process(delta): 
 	velocity.x = 0
-	if is_on_floor():
-		velocity.y += SPEED * delta
+	velocity.y += SPEED * delta
 	_get_input()
 	move_and_slide(velocity,Vector2(0,-1))
+	print(impulso)
 	if(Input.is_action_just_pressed("Impulso")) && impulso:
-		velocity.y = -vel_salto
-		plataforma_de_salto.cambiar_frame()
-		impulso = false
+			print("entra?")
+			velocity.y = -vel_salto
+			plataforma_de_salto.cambiar_frame()
+			impulso = false
 		
 
-func _get_input()->void: # Obtiene el input para moverse o caer.
+func _get_input()->void: # Obtiene el input para moverse o caer. 
 	if control_switch:
 		if Input.is_action_pressed('ui_right'): _move_left()
 		if Input.is_action_pressed('ui_left'): _move_right()
