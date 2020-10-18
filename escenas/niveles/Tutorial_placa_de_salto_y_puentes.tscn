@@ -347,7 +347,7 @@ __meta__ = {
 }
 
 [node name="Jugador" parent="." instance=ExtResource( 3 )]
-position = Vector2( 69.6515, -72.0295 )
+position = Vector2( 52.752, -9.30945 )
 
 [node name="Plataforma_de_salto" parent="." instance=ExtResource( 2 )]
 position = Vector2( 88.2254, 6.7317 )
@@ -385,16 +385,16 @@ acciono = "Puerta"
 position = Vector2( 198.559, -79.2423 )
 
 [node name="Suelo" parent="." instance=ExtResource( 7 )]
-position = Vector2( -19.8321, -53.7082 )
+position = Vector2( 63.9431, -61.7639 )
 
 [node name="Suelo5" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1.23692, -53.4751 )
+position = Vector2( 85.0121, -61.5308 )
 
 [node name="Suelo2" parent="." instance=ExtResource( 7 )]
-position = Vector2( -40.697, -53.7145 )
+position = Vector2( 43.0782, -61.7702 )
 
 [node name="Suelo3" parent="." instance=ExtResource( 7 )]
-position = Vector2( -61.0479, -53.7396 )
+position = Vector2( 22.7273, -61.7953 )
 
 [node name="Suelo4" parent="." instance=ExtResource( 7 )]
-position = Vector2( -81.3579, -53.806 )
+position = Vector2( 2.41726, -61.8617 )
