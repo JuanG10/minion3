@@ -32,7 +32,7 @@ func _physics_process(delta):
 	velocity.x = 0
 	velocity.y += SPEED * delta
 	_get_input()
-	move_and_slide(velocity,Vector2(0,-1))
+	move_and_slide(velocity)
 	if(Input.is_action_just_pressed("Impulso")) && impulso:
 		velocity.y = -vel_salto
 		plataforma_de_salto.cambiar_frame()

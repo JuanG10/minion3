@@ -6,9 +6,9 @@ var aceleracion = 0
 
 onready var jugador = get_parent().get_parent().get_node("Jugador")
 
-var activado     = false
+var activado     
 
-var limite_bajada = 400
+var limite_bajada = 0
 
 var limite_subida = 0
 
@@ -29,11 +29,12 @@ func movimiento_cadena(n):
 	set_offset(Vector2(get_offset().x,aceleracion / 2))
 	velocidad += n
 
-func set_limite_bajada(limite:int)->void: limite_bajada = limite
+func set_limite_bajada(limite:int)->void: 
+	if limite_bajada == 0 && limite_subida == 0:
+		limite_bajada = limite
 
 
 func activar():
-	print("buenaassss")
 	activado    = true
 
 func  desactivar():
