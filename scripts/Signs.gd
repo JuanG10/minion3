@@ -30,7 +30,7 @@ func _create_timer(time)->Timer:
 	var new_timer:Timer = Timer.new()
 	new_timer.set_one_shot(true)
 	new_timer.set_wait_time(time)
-	new_timer.connect("timeout",self,"_on_timer_timeout")
+	new_timer.connect("timeout",self,"_delete_sprite_and_timer")
 	new_timer.set_name(timer_name)
 	return new_timer
 
@@ -40,7 +40,7 @@ func _create_sprite(image)->Sprite:
 	new_sign.set_name(spr_name)
 	return new_sign
 
-func _on_timer_timeout()->void:
+func _delete_sprite_and_timer()->void:
 	var root = get_tree().get_root()
 	root.get_node(spr_name).queue_free()
 	root.get_node(timer_name).queue_free()

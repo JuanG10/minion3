@@ -30,21 +30,32 @@ func _ready():
 
 func _physics_process(delta): 
 	velocity.x = 0
-	velocity.y += SPEED * delta
+	velocity.y += (SPEED * delta)
+	velocity = velocity.normalized() * SPEED
 	_get_input()
 	move_and_slide(velocity,Vector2(0,-1))
 	if(Input.is_action_just_pressed("Impulso")) && impulso:
-			velocity.y = -vel_salto
+			velocity.y -= vel_salto
 			plataforma_de_salto.cambiar_frame()
 			impulso = false
-		
 
-func _get_input()->void: # Obtiene el input para moverse o caer. 
+func _get_input()->void: # Obtiene el input para moverse o caer.
+	if Input.is_action_just_pressed("reload"):
+		_delete_old_signs()
+		get_tree().reload_current_scene()
 	if control_switch:
 		if Input.is_action_pressed('ui_right'): _move_left()
 		if Input.is_action_pressed('ui_left'): _move_right()
 		if _input_release(): player_spr.play("idle")
 
+func _delete_old_signs(): # Para que no queden iconos sueltos al reiniciar.
+	var root = get_tree().get_root()
+	var old_sign = root.get_node(_sign_name)
+	var old_timer = root.get_node(_timer_name)
+	if old_sign != null:
+		old_sign.queue_free()
+	if old_timer != null:
+		old_timer.queue_free()
 
 func impulso(plataforma)->void: # Lo llama la plataforma de salto.
 	impulso = true
