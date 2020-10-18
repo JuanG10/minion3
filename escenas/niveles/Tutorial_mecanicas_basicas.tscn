@@ -347,7 +347,7 @@ current = true
 zoom = Vector2( 0.23, 0.23 )
 
 [node name="Jugador" parent="." instance=ExtResource( 2 )]
-position = Vector2( 44.3864, -23.8898 )
+position = Vector2( 16.6368, -12.5377 )
 
 [node name="Palanca" parent="." instance=ExtResource( 6 )]
 position = Vector2( 92.0452, -8.77631 )
@@ -355,7 +355,6 @@ acciono = "Cadena"
 
 [node name="CadenaYGancho" parent="." instance=ExtResource( 3 )]
 position = Vector2( 88.588, -67.0143 )
-limite_bajada = 450
 
 [node name="Palanca 2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 177.57, -71.1156 )

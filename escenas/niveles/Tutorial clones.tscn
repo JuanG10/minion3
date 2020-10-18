@@ -335,9 +335,9 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 [node name="Main" type="Node"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 153.053, -18.2025 )
+position = Vector2( 155.053, -22.7025 )
 current = true
-zoom = Vector2( 0.25, 0.25 )
+zoom = Vector2( 0.25, 0.24 )
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 43, 38 )
@@ -351,6 +351,8 @@ __meta__ = {
 
 [node name="Jugador" parent="." instance=ExtResource( 2 )]
 position = Vector2( 57.1949, 28.9727 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="Robot" parent="." instance=ExtResource( 3 )]
 position = Vector2( 65.8701, -69.4053 )
