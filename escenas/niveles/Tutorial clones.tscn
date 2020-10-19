@@ -351,26 +351,21 @@ __meta__ = {
 
 [node name="Jugador" parent="." instance=ExtResource( 2 )]
 position = Vector2( 57.1949, 28.9727 )
-collision_layer = 1024
 
 [node name="Robot" parent="." instance=ExtResource( 3 )]
 position = Vector2( 65.8701, -69.4053 )
-collision_layer = 2
 id = 1
 
 [node name="Robot2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 177.179, 26.1832 )
-collision_layer = 4
 id = 1
 
 [node name="Robot3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 178.976, -68.6653 )
-collision_layer = 8
 id = 2
 
 [node name="Robot4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 235.194, 25.971 )
-collision_layer = 16
 id = 3
 
 [node name="Robot_station" parent="." instance=ExtResource( 4 )]

@@ -30,7 +30,7 @@ func _ready():
 
 func _physics_process(delta): 
 	velocity.x = 0
-	velocity.y += (SPEED * delta)
+	velocity.y += SPEED * delta
 	velocity = velocity.normalized() * SPEED
 	_get_input()
 	move_and_slide(velocity,Vector2(0,-1))

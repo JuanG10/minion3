@@ -386,9 +386,9 @@ position = Vector2( 72.0283, 6.74645 )
 position = Vector2( 152.031, 6.666 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 127.542, -95.8032 )
+position = Vector2( 110.742, -97.6732 )
 current = true
-zoom = Vector2( 0.4, 0.4 )
+zoom = Vector2( 0.28, 0.38 )
 
 [node name="Palanca" parent="." instance=ExtResource( 4 )]
 position = Vector2( 114.245, -7.95349 )

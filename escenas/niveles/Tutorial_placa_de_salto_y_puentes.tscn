@@ -385,16 +385,16 @@ acciono = "Puerta"
 position = Vector2( 198.559, -79.2423 )
 
 [node name="Suelo" parent="." instance=ExtResource( 7 )]
-position = Vector2( -19.8321, -53.7082 )
+position = Vector2( 64.0717, -61.8864 )
 
 [node name="Suelo5" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1.23692, -53.4751 )
+position = Vector2( 85.1407, -61.6534 )
 
 [node name="Suelo2" parent="." instance=ExtResource( 7 )]
-position = Vector2( -40.697, -53.7145 )
+position = Vector2( 43.2068, -61.8927 )
 
 [node name="Suelo3" parent="." instance=ExtResource( 7 )]
-position = Vector2( -61.0479, -53.7396 )
+position = Vector2( 22.8559, -61.9178 )
 
 [node name="Suelo4" parent="." instance=ExtResource( 7 )]
-position = Vector2( -81.3579, -53.806 )
+position = Vector2( 2.54588, -61.9842 )
