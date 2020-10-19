@@ -34,17 +34,10 @@ func _physics_process(delta):
 	velocity = velocity.normalized() * SPEED
 	_get_input()
 	move_and_slide(velocity,Vector2(0,-1))
-	
-	frenar()
 	if(Input.is_action_just_pressed("Impulso")) && impulso:
 			velocity.y -= 110
 			plataforma_de_salto.cambiar_frame()
 			impulso = false
-
-
-func frenar():
-	if int(position.y) * -1 > vel_salto:
-		velocity.y = 100 
 
 func _get_input()->void: # Obtiene el input para moverse o caer.
 	if Input.is_action_just_pressed("reload"):
@@ -55,7 +48,7 @@ func _get_input()->void: # Obtiene el input para moverse o caer.
 		if Input.is_action_pressed('ui_left'): _move_right()
 		if _input_release(): player_spr.play("idle")
 	else:
-		$character_col/character_spr.animation = "idle"	
+		$character_col/character_spr.animation = "idle"
 		
 
 func _delete_old_signs(): # Para que no queden iconos sueltos al reiniciar.
