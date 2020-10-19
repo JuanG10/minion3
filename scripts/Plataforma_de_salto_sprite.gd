@@ -11,7 +11,6 @@ func desactivar():
 func _on_Area2D_body_entered(body):
 	if(get_tree().get_nodes_in_group("controllable_characters").has(body)): 
 		if activado:
-			print("holaaa ?")
 			body.impulso(self)
 
 
