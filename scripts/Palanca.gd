@@ -10,10 +10,12 @@ var baje = false
 
 var body_actual 
 
+export (int) var id_puerta_a_accionar
+
 func _ready():
 	if acciono != "Puerta":
 		escenas_a_accionar = get_tree().get_nodes_in_group(acciono)
-	else: escenas_a_accionar = [get_tree().get_nodes_in_group(acciono)[1]]
+	else: buscar_puerta()
  
 func _physics_process(delta):
 	if body_actual != null:
@@ -46,3 +48,11 @@ func cambiar_animacion():
 
 func _on_Timer_timeout():
 	cambiar_animacion()
+	
+func buscar_puerta():
+	var puertas = get_tree().get_nodes_in_group(acciono)
+	for puerta in puertas:
+		if(puerta.id == id_puerta_a_accionar):
+			escenas_a_accionar = [puerta]
+			
+		

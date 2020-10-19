@@ -1,5 +1,6 @@
 extends "res://scripts/gamehadler.gd"
 
+export (int) var id 
 
 func _physics_process(delta):
 	if activada:

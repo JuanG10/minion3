@@ -424,10 +424,12 @@ position = Vector2( 136.012, -153.083 )
 
 [node name="Puerta" parent="." instance=ExtResource( 8 )]
 position = Vector2( 248, -15 )
+id = 1
 
 [node name="Palanca2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 216.997, -167.05 )
 acciono = "Puerta"
+id_puerta_a_accionar = 1
 
 [node name="Robot_station" parent="." instance=ExtResource( 9 )]
 position = Vector2( 206.032, -96.7686 )
@@ -435,3 +437,9 @@ position = Vector2( 206.032, -96.7686 )
 [node name="Robot" parent="." instance=ExtResource( 10 )]
 position = Vector2( 6.31375, -167.895 )
 id = 1
+
+[node name="StaticBody2D5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 166.398, -77.2161 )
+
+[node name="StaticBody2D6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 145.896, -76.5216 )
