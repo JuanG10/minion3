@@ -7,8 +7,10 @@ export (String) var accionar
 var  escenas_actuales
 
 func _ready():
-	escenas_actuales = get_tree().get_nodes_in_group(accionar)
-
+	if accionar != "Puerta":
+		escenas_actuales = get_tree().get_nodes_in_group(accionar)
+	else:
+		escenas_actuales = [get_tree().get_nodes_in_group(accionar)[0]]
 func _physics_process(delta):
 	if puede_accionar:
 		frame = 1 
