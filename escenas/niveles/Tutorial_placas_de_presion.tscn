@@ -364,7 +364,6 @@ position = Vector2( 249.278, -110.422 )
 
 [node name="CadenaYGancho" parent="." instance=ExtResource( 5 )]
 position = Vector2( 92.0413, -106.31 )
-limite_bajada = 600
 
 [node name="Palanca" parent="." instance=ExtResource( 4 )]
 position = Vector2( 11.7658, -7.36509 )

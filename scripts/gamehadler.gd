@@ -1,6 +1,6 @@
 extends Node
 
-var activada = false
+export (bool) var activada = false
 
 export (String) var acciono
 

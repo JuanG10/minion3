@@ -1,7 +1,5 @@
 extends "res://scripts/gamehadler.gd"
 
-
-
 func _physics_process(delta):
 	if activada:
 		$AnimatedSprite.play()
@@ -11,4 +9,3 @@ func _physics_process(delta):
 		$AnimatedSprite.play("",true)
 		$CollisionShape2D.disabled = true
 		stop_animation(0)
-

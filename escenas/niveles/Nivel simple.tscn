@@ -408,3 +408,4 @@ position = Vector2( 183.287, -143.557 )
 
 [node name="Rejilla" parent="." instance=ExtResource( 6 )]
 position = Vector2( 24.2946, -121 )
+activada = true
