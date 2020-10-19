@@ -11,7 +11,9 @@ var baje = false
 var body_actual 
 
 func _ready():
-	escenas_a_accionar = get_tree().get_nodes_in_group(acciono)
+	if acciono != "Puerta":
+		escenas_a_accionar = get_tree().get_nodes_in_group(acciono)
+	else: escenas_a_accionar = [get_tree().get_nodes_in_group(acciono)[1]]
  
 func _physics_process(delta):
 	if body_actual != null:
@@ -25,7 +27,7 @@ func _physics_process(delta):
 			desactivar_plataformas()
 			puedo_desactivar = false
 			baje = false
-	
+
 func _on_Area2D_body_entered(body):
 	if(get_tree().get_nodes_in_group("characters").has(body)):
 			puedo_accionar = true
