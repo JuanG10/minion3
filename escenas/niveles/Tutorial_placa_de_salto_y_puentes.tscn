@@ -347,7 +347,7 @@ __meta__ = {
 }
 
 [node name="Jugador" parent="." instance=ExtResource( 3 )]
-position = Vector2( 69.6515, -72.0295 )
+position = Vector2( 44.1957, -12.9861 )
 
 [node name="Plataforma_de_salto" parent="." instance=ExtResource( 2 )]
 position = Vector2( 88.2254, 6.7317 )

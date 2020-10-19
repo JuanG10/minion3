@@ -4,7 +4,7 @@ export (int) var id
 
 # Variables internas.
 const SPEED:int = 100
-const vel_salto = 120
+var vel_salto = 100
 var velocity:Vector2
 var impulso = false
 var plataforma_de_salto 
@@ -34,10 +34,15 @@ func _physics_process(delta):
 	velocity = velocity.normalized() * SPEED
 	_get_input()
 	move_and_slide(velocity,Vector2(0,-1))
+
+
+	if int(position.y) * -1 > vel_salto:
+		velocity.y = 100
 	if(Input.is_action_just_pressed("Impulso")) && impulso:
-			velocity.y -= vel_salto
+			velocity.y -= 110
 			plataforma_de_salto.cambiar_frame()
 			impulso = false
+
 
 func _get_input()->void: # Obtiene el input para moverse o caer.
 	if Input.is_action_just_pressed("reload"):
