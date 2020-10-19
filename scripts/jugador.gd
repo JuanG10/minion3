@@ -41,6 +41,7 @@ func _physics_process(delta):
 			plataforma_de_salto.cambiar_frame()
 			impulso = false
 
+
 func frenar():
 	if int(position.y) * -1 > vel_salto:
 		velocity.y = 100 
@@ -49,10 +50,13 @@ func _get_input()->void: # Obtiene el input para moverse o caer.
 	if Input.is_action_just_pressed("reload"):
 		_delete_old_signs()
 		get_tree().reload_current_scene()
-	if control_switch:
+	if control_switch && is_on_floor():
 		if Input.is_action_pressed('ui_right'): _move_left()
 		if Input.is_action_pressed('ui_left'): _move_right()
 		if _input_release(): player_spr.play("idle")
+	else:
+		$character_col/character_spr.animation = "idle"	
+		
 
 func _delete_old_signs(): # Para que no queden iconos sueltos al reiniciar.
 	var root = get_tree().get_root()
