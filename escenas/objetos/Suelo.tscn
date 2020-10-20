@@ -1,37 +1,25 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://sprites/Suelo/Suelo.png" type="Texture" id=1]
-[ext_resource path="res://scripts/Suelo_RayCast.gd" type="Script" id=2]
+[ext_resource path="res://scripts/RayCast2D.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10.4825, 2.99786 )
+extents = Vector2( 10.4612, 2.9701 )
 
-[node name="Suelo" type="StaticBody2D"]
-<<<<<<< HEAD
-=======
-scale = Vector2( 0.7, 1 )
->>>>>>> 00ac9c4ecc465374e88b729c999021b88c5d3e1d
-__meta__ = {
-"_edit_group_": true
-}
+[node name="StaticBody2D" type="StaticBody2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.0167961, 0.0781984 )
+position = Vector2( 0.0131578, 0.0198555 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.49, 0.1 )
+position = Vector2( -0.466111, 0.0449057 )
 shape = SubResource( 1 )
 one_way_collision = true
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2( 0, -30 )
+[node name="piso_rayCast" type="RayCast2D" parent="."]
+position = Vector2( 0.0213203, -25.1022 )
 rotation = 3.14159
-<<<<<<< HEAD
-scale = Vector2( 12, 0.2 )
-=======
-scale = Vector2( 9, 0.2 )
->>>>>>> 00ac9c4ecc465374e88b729c999021b88c5d3e1d
+scale = Vector2( 6, 0.5 )
 enabled = true
-collision_mask = 3
 script = ExtResource( 2 )

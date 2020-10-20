@@ -346,9 +346,11 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="Jugador" parent="." instance=ExtResource( 5 )]
+position = Vector2( 52.752, -9.30945 )
+
 [node name="Plataforma_de_salto" parent="." instance=ExtResource( 6 )]
 position = Vector2( 88.2254, 6.7317 )
-id = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 103.939, -46.2755 )
@@ -357,59 +359,42 @@ zoom = Vector2( 0.2, 0.23 )
 
 [node name="Rejilla" parent="." instance=ExtResource( 3 )]
 position = Vector2( 151.74, -57.2016 )
-id = 2
 
 [node name="Rejilla2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 103.139, -57.513 )
-id = 2
 
 [node name="Rejilla3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 119.234, -57.3444 )
-id = 2
 
 [node name="Rejilla4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 135.563, -57.2434 )
-id = 2
 
 [node name="Palanca" parent="." instance=ExtResource( 4 )]
 position = Vector2( 69.5247, -7.0526 )
 acciono = "Plataforma_de_salto"
-id = 1
 
 [node name="Palanca2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 200.414, -9.26086 )
 acciono = "Rejilla"
-id = 2
 
 [node name="Palanca3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 46.7441, -71.5103 )
+position = Vector2( 25.3254, -71.8253 )
 acciono = "Puerta"
-id = 3
 
 [node name="Puerta" parent="." instance=ExtResource( 2 )]
 position = Vector2( 198.559, -79.2423 )
-id = 3
 
 [node name="Suelo" parent="." instance=ExtResource( 1 )]
-position = Vector2( 84.6364, -61.3388 )
-
-<<<<<<< HEAD
-[node name="Suelo2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 25.6364, -61.3388 )
+position = Vector2( 63.9431, -61.7639 )
 
 [node name="Suelo5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 4.8864, -61.3388 )
+position = Vector2( 85.0121, -61.5308 )
+
+[node name="Suelo2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 43.0782, -61.7702 )
 
 [node name="Suelo3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 45.6364, -61.5888 )
+position = Vector2( 22.7273, -61.7953 )
 
 [node name="Suelo4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 63.6364, -61.3388 )
-
-[node name="Jugador" parent="." instance=ExtResource( 5 )]
-collision_layer = 2
-=======
-[node name="Suelo" parent="." instance=ExtResource( 1 )]
-position = Vector2( 86.5189, -61.4548 )
-scale = Vector2( 0.7, 1 )
->>>>>>> 00ac9c4ecc465374e88b729c999021b88c5d3e1d
+position = Vector2( 2.41726, -61.8617 )
