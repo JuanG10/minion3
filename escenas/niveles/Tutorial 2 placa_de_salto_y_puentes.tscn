@@ -378,23 +378,26 @@ position = Vector2( 200.414, -9.26086 )
 acciono = "Rejilla"
 
 [node name="Palanca3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 25.3254, -71.8253 )
+position = Vector2( 46.7441, -71.5103 )
 acciono = "Puerta"
 
 [node name="Puerta" parent="." instance=ExtResource( 2 )]
 position = Vector2( 198.559, -79.2423 )
 
-[node name="Suelo" parent="." instance=ExtResource( 1 )]
-position = Vector2( 64.0717, -61.8864 )
-
-[node name="Suelo5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 85.1407, -61.6534 )
-
 [node name="Suelo2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 43.2068, -61.8927 )
+position = Vector2( 63.8934, -61.5977 )
 
 [node name="Suelo3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 22.8559, -61.9178 )
+position = Vector2( 51.3247, -61.6056 )
 
 [node name="Suelo4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 2.54588, -61.9842 )
+position = Vector2( 38.7386, -61.5387 )
+
+[node name="Suelo6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 26.1547, -61.5387 )
+
+[node name="Suelo" parent="." instance=ExtResource( 1 )]
+position = Vector2( 76.3656, -61.5392 )
+
+[node name="Suelo5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 88.8523, -61.5392 )

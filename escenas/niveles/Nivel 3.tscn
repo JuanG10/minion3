@@ -418,7 +418,7 @@ position = Vector2( 120.023, 62.3078 )
 accionar = "Cadena"
 
 [node name="CadenaYGancho" parent="." instance=ExtResource( 9 )]
-position = Vector2( 352.474, 166.297 )
+position = Vector2( 353.744, 164.999 )
 
 [node name="CadenaYGancho2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 204.247, 38.5636 )
@@ -444,10 +444,16 @@ position = Vector2( 310.58, 162.918 )
 position = Vector2( 323.116, 162.896 )
 
 [node name="Suelo3" parent="." instance=ExtResource( 10 )]
-position = Vector2( 42.9533, 114.788 )
+position = Vector2( 38.4988, 114.788 )
+
+[node name="Suelo9" parent="." instance=ExtResource( 10 )]
+position = Vector2( 51.0587, 114.788 )
 
 [node name="Suelo4" parent="." instance=ExtResource( 10 )]
-position = Vector2( 22.2522, 67.0112 )
+position = Vector2( 25.998, 67.0112 )
+
+[node name="Suelo10" parent="." instance=ExtResource( 10 )]
+position = Vector2( 13.4381, 67.0112 )
 
 [node name="Suelo2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 292.31, 210.92 )
