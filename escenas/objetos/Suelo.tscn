@@ -7,6 +7,10 @@
 extents = Vector2( 10.4825, 2.99786 )
 
 [node name="Suelo" type="StaticBody2D"]
+<<<<<<< HEAD
+=======
+scale = Vector2( 0.7, 1 )
+>>>>>>> 00ac9c4ecc465374e88b729c999021b88c5d3e1d
 __meta__ = {
 "_edit_group_": true
 }
@@ -23,7 +27,11 @@ one_way_collision = true
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2( 0, -30 )
 rotation = 3.14159
+<<<<<<< HEAD
 scale = Vector2( 12, 0.2 )
+=======
+scale = Vector2( 9, 0.2 )
+>>>>>>> 00ac9c4ecc465374e88b729c999021b88c5d3e1d
 enabled = true
 collision_mask = 3
 script = ExtResource( 2 )
