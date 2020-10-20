@@ -22,4 +22,5 @@ position = Vector2( 0.0213203, -25.1022 )
 rotation = 3.14159
 scale = Vector2( 6, 0.5 )
 enabled = true
+collision_mask = 3
 script = ExtResource( 2 )
