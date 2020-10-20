@@ -363,7 +363,7 @@ id = 1
 [node name="Palanca" parent="." instance=ExtResource( 3 )]
 position = Vector2( 227.126, -64.7901 )
 acciono = "Puerta"
-id_puerta_a_accionar = 1
+id = 1
 
 [node name="Puerta" parent="." instance=ExtResource( 1 )]
 position = Vector2( 259.5, 22 )

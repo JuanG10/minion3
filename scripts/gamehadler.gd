@@ -4,7 +4,7 @@ export (bool) var activada = false
 
 export (String) var acciono
 
-var escenas_a_accionar 
+var escenas_a_accionar = []
 
 func activar():
 	activada = true

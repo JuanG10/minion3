@@ -377,13 +377,16 @@ points = PoolVector2Array( 7.69982, -167.042, 100.2, -209.989, 100.199, -209.989
 width = 1.0
 
 [node name="Jugador" parent="." instance=ExtResource( 2 )]
-position = Vector2( 9.23662, -8.53245 )
+position = Vector2( 58.2366, -93.0324 )
+collision_layer = 2
 
 [node name="Plataforma_de_salto" parent="." instance=ExtResource( 3 )]
 position = Vector2( 72.0283, 6.74645 )
+id = 2
 
 [node name="Plataforma_de_salto2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 152.031, 6.666 )
+position = Vector2( 152.825, 6.666 )
+id = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 110.742, -97.6732 )
@@ -393,6 +396,7 @@ zoom = Vector2( 0.28, 0.38 )
 [node name="Palanca" parent="." instance=ExtResource( 4 )]
 position = Vector2( 114.245, -7.95349 )
 acciono = "Plataforma_de_salto"
+id = 2
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( -17.9509, -77.1313 )
@@ -412,27 +416,32 @@ position = Vector2( 54.7729, -77.0202 )
 [node name="Palanca_de_presion" parent="." instance=ExtResource( 6 )]
 position = Vector2( 56.1568, -82.1227 )
 accionar = "Rejilla"
+id = 3
 
 [node name="Rejilla" parent="." instance=ExtResource( 7 )]
 position = Vector2( 88.1916, -152.884 )
+id = 3
 
 [node name="Rejilla4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 104.264, -153.083 )
+position = Vector2( 103.867, -153.083 )
+id = 3
 
 [node name="Rejilla3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 119.741, -153.083 )
+position = Vector2( 120.138, -153.083 )
+id = 3
 
 [node name="Rejilla2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 136.012, -153.083 )
+id = 3
 
 [node name="Puerta" parent="." instance=ExtResource( 8 )]
 position = Vector2( 248, -15 )
 id = 1
 
 [node name="Palanca2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 216.997, -167.05 )
+position = Vector2( 216.6, -167.05 )
 acciono = "Puerta"
-id_puerta_a_accionar = 1
+id = 1
 
 [node name="Robot_station" parent="." instance=ExtResource( 9 )]
 position = Vector2( 206.032, -96.7686 )
