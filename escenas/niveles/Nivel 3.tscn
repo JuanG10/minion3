@@ -1,15 +1,15 @@
 [gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=1]
-[ext_resource path="res://escenas/objetos/Robot_station.tscn" type="PackedScene" id=2]
-[ext_resource path="res://escenas/objetos/Palanca.tscn" type="PackedScene" id=3]
-[ext_resource path="res://escenas/objetos/Robot.tscn" type="PackedScene" id=4]
-[ext_resource path="res://escenas/objetos/Plataforma_de_salto.tscn" type="PackedScene" id=5]
-[ext_resource path="res://escenas/objetos/Suelo.tscn" type="PackedScene" id=6]
-[ext_resource path="res://escenas/objetos/Placa_de_presion.tscn" type="PackedScene" id=7]
-[ext_resource path="res://escenas/objetos/Puerta.tscn" type="PackedScene" id=8]
-[ext_resource path="res://escenas/objetos/Jugador.tscn" type="PackedScene" id=9]
-[ext_resource path="res://escenas/objetos/CadenaYGancho.tscn" type="PackedScene" id=10]
+[ext_resource path="res://escenas/objetos/Suelo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://escenas/objetos/Robot.tscn" type="PackedScene" id=3]
+[ext_resource path="res://escenas/objetos/CadenaYGancho.tscn" type="PackedScene" id=4]
+[ext_resource path="res://escenas/objetos/Palanca.tscn" type="PackedScene" id=5]
+[ext_resource path="res://escenas/objetos/Jugador.tscn" type="PackedScene" id=6]
+[ext_resource path="res://escenas/objetos/Puerta.tscn" type="PackedScene" id=7]
+[ext_resource path="res://escenas/objetos/Placa_de_presion.tscn" type="PackedScene" id=8]
+[ext_resource path="res://escenas/objetos/Robot_station.tscn" type="PackedScene" id=9]
+[ext_resource path="res://escenas/objetos/Plataforma_de_salto.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 4.51554, 0, 4.51554 )
@@ -363,71 +363,71 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Robot_station" parent="." instance=ExtResource( 2 )]
+[node name="Robot_station" parent="." instance=ExtResource( 9 )]
 position = Vector2( 193.089, 142.698 )
 
-[node name="Robot" parent="." instance=ExtResource( 4 )]
+[node name="Robot" parent="." instance=ExtResource( 3 )]
 position = Vector2( 135.75, 102.677 )
 id = 1
 
-[node name="Palanca" parent="." instance=ExtResource( 3 )]
+[node name="Palanca" parent="." instance=ExtResource( 5 )]
 position = Vector2( 69.2336, 56.7189 )
 acciono = "Puerta"
 id = 4
 
-[node name="Palanca4" parent="." instance=ExtResource( 3 )]
+[node name="Palanca4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 281.693, 24.6802 )
 acciono = "Puerta"
 id = 5
 
-[node name="Palanca2" parent="." instance=ExtResource( 3 )]
+[node name="Palanca2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 278.459, 248.93 )
 acciono = "Plataforma_de_salto"
 id = 1
 
-[node name="Palanca3" parent="." instance=ExtResource( 3 )]
+[node name="Palanca3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 348.114, 200.724 )
 acciono = "Cadena"
 id = 2
 
-[node name="Plataforma_de_salto" parent="." instance=ExtResource( 5 )]
+[node name="Plataforma_de_salto" parent="." instance=ExtResource( 10 )]
 position = Vector2( 40.6213, 166.47 )
 id = 1
 
-[node name="Plataforma_de_salto3" parent="." instance=ExtResource( 5 )]
+[node name="Plataforma_de_salto3" parent="." instance=ExtResource( 10 )]
 position = Vector2( 302.595, 262.701 )
 id = 1
 
-[node name="Plataforma_de_salto2" parent="." instance=ExtResource( 5 )]
+[node name="Plataforma_de_salto2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 24.139, 118.069 )
 id = 1
 
-[node name="Jugador" parent="." instance=ExtResource( 9 )]
+[node name="Jugador" parent="." instance=ExtResource( 6 )]
 position = Vector2( 235.115, 143.762 )
 collision_layer = 1
 
-[node name="Puerta" parent="." instance=ExtResource( 8 )]
+[node name="Puerta" parent="." instance=ExtResource( 7 )]
 position = Vector2( 74.0791, 144.72 )
 id = 3
 
-[node name="Puerta2" parent="." instance=ExtResource( 8 )]
+[node name="Puerta2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 327.509, 16.3525 )
 id = 5
 
-[node name="Palanca_de_presion" parent="." instance=ExtResource( 7 )]
+[node name="Palanca_de_presion" parent="." instance=ExtResource( 8 )]
 position = Vector2( 168.331, 110.71 )
 accionar = "Puerta"
 id = 3
 
-[node name="Palanca_de_presion2" parent="." instance=ExtResource( 7 )]
+[node name="Palanca_de_presion2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 120.023, 62.3078 )
 accionar = "Cadena"
 
-[node name="CadenaYGancho" parent="." instance=ExtResource( 10 )]
+[node name="CadenaYGancho" parent="." instance=ExtResource( 4 )]
 position = Vector2( 372.548, 166.541 )
 id = 2
 
-[node name="CadenaYGancho2" parent="." instance=ExtResource( 10 )]
+[node name="CadenaYGancho2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 204.247, 38.1181 )
 id = 4
 
@@ -436,20 +436,20 @@ position = Vector2( 204.559, 149.12 )
 current = true
 zoom = Vector2( 0.4, 0.5 )
 
-[node name="Suelo" parent="." instance=ExtResource( 6 )]
+[node name="Suelo" parent="." instance=ExtResource( 2 )]
 position = Vector2( 326.207, 210.92 )
 
-[node name="Suelo5" parent="." instance=ExtResource( 6 )]
+[node name="Suelo5" parent="." instance=ExtResource( 2 )]
 position = Vector2( 314.638, 162.894 )
 
-[node name="Suelo6" parent="." instance=ExtResource( 6 )]
+[node name="Suelo6" parent="." instance=ExtResource( 2 )]
 position = Vector2( 335.548, 162.884 )
 
-[node name="Suelo3" parent="." instance=ExtResource( 6 )]
+[node name="Suelo3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 42.9533, 114.788 )
 
-[node name="Suelo4" parent="." instance=ExtResource( 6 )]
+[node name="Suelo4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 22.2522, 67.0112 )
 
-[node name="Suelo2" parent="." instance=ExtResource( 6 )]
+[node name="Suelo2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 305.247, 210.92 )
