@@ -27,6 +27,7 @@ animations = [ {
 
 [node name="Jugador" type="KinematicBody2D"]
 position = Vector2( 7.56807, -8.19874 )
+collision_layer = 2
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true

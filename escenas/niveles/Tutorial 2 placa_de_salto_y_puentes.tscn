@@ -1,13 +1,12 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=1]
-[ext_resource path="res://escenas/objetos/Placa_de_presion.tscn" type="PackedScene" id=2]
-[ext_resource path="res://escenas/objetos/Jugador.tscn" type="PackedScene" id=3]
+[ext_resource path="res://escenas/objetos/Suelo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://escenas/objetos/Puerta.tscn" type="PackedScene" id=2]
+[ext_resource path="res://escenas/objetos/Rejilla.tscn" type="PackedScene" id=3]
 [ext_resource path="res://escenas/objetos/Palanca.tscn" type="PackedScene" id=4]
-[ext_resource path="res://escenas/objetos/CadenaYGancho.tscn" type="PackedScene" id=5]
-[ext_resource path="res://escenas/objetos/Puerta.tscn" type="PackedScene" id=6]
-[ext_resource path="res://escenas/objetos/Robot_station.tscn" type="PackedScene" id=7]
-[ext_resource path="res://escenas/objetos/Robot.tscn" type="PackedScene" id=8]
+[ext_resource path="res://escenas/objetos/Jugador.tscn" type="PackedScene" id=5]
+[ext_resource path="res://escenas/objetos/Plataforma_de_salto.tscn" type="PackedScene" id=6]
+[ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 4.51554, 0, 4.51554 )
@@ -35,7 +34,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 
 [sub_resource type="TileSet" id=9]
 0/name = "Plataforma_de_salto"
-0/texture = ExtResource( 1 )
+0/texture = ExtResource( 7 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 16, 80, 16, 16 )
@@ -49,7 +48,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 0/shapes = [  ]
 0/z_index = 0
 1/name = "Plataformas_bajables"
-1/texture = ExtResource( 1 )
+1/texture = ExtResource( 7 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 384, 32, 64, 32 )
@@ -119,7 +118,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 } ]
 1/z_index = 0
 2/name = "Carteles"
-2/texture = ExtResource( 1 )
+2/texture = ExtResource( 7 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 432, 64, 32, 48 )
@@ -140,7 +139,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 2/shapes = [  ]
 2/z_index = 0
 3/name = "nuestrosSprites.png 3"
-3/texture = ExtResource( 1 )
+3/texture = ExtResource( 7 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 304, 48, 16, 16 )
@@ -161,7 +160,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 3/shapes = [  ]
 3/z_index = 0
 4/name = "Cadena"
-4/texture = ExtResource( 1 )
+4/texture = ExtResource( 7 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 304, 48, 16, 16 )
@@ -175,7 +174,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 4/shapes = [  ]
 4/z_index = 0
 5/name = "Cadena_final"
-5/texture = ExtResource( 1 )
+5/texture = ExtResource( 7 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 304, 64, 16, 16 )
@@ -189,7 +188,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 5/shapes = [  ]
 5/z_index = 0
 6/name = "Columna"
-6/texture = ExtResource( 1 )
+6/texture = ExtResource( 7 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 320, 48, 16, 16 )
@@ -203,7 +202,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 6/shapes = [  ]
 6/z_index = 0
 7/name = "Palanca"
-7/texture = ExtResource( 1 )
+7/texture = ExtResource( 7 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 112, 128, 16, 16 )
@@ -217,7 +216,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 7/shapes = [  ]
 7/z_index = 0
 9/name = "Ganchos"
-9/texture = ExtResource( 1 )
+9/texture = ExtResource( 7 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 0, 64, 16, 32 )
@@ -238,7 +237,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 9/shapes = [  ]
 9/z_index = 0
 11/name = "puerta"
-11/texture = ExtResource( 1 )
+11/texture = ExtResource( 7 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 0, 96, 16, 32 )
@@ -252,7 +251,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 11/shapes = [  ]
 11/z_index = 0
 12/name = "Bot_station"
-12/texture = ExtResource( 1 )
+12/texture = ExtResource( 7 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 80, 208, 32, 32 )
@@ -266,7 +265,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 12/shapes = [  ]
 12/z_index = 0
 14/name = "Bot_apagado"
-14/texture = ExtResource( 1 )
+14/texture = ExtResource( 7 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
 14/region = Rect2( 0, 320, 16, 16 )
@@ -280,7 +279,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 14/shapes = [  ]
 14/z_index = 0
 15/name = "Player"
-15/texture = ExtResource( 1 )
+15/texture = ExtResource( 7 )
 15/tex_offset = Vector2( 0, 0 )
 15/modulate = Color( 1, 1, 1, 1 )
 15/region = Rect2( 0, 256, 16, 16 )
@@ -294,7 +293,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 15/shapes = [  ]
 15/z_index = 0
 16/name = "Puente_bajo"
-16/texture = ExtResource( 1 )
+16/texture = ExtResource( 7 )
 16/tex_offset = Vector2( 0, 0 )
 16/modulate = Color( 1, 1, 1, 1 )
 16/region = Rect2( 48, 176, 16, 16 )
@@ -308,7 +307,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 16/shapes = [  ]
 16/z_index = 0
 17/name = "Plata_de_presion"
-17/texture = ExtResource( 1 )
+17/texture = ExtResource( 7 )
 17/tex_offset = Vector2( 0, 0 )
 17/modulate = Color( 1, 1, 1, 1 )
 17/region = Rect2( 64, 176, 16, 16 )
@@ -322,7 +321,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 17/shapes = [  ]
 17/z_index = 0
 18/name = "cadena_trepable"
-18/texture = ExtResource( 1 )
+18/texture = ExtResource( 7 )
 18/tex_offset = Vector2( 0, 0 )
 18/modulate = Color( 1, 1, 1, 1 )
 18/region = Rect2( 0, 48, 16, 16 )
@@ -342,37 +341,61 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 tile_set = SubResource( 9 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -393209, 1, 2, -393208, 1, 2, -393207, 1, 2, -393206, 1, 2, -393205, 1, 2, -393204, 1, 2, -393203, 1, 2, -393202, 1, 2, -393201, 1, 2, 0, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 2, 5, 1, 2, 6, 1, 2, 7, 1, 2, 8, 1, 2, 9, 1, 2, 10, 1, 2, 11, 1, 2, 12, 1, 2, 13, 1, 2, 14, 1, 2, 15, 1, 2 )
+tile_data = PoolIntArray( -262134, 1, 2, -262133, 1, 2, -262132, 1, 2, -65535, 2, 131072, 0, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 2, 6, 1, 2, 7, 1, 2, 8, 1, 2, 9, 1, 2, 10, 1, 2, 11, 1, 2, 12, 1, 2 )
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Jugador" parent="." instance=ExtResource( 3 )]
-position = Vector2( 44.7035, -25.9343 )
+[node name="Jugador" parent="." instance=ExtResource( 5 )]
+position = Vector2( 52.752, -9.30945 )
+collision_layer = 1
 
-[node name="Placa_de_presion" parent="." instance=ExtResource( 2 )]
-position = Vector2( 174.73, -1.94247 )
-accionar = "Cadena"
+[node name="Plataforma_de_salto" parent="." instance=ExtResource( 6 )]
+position = Vector2( 88.2254, 6.7317 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 174.63, -83.2353 )
+position = Vector2( 103.939, -46.2755 )
 current = true
-zoom = Vector2( 0.4, 0.4 )
+zoom = Vector2( 0.2, 0.23 )
 
-[node name="Puerta" parent="." instance=ExtResource( 6 )]
-position = Vector2( 249.278, -110.422 )
+[node name="Rejilla" parent="." instance=ExtResource( 3 )]
+position = Vector2( 151.74, -57.2016 )
 
-[node name="CadenaYGancho" parent="." instance=ExtResource( 5 )]
-position = Vector2( 92.0413, -106.31 )
-limite_bajada = 600
+[node name="Rejilla2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 103.139, -57.513 )
+
+[node name="Rejilla3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 119.234, -57.3444 )
+
+[node name="Rejilla4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 135.563, -57.2434 )
 
 [node name="Palanca" parent="." instance=ExtResource( 4 )]
-position = Vector2( 11.7658, -7.36509 )
+position = Vector2( 69.5247, -7.0526 )
+acciono = "Plataforma_de_salto"
+
+[node name="Palanca2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 200.414, -9.26086 )
+acciono = "Rejilla"
+
+[node name="Palanca3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 25.3254, -71.8253 )
 acciono = "Puerta"
 
-[node name="Robot" parent="." instance=ExtResource( 8 )]
-position = Vector2( 222.558, -8.08098 )
-id = 1
+[node name="Puerta" parent="." instance=ExtResource( 2 )]
+position = Vector2( 198.559, -79.2423 )
 
-[node name="Robot_station" parent="." instance=ExtResource( 7 )]
-position = Vector2( 134.292, -16.5184 )
+[node name="Suelo" parent="." instance=ExtResource( 1 )]
+position = Vector2( 63.9431, -61.7639 )
+
+[node name="Suelo5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 85.0121, -61.5308 )
+
+[node name="Suelo2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 43.0782, -61.7702 )
+
+[node name="Suelo3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 22.7273, -61.7953 )
+
+[node name="Suelo4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2.41726, -61.8617 )

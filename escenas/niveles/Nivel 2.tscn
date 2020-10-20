@@ -1,12 +1,15 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=1]
-[ext_resource path="res://escenas/objetos/Plataforma_de_salto.tscn" type="PackedScene" id=2]
-[ext_resource path="res://escenas/objetos/Jugador.tscn" type="PackedScene" id=3]
-[ext_resource path="res://escenas/objetos/Rejilla.tscn" type="PackedScene" id=4]
-[ext_resource path="res://escenas/objetos/Palanca.tscn" type="PackedScene" id=5]
-[ext_resource path="res://escenas/objetos/Puerta.tscn" type="PackedScene" id=6]
-[ext_resource path="res://escenas/objetos/Suelo.tscn" type="PackedScene" id=7]
+[ext_resource path="res://escenas/objetos/Jugador.tscn" type="PackedScene" id=2]
+[ext_resource path="res://escenas/objetos/Plataforma_de_salto.tscn" type="PackedScene" id=3]
+[ext_resource path="res://escenas/objetos/Palanca.tscn" type="PackedScene" id=4]
+[ext_resource path="res://escenas/objetos/Suelo.tscn" type="PackedScene" id=5]
+[ext_resource path="res://escenas/objetos/Placa_de_presion.tscn" type="PackedScene" id=6]
+[ext_resource path="res://escenas/objetos/Rejilla.tscn" type="PackedScene" id=7]
+[ext_resource path="res://escenas/objetos/Puerta.tscn" type="PackedScene" id=8]
+[ext_resource path="res://escenas/objetos/Robot_station.tscn" type="PackedScene" id=9]
+[ext_resource path="res://escenas/objetos/Robot.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 4.51554, 0, 4.51554 )
@@ -334,67 +337,120 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 18/shape_one_way_margin = 0.0
 18/shapes = [  ]
 18/z_index = 0
+19/name = "puente_alto"
+19/texture = ExtResource( 1 )
+19/tex_offset = Vector2( 0, 0 )
+19/modulate = Color( 1, 1, 1, 1 )
+19/region = Rect2( 0, 176, 16, 16 )
+19/tile_mode = 0
+19/occluder_offset = Vector2( 0, 0 )
+19/navigation_offset = Vector2( 0, 0 )
+19/shape_offset = Vector2( 0, 0 )
+19/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+19/shape_one_way = false
+19/shape_one_way_margin = 0.0
+19/shapes = [  ]
+19/z_index = 0
 
-[node name="Main" type="Node"]
+[node name="Nivel 2" type="Node"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 9 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -262134, 1, 2, -262133, 1, 2, -262132, 1, 2, -65535, 2, 131072, 0, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 2, 6, 1, 2, 7, 1, 2, 8, 1, 2, 9, 1, 2, 10, 1, 2, 11, 1, 2, 12, 1, 2 )
+tile_data = PoolIntArray( -655360, 1, 2, -655359, 1, 2, -655358, 1, 3, -655357, 1, 2, -655356, 1, 2, -655351, 1, 2, -655350, 1, 2, -655349, 1, 3, -655348, 1, 2, -655347, 1, 2, -589822, 6, 0, -589813, 6, 0, -524286, 6, 0, -524277, 6, 0, -458750, 6, 0, -458741, 6, 0, -393214, 6, 0, -393205, 6, 0, -327680, 1, 2, -327679, 1, 2, -327678, 1, 3, -327669, 1, 3, -327668, 1, 2, -327667, 1, 2, -262142, 6, 0, -262133, 6, 0, -196606, 6, 0, -196597, 6, 0, -131070, 6, 0, -131061, 6, 0, -65534, 6, 0, -65525, 6, 0, 0, 1, 0, 1, 1, 2, 2, 1, 2, 3, 1, 2, 5, 1, 2, 6, 1, 2, 7, 1, 2, 8, 1, 2, 10, 1, 2, 11, 1, 2, 12, 1, 2, 13, 1, 2, 14, 1, 2, 15, 1, 1 )
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Jugador" parent="." instance=ExtResource( 3 )]
-position = Vector2( 69.6515, -72.0295 )
+[node name="Line2D" type="Line2D" parent="."]
+points = PoolVector2Array( 215.633, -165.254, 247.916, -16.4945 )
+width = 1.0
 
-[node name="Plataforma_de_salto" parent="." instance=ExtResource( 2 )]
-position = Vector2( 88.2254, 6.7317 )
+[node name="Line2D2" type="Line2D" parent="."]
+points = PoolVector2Array( 111.998, -152.884, 57.2532, -81.6218 )
+width = 1.0
+
+[node name="Line2D3" type="Line2D" parent="."]
+position = Vector2( 0.471939, 0.471939 )
+points = PoolVector2Array( 7.69982, -167.042, 100.2, -209.989, 100.199, -209.989, 209.217, -96.7238 )
+width = 1.0
+
+[node name="Jugador" parent="." instance=ExtResource( 2 )]
+position = Vector2( 58.2366, -93.0324 )
+
+[node name="Plataforma_de_salto" parent="." instance=ExtResource( 3 )]
+position = Vector2( 72.0283, 6.74645 )
+id = 2
+
+[node name="Plataforma_de_salto2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 152.825, 6.666 )
+id = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 103.939, -46.2755 )
+position = Vector2( 110.742, -97.6732 )
 current = true
-zoom = Vector2( 0.2, 0.23 )
+zoom = Vector2( 0.28, 0.38 )
 
-[node name="Rejilla" parent="." instance=ExtResource( 4 )]
-position = Vector2( 151.74, -57.2016 )
-
-[node name="Rejilla2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 103.139, -57.513 )
-
-[node name="Rejilla3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 119.234, -57.3444 )
-
-[node name="Rejilla4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 135.563, -57.2434 )
-
-[node name="Palanca" parent="." instance=ExtResource( 5 )]
-position = Vector2( 69.5247, -7.0526 )
+[node name="Palanca" parent="." instance=ExtResource( 4 )]
+position = Vector2( 114.245, -7.95349 )
 acciono = "Plataforma_de_salto"
+id = 2
 
-[node name="Palanca2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 200.414, -9.26086 )
-acciono = "Rejilla"
+[node name="StaticBody2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( -17.9509, -77.1313 )
 
-[node name="Palanca3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 25.3254, -71.8253 )
+[node name="StaticBody2D2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 67.5676, -76.9908 )
+
+[node name="StaticBody2D7" parent="." instance=ExtResource( 5 )]
+position = Vector2( 80.4193, -77.0106 )
+
+[node name="StaticBody2D3" parent="." instance=ExtResource( 5 )]
+position = Vector2( -5.82619, -77.1505 )
+
+[node name="StaticBody2D4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 54.7729, -77.0202 )
+
+[node name="Palanca_de_presion" parent="." instance=ExtResource( 6 )]
+position = Vector2( 56.1568, -82.1227 )
+accionar = "Rejilla"
+id = 3
+
+[node name="Rejilla" parent="." instance=ExtResource( 7 )]
+position = Vector2( 88.1916, -152.884 )
+id = 3
+
+[node name="Rejilla4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 103.867, -153.083 )
+id = 3
+
+[node name="Rejilla3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 120.138, -153.083 )
+id = 3
+
+[node name="Rejilla2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 136.012, -153.083 )
+id = 3
+
+[node name="Puerta" parent="." instance=ExtResource( 8 )]
+position = Vector2( 248, -15 )
+id = 1
+
+[node name="Palanca2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 216.6, -167.05 )
 acciono = "Puerta"
+id = 1
 
-[node name="Puerta" parent="." instance=ExtResource( 6 )]
-position = Vector2( 198.559, -79.2423 )
+[node name="Robot_station" parent="." instance=ExtResource( 9 )]
+position = Vector2( 206.032, -96.7686 )
 
-[node name="Suelo" parent="." instance=ExtResource( 7 )]
-position = Vector2( -19.8321, -53.7082 )
+[node name="Robot" parent="." instance=ExtResource( 10 )]
+position = Vector2( 6.31375, -167.895 )
+id = 1
 
-[node name="Suelo5" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1.23692, -53.4751 )
+[node name="StaticBody2D5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 169.986, -77.0675 )
 
-[node name="Suelo2" parent="." instance=ExtResource( 7 )]
-position = Vector2( -40.697, -53.7145 )
-
-[node name="Suelo3" parent="." instance=ExtResource( 7 )]
-position = Vector2( -61.0479, -53.7396 )
-
-[node name="Suelo4" parent="." instance=ExtResource( 7 )]
-position = Vector2( -81.3579, -53.806 )
+[node name="StaticBody2D6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 157.416, -77.0731 )
