@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://escenas/objetos/Suelo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://escenas/objetos/Puerta.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://escenas/objetos/Jugador.tscn" type="PackedScene" id=5]
 [ext_resource path="res://escenas/objetos/Plataforma_de_salto.tscn" type="PackedScene" id=6]
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=7]
+[ext_resource path="res://scripts/LevelChanger.gd" type="Script" id=8]
+[ext_resource path="res://scripts/Main - tut2.gd" type="Script" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 4.51554, 0, 4.51554 )
@@ -335,7 +337,11 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 18/shapes = [  ]
 18/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 4.47554, 15.6425 )
+
 [node name="Main" type="Node"]
+script = ExtResource( 9 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 9 )
@@ -399,3 +405,12 @@ position = Vector2( 22.7273, -61.7953 )
 
 [node name="Suelo4" parent="." instance=ExtResource( 1 )]
 position = Vector2( 2.41726, -61.8617 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 202.271, -77.1628 )
+script = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 3.74576, -1.87289 )
+shape = SubResource( 10 )
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]

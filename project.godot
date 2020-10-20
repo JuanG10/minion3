@@ -17,6 +17,10 @@ _global_script_class_icons={
 
 config/name="Minion 3"
 
+[autoload]
+
+Global="*res://scripts/Global.gd"
+
 [input]
 
 Accionar_palanca={
