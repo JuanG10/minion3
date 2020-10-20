@@ -378,6 +378,7 @@ width = 1.0
 
 [node name="Jugador" parent="." instance=ExtResource( 2 )]
 position = Vector2( 58.2366, -93.0324 )
+collision_layer = 1
 
 [node name="Plataforma_de_salto" parent="." instance=ExtResource( 3 )]
 position = Vector2( 72.0283, 6.74645 )

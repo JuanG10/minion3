@@ -334,7 +334,6 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 18/shapes = [  ]
 18/z_index = 0
 19/name = "puente_alto"
-19/texture = ExtResource( 1 )
 19/tex_offset = Vector2( 0, 0 )
 19/modulate = Color( 1, 1, 1, 1 )
 19/region = Rect2( 0, 176, 16, 16 )
