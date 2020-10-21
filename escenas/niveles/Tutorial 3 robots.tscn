@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://escenas/objetos/Puerta.tscn" type="PackedScene" id=1]
 [ext_resource path="res://escenas/objetos/Robot.tscn" type="PackedScene" id=2]
@@ -33,7 +33,13 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.57964, 0, 4.57964 )
 [sub_resource type="ConvexPolygonShape2D" id=8]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 
-[sub_resource type="TileSet" id=9]
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 0, 0, 5.49622, 0.000427246, 5.49622, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 16, 16, 10.9308, 16, 11.0307, 0, 16, 0 )
+
+[sub_resource type="TileSet" id=11]
 0/name = "Plataforma_de_salto"
 0/texture = ExtResource( 6 )
 0/tex_offset = Vector2( 0, 0 )
@@ -366,9 +372,22 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 21/navigation_offset = Vector2( 0, 0 )
 21/shape_offset = Vector2( 0, 0 )
 21/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+21/shape = SubResource( 9 )
 21/shape_one_way = false
-21/shape_one_way_margin = 0.0
-21/shapes = [  ]
+21/shape_one_way_margin = 1.0
+21/shapes = [ {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 21/z_index = 0
 22/name = "Decoraciones"
 22/texture = ExtResource( 6 )
@@ -402,10 +421,10 @@ zoom = Vector2( 0.25, 0.24 )
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 45.3238, 37.8323 )
-tile_set = SubResource( 9 )
+tile_set = SubResource( 11 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -458752, 22, 0, -458751, 22, 2, -458750, 22, 2, -458749, 22, 1, -458748, 22, 1, -458747, 22, 2, -458746, 22, 1, -458745, 22, 2, -458744, 22, 1, -458743, 22, 2, -458742, 22, 2, -458741, 22, 2, -458740, 22, 1, -458739, 22, 3, -327681, 21, 0, -393216, 1, 2, -393215, 1, 2, -393214, 1, 2, -393213, 1, 3, -393212, 1, 2, -393211, 1, 2, -393210, 1, 2, -393209, 1, 2, -393208, 1, 2, -393207, 1, 3, -393206, 1, 2, -393205, 1, 2, -393204, 1, 2, -393203, 1, 2, -393202, 21, 1, -262145, 21, 0, -327677, 6, 0, -327671, 6, 0, -327666, 21, 1, -196609, 21, 0, -262141, 6, 0, -262135, 6, 0, -262130, 21, 1, -131073, 21, 0, -196605, 6, 0, -196599, 6, 0, -196594, 21, 1, -65537, 21, 0, -131069, 6, 0, -131063, 6, 0, -1, 21, 0, -65534, 2, 1, -65533, 6, 0, -65527, 6, 0, 0, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 2, 5, 1, 2, 6, 1, 2, 7, 1, 2, 8, 1, 2, 9, 1, 2, 10, 1, 2, 11, 1, 2, 12, 1, 2, 13, 1, 2 )
+tile_data = PoolIntArray( -458753, 21, 0, -524288, 1, 2, -524287, 1, 65538, -524286, 1, 65538, -524285, 1, 2, -524284, 1, 2, -524283, 1, 65536, -524282, 1, 65538, -524281, 1, 65536, -524280, 1, 65536, -524279, 1, 2, -524278, 1, 65536, -524277, 1, 65538, -524276, 1, 2, -524275, 1, 65538, -524274, 21, 1, -393217, 21, 0, -458752, 22, 0, -458751, 22, 2, -458750, 22, 2, -458749, 22, 1, -458748, 22, 1, -458747, 22, 2, -458746, 22, 1, -458745, 22, 2, -458744, 22, 1, -458743, 22, 2, -458742, 22, 2, -458741, 22, 2, -458740, 22, 1, -458739, 22, 3, -458738, 21, 1, -327681, 21, 0, -393216, 1, 2, -393215, 1, 2, -393214, 1, 2, -393213, 1, 3, -393212, 1, 2, -393211, 1, 2, -393210, 1, 2, -393209, 1, 2, -393208, 1, 2, -393207, 1, 3, -393206, 1, 2, -393205, 1, 2, -393204, 1, 2, -393203, 1, 2, -393202, 21, 1, -262145, 21, 0, -327677, 6, 0, -327671, 6, 0, -327666, 21, 1, -196609, 21, 0, -262141, 6, 0, -262135, 6, 0, -262130, 21, 1, -131073, 21, 0, -196605, 6, 0, -196599, 6, 0, -196594, 21, 1, -65537, 21, 0, -131069, 6, 0, -131063, 6, 0, -1, 21, 0, -65534, 2, 1, -65533, 6, 0, -65527, 6, 0, 0, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 2, 5, 1, 2, 6, 1, 2, 7, 1, 2, 8, 1, 2, 9, 1, 2, 10, 1, 2, 11, 1, 2, 12, 1, 2, 13, 1, 2 )
 __meta__ = {
 "_editor_description_": ""
 }
@@ -414,8 +433,7 @@ __meta__ = {
 position = Vector2( 57.1949, 28.9727 )
 
 [node name="Robot" parent="." instance=ExtResource( 2 )]
-position = Vector2( 65.8701, -69.4053 )
-id = 1
+position = Vector2( 66.9308, -66.5769 )
 
 [node name="Robot_station" parent="." instance=ExtResource( 5 )]
 position = Vector2( 127.423, 20.3683 )

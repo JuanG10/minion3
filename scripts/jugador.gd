@@ -21,7 +21,7 @@ onready var _timer_name:String = "timer" + name
 
 func _ready():
 	add_to_group("characters")
-	if id == ID_JUGADOR: # Solo se agrega Jugador.
+	if id == ID_JUGADOR: # Solo se agrega Jugador (id 0).
 		add_to_group("controllable_characters")
 		control_switch = true
 		player_spr.play("idle")
@@ -43,14 +43,13 @@ func _get_input()->void: # Obtiene el input para moverse o caer.
 		if Input.is_action_pressed('ui_right'): _move_left()
 		if Input.is_action_pressed('ui_left'): _move_right()
 		if _input_release(): player_spr.play("idle")
-		if(Input.is_action_just_pressed("Impulso")) && impulso:
+		if Input.is_action_just_pressed("Impulso") && impulso:
 			velocity.y -= 110
 			plataforma_de_salto.cambiar_frame()
 			impulso = false
 			$character_rayCast.enabled = true
-	else:
-		$character_col/character_spr.animation = "idle"
-		
+	elif control_switch && !is_on_floor():
+		player_spr.play("idle")
 
 func _delete_old_signs(): # Para que no queden iconos sueltos al reiniciar.
 	var root = get_tree().get_root()

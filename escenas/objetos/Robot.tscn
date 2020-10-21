@@ -39,13 +39,14 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+id = 1
 
 [node name="character_col" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="character_spr" type="AnimatedSprite" parent="character_col"]
 frames = SubResource( 2 )
-animation = "idle"
+animation = "off"
 
 [node name="character_rayCast" type="RayCast2D" parent="."]
 position = Vector2( 0, 13.4 )

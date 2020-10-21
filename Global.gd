@@ -21,6 +21,8 @@ func goto_scene(path):
 
 func _deferred_goto_scene(path):
 	# It is now safe to remove the current scene
+	# Lies...
+	# Si es null no carga y tira error.
 	current_scene.free()
 
 	# Load the new scene.
