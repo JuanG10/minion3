@@ -504,7 +504,6 @@ position = Vector2( 193.089, 142.698 )
 
 [node name="Robot" parent="." instance=ExtResource( 3 )]
 position = Vector2( 135.75, 102.677 )
-id = 1
 
 [node name="Palanca4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 281.693, 24.6802 )

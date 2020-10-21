@@ -442,7 +442,7 @@ id = 2
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 115.237, -88.7254 )
 current = true
-zoom = Vector2( 0.28, 0.38 )
+zoom = Vector2( 0.38, 0.38 )
 
 [node name="Palanca" parent="." instance=ExtResource( 4 )]
 position = Vector2( 114.245, -7.95349 )
@@ -474,15 +474,15 @@ position = Vector2( 88.1916, -152.884 )
 id = 3
 
 [node name="Rejilla4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 103.867, -153.083 )
+position = Vector2( 104, -152.884 )
 id = 3
 
 [node name="Rejilla3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 120.138, -153.083 )
+position = Vector2( 120.138, -152.884 )
 id = 3
 
 [node name="Rejilla2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 136.012, -153.083 )
+position = Vector2( 136.012, -152.884 )
 id = 3
 
 [node name="Puerta" parent="." instance=ExtResource( 8 )]
