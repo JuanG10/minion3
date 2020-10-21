@@ -1,4 +1,4 @@
 extends Node
 
 func _ready():
-	$Area2D.initialize("res://escenas/niveles/Nivel 1.tscn")
+	$Area_final.initialize("res://escenas/niveles/Nivel 1.tscn")

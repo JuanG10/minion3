@@ -33,6 +33,7 @@ scale = Vector2( 1.14932, 1.43504 )
 [node name="Plataforma_col" type="CollisionShape2D" parent="Cadena_plataforma_spr/Plataforma_body"]
 position = Vector2( -2.45562, -0.437607 )
 shape = SubResource( 1 )
+one_way_collision = true
 
 [node name="RayCast2D" type="RayCast2D" parent="Cadena_plataforma_spr/Plataforma_body"]
 position = Vector2( -2.29934, -2.31091 )

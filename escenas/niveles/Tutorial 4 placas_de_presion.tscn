@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://escenas/objetos/CadenaYGancho.tscn" type="PackedScene" id=1]
 [ext_resource path="res://escenas/objetos/Placa_de_presion.tscn" type="PackedScene" id=2]
@@ -8,7 +8,7 @@
 [ext_resource path="res://escenas/objetos/Jugador.tscn" type="PackedScene" id=6]
 [ext_resource path="res://escenas/objetos/Robot_station.tscn" type="PackedScene" id=7]
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=8]
-[ext_resource path="res://scripts/LevelChanger.gd" type="Script" id=9]
+[ext_resource path="res://escenas/objetos/Area_final.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scripts/Main - tut4.gd" type="Script" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -394,10 +394,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 22/shapes = [  ]
 22/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 4.47839, 16.1172 )
-
-[node name="Main" type="Node"]
+[node name="Tutorial 4" type="Node"]
 script = ExtResource( 10 )
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -418,16 +415,16 @@ accionar = "Cadena"
 id = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 174.63, -83.2353 )
+position = Vector2( 130.58, -89.2421 )
 current = true
-zoom = Vector2( 0.4, 0.4 )
+zoom = Vector2( 0.3, 0.4 )
 
 [node name="Puerta" parent="." instance=ExtResource( 3 )]
 position = Vector2( 255.452, -112.106 )
 id = 1
 
 [node name="CadenaYGancho" parent="." instance=ExtResource( 1 )]
-position = Vector2( 92.0413, -106.31 )
+position = Vector2( 92.041, -94.5 )
 id = 2
 
 [node name="Palanca" parent="." instance=ExtResource( 5 )]
@@ -442,10 +439,5 @@ id = 1
 [node name="Robot_station" parent="." instance=ExtResource( 7 )]
 position = Vector2( 123.974, -17.3121 )
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 260.411, -112.247 )
-script = ExtResource( 9 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 10 )
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[node name="Area_final" parent="." instance=ExtResource( 9 )]
+position = Vector2( 257.942, -112.305 )

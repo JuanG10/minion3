@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/jugador.gd" type="Script" id=1]
 [ext_resource path="res://sprites/jugador/jugador_sprite_mov_3.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://sprites/jugador/jugador_sprite_mov_1.png" type="Texture" id=6]
 [ext_resource path="res://sprites/jugador/jugador_sprite_mov_4.png" type="Texture" id=7]
 [ext_resource path="res://sprites/jugador/idle_1.png" type="Texture" id=8]
+[ext_resource path="res://scripts/character_rayCast.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.12752, 7.73519 )
@@ -43,3 +44,8 @@ frames = SubResource( 2 )
 animation = "idle"
 frame = 1
 speed_scale = 2.0
+
+[node name="character_rayCast" type="RayCast2D" parent="."]
+position = Vector2( 0, 13.4 )
+scale = Vector2( 1, 0.1 )
+script = ExtResource( 9 )

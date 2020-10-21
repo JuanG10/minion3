@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://escenas/objetos/Placa_de_presion.tscn" type="PackedScene" id=1]
 [ext_resource path="res://escenas/objetos/Puerta.tscn" type="PackedScene" id=2]
@@ -8,7 +8,7 @@
 [ext_resource path="res://escenas/objetos/Jugador.tscn" type="PackedScene" id=6]
 [ext_resource path="res://escenas/objetos/Robot_station.tscn" type="PackedScene" id=7]
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=8]
-[ext_resource path="res://scripts/LevelChanger.gd" type="Script" id=9]
+[ext_resource path="res://escenas/objetos/Area_final.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scripts/Main - lvl 1.gd" type="Script" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -394,9 +394,6 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 22/shapes = [  ]
 22/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 4.14481, 15.0972 )
-
 [node name="Nivel 1" type="Node"]
 script = ExtResource( 10 )
 
@@ -410,9 +407,9 @@ __meta__ = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 131.754, -100.006 )
+position = Vector2( 125.39, -78.0857 )
 current = true
-zoom = Vector2( 0.4, 0.5 )
+zoom = Vector2( 0.3, 0.4 )
 
 [node name="Jugador" parent="." instance=ExtResource( 6 )]
 position = Vector2( 21.257, -11.6041 )
@@ -436,6 +433,7 @@ id = 2
 
 [node name="Palanca2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 217.902, -135.364 )
+activada = true
 acciono = "Rejilla"
 id = 3
 
@@ -452,10 +450,5 @@ position = Vector2( 24.2946, -120.603 )
 activada = true
 id = 3
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 244.361, -15.38 )
-script = ExtResource( 9 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 10 )
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[node name="Area_final" parent="." instance=ExtResource( 9 )]
+position = Vector2( 242.301, -15.39 )

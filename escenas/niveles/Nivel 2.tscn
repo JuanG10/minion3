@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=1]
 [ext_resource path="res://escenas/objetos/Jugador.tscn" type="PackedScene" id=2]
@@ -10,7 +10,7 @@
 [ext_resource path="res://escenas/objetos/Puerta.tscn" type="PackedScene" id=8]
 [ext_resource path="res://escenas/objetos/Robot_station.tscn" type="PackedScene" id=9]
 [ext_resource path="res://escenas/objetos/Robot.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scripts/LevelChanger.gd" type="Script" id=11]
+[ext_resource path="res://escenas/objetos/Area_final.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scripts/Main - lvl 2.gd" type="Script" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -396,9 +396,6 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 4.63372, 0, 4.63372 )
 22/shapes = [  ]
 22/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 4.49155, 15.5 )
-
 [node name="Nivel 2" type="Node"]
 script = ExtResource( 12 )
 
@@ -424,7 +421,7 @@ position = Vector2( 152.825, 6.666 )
 id = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 110.742, -97.6732 )
+position = Vector2( 115.237, -88.7254 )
 current = true
 zoom = Vector2( 0.28, 0.38 )
 
@@ -491,10 +488,5 @@ position = Vector2( 169.986, -77.0675 )
 [node name="StaticBody2D6" parent="." instance=ExtResource( 5 )]
 position = Vector2( 157.416, -77.0731 )
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 233.233, -16.1453 )
-script = ExtResource( 11 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 10 )
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[node name="Area_final" parent="." instance=ExtResource( 11 )]
+position = Vector2( 234.629, -15.9761 )
