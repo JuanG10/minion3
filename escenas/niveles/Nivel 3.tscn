@@ -385,7 +385,7 @@ acciono = "Plataforma_de_salto"
 id = 1
 
 [node name="Palanca6" parent="." instance=ExtResource( 5 )]
-position = Vector2( 106.632, 105.034 )
+position = Vector2( 117.323, 153.143 )
 acciono = "Plataforma_de_salto"
 id = 2
 
