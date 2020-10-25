@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/BoxCat_Games_-_04_-_B-3.ogg-fdda9a9dabf9168c22be46b06d24444b.oggstr"
+
+[deps]
+
+source_file="res://Music/BoxCat_Games_-_04_-_B-3.ogg"
+dest_files=[ "res://.import/BoxCat_Games_-_04_-_B-3.ogg-fdda9a9dabf9168c22be46b06d24444b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

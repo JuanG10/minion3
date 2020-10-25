@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=1]
 [ext_resource path="res://escenas/objetos/Suelo.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://escenas/objetos/Rejilla.tscn" type="PackedScene" id=11]
 [ext_resource path="res://escenas/objetos/Area_final.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scripts/Main - lvl 3.gd" type="Script" id=13]
+[ext_resource path="res://Music/BoxCat_Games_-_04_-_B-3.ogg" type="AudioStream" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 4.51554, 0, 4.51554 )
@@ -504,7 +505,6 @@ position = Vector2( 193.089, 142.698 )
 
 [node name="Robot" parent="." instance=ExtResource( 3 )]
 position = Vector2( 135.75, 102.677 )
-id = 1
 
 [node name="Palanca4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 281.693, 24.6802 )
@@ -605,3 +605,7 @@ position = Vector2( 56.9322, 118.984 )
 
 [node name="Area_final" parent="." instance=ExtResource( 12 )]
 position = Vector2( 331.503, 16.2066 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+autoplay = true

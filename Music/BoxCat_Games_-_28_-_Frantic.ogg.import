@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/BoxCat_Games_-_28_-_Frantic.ogg-fc035069653ea70322b1599fb6e450ba.oggstr"
+
+[deps]
+
+source_file="res://Music/BoxCat_Games_-_28_-_Frantic.ogg"
+dest_files=[ "res://.import/BoxCat_Games_-_28_-_Frantic.ogg-fc035069653ea70322b1599fb6e450ba.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
