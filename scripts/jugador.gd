@@ -63,6 +63,8 @@ func _delete_old_signs(): # Para que no queden iconos sueltos al reiniciar.
 func impulso(plataforma)->void: # Lo llama la plataforma de salto.
 	impulso = true
 	plataforma_de_salto = plataforma
+	
+	#asdsasdadas
 
 func _input_release()->bool: # Chequea si se sueltan teclas direccionales.
 	return Input.is_action_just_released("ui_right") or Input.is_action_just_released("ui_left")
