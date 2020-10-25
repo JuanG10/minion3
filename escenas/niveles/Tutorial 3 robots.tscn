@@ -6,7 +6,7 @@
 [ext_resource path="res://escenas/objetos/Jugador.tscn" type="PackedScene" id=4]
 [ext_resource path="res://escenas/objetos/Robot_station.tscn" type="PackedScene" id=5]
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=6]
-[ext_resource path="res://scripts/Main - tut3.gd" type="Script" id=7]
+[ext_resource path="res://scripts/level_name.gd" type="Script" id=7]
 [ext_resource path="res://escenas/objetos/Area_final.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Music/BoxCat_Games_-_19_-_Mission.ogg" type="AudioStream" id=9]
 
@@ -442,11 +442,9 @@ position = Vector2( 127.423, 20.3683 )
 [node name="Palanca" parent="." instance=ExtResource( 3 )]
 position = Vector2( 227.126, -64.7901 )
 acciono = "Puerta"
-id = 1
 
 [node name="Puerta" parent="." instance=ExtResource( 1 )]
 position = Vector2( 264.172, 22.6674 )
-id = 1
 
 [node name="Area_final" parent="." instance=ExtResource( 8 )]
 position = Vector2( 267.636, 22.6923 )

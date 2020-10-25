@@ -40,8 +40,10 @@ func _get_input()->void: # Obtiene el input para moverse o caer.
 		_delete_old_signs()
 		get_tree().reload_current_scene()
 	if control_switch && is_on_floor():
-		if Input.is_action_pressed('ui_right'): _move_left()
-		if Input.is_action_pressed('ui_left'): _move_right()
+		if !_both_movement_key_pressed():
+			if Input.is_action_pressed('ui_right'): _move_left()
+			if Input.is_action_pressed('ui_left'): _move_right()
+		else: player_spr.play("idle")
 		if _input_release(): player_spr.play("idle")
 		if Input.is_action_just_pressed("Impulso") && impulso:
 			velocity.y -= 110
@@ -63,11 +65,12 @@ func _delete_old_signs(): # Para que no queden iconos sueltos al reiniciar.
 func impulso(plataforma)->void: # Lo llama la plataforma de salto.
 	impulso = true
 	plataforma_de_salto = plataforma
-	
-	#asdsasdadas
 
 func _input_release()->bool: # Chequea si se sueltan teclas direccionales.
 	return Input.is_action_just_released("ui_right") or Input.is_action_just_released("ui_left")
+
+func _both_movement_key_pressed()->bool:
+	return Input.is_action_pressed('ui_right') && Input.is_action_pressed('ui_left')
 
 func _move_left()->void:
 	velocity.x += SPEED

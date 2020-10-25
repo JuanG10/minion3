@@ -8,7 +8,7 @@
 [ext_resource path="res://escenas/objetos/Plataforma_de_salto.tscn" type="PackedScene" id=6]
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=7]
 [ext_resource path="res://escenas/objetos/Area_final.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scripts/Main - tut2.gd" type="Script" id=9]
+[ext_resource path="res://scripts/level_name.gd" type="Script" id=9]
 [ext_resource path="res://Music/BoxCat_Games_-_19_-_Mission.ogg" type="AudioStream" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]

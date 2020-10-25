@@ -9,7 +9,7 @@
 [ext_resource path="res://escenas/objetos/Robot_station.tscn" type="PackedScene" id=7]
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=8]
 [ext_resource path="res://escenas/objetos/Area_final.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scripts/Main - lvl 1.gd" type="Script" id=10]
+[ext_resource path="res://scripts/level_name.gd" type="Script" id=10]
 [ext_resource path="res://Music/BoxCat_Games_-_12_-_Passing_Time.ogg" type="AudioStream" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -418,6 +418,8 @@ points = PoolVector2Array( 0, 0, 5.16373, 0, 5.16373, 16, 0, 16 )
 script = ExtResource( 10 )
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 23.296, 462.242 )
+scale = Vector2( 2.8, 2.4 )
 tile_set = SubResource( 11 )
 cell_size = Vector2( 16, 16 )
 format = 1
@@ -426,51 +428,56 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 125.39, -78.0857 )
-current = true
-zoom = Vector2( 0.3, 0.4 )
-
 [node name="Jugador" parent="." instance=ExtResource( 6 )]
-position = Vector2( 21.257, -11.6041 )
+position = Vector2( 60.1094, 442.152 )
+scale = Vector2( 2.8, 2.4 )
 
 [node name="Robot" parent="." instance=ExtResource( 3 )]
-position = Vector2( 51.1612, -138.66 )
+position = Vector2( 162.457, 135.582 )
+scale = Vector2( 2.8, 2.4 )
 
 [node name="Robot_station" parent="." instance=ExtResource( 7 )]
-position = Vector2( 63.0172, -17.0072 )
+position = Vector2( 383.313, 419.234 )
+scale = Vector2( 2.8, 2.4 )
 
 [node name="Palanca_de_presion" parent="." instance=ExtResource( 1 )]
-position = Vector2( 104.831, -2.6009 )
+position = Vector2( 537.57, 458.965 )
+scale = Vector2( 2.8, 2.4 )
 accionar = "Puerta"
 id = 1
 
 [node name="Palanca" parent="." instance=ExtResource( 5 )]
-position = Vector2( 182.916, -7.45952 )
+position = Vector2( 224.089, 444.463 )
+scale = Vector2( 2.8, 2.4 )
 acciono = "Puerta"
 id = 2
 
 [node name="Palanca2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 217.902, -135.364 )
+position = Vector2( 630.116, 137.287 )
+scale = Vector2( 2.8, 2.4 )
 activada = true
 acciono = "Rejilla"
 id = 3
 
 [node name="Puerta" parent="." instance=ExtResource( 2 )]
-position = Vector2( 240.091, -15.4829 )
+position = Vector2( 679.437, 423.595 )
+scale = Vector2( 2.8, 2.4 )
 id = 1
 
 [node name="Puerta2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 183.287, -143.557 )
+position = Vector2( 535.99, 117.057 )
+scale = Vector2( 2.8, 2.4 )
 id = 2
 
 [node name="Rejilla" parent="." instance=ExtResource( 4 )]
-position = Vector2( 24.0719, -120.993 )
+position = Vector2( 90.6179, 171.874 )
+scale = Vector2( 2.8, 2.4 )
 activada = true
 id = 3
 
 [node name="Area_final" parent="." instance=ExtResource( 9 )]
-position = Vector2( 242.301, -15.39 )
+position = Vector2( 681.647, 423.688 )
+scale = Vector2( 2.8, 2.4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
