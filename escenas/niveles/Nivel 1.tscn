@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://escenas/objetos/Placa_de_presion.tscn" type="PackedScene" id=1]
 [ext_resource path="res://escenas/objetos/Puerta.tscn" type="PackedScene" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=8]
 [ext_resource path="res://escenas/objetos/Area_final.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scripts/level_name.gd" type="Script" id=10]
-[ext_resource path="res://Music/BoxCat_Games_-_12_-_Passing_Time.ogg" type="AudioStream" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 4.51554, 0, 4.51554 )
@@ -478,7 +477,3 @@ id = 3
 [node name="Area_final" parent="." instance=ExtResource( 9 )]
 position = Vector2( 681.647, 423.688 )
 scale = Vector2( 2.8, 2.4 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 11 )
-autoplay = true

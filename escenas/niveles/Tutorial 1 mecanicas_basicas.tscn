@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://escenas/objetos/CadenaYGancho.tscn" type="PackedScene" id=1]
 [ext_resource path="res://escenas/objetos/Puerta.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=5]
 [ext_resource path="res://escenas/objetos/Area_final.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/level_name.gd" type="Script" id=7]
-[ext_resource path="res://Music/BoxCat_Games_-_19_-_Mission.ogg" type="AudioStream" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 4.51554, 0, 4.51554 )
@@ -447,7 +446,3 @@ position = Vector2( 215.675, -79.3809 )
 id = 1
 
 [node name="Area_final" parent="." instance=ExtResource( 6 )]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
-autoplay = true

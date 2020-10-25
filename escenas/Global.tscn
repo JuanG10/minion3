@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Global.gd" type="Script" id=1]
 [ext_resource path="res://escenas/niveles/Tutorial 1 mecanicas_basicas.tscn" type="PackedScene" id=2]
+[ext_resource path="res://escenas/objetos/Controller_Music.tscn" type="PackedScene" id=3]
 
 [node name="Global" type="Node"]
 script = ExtResource( 1 )
+
+[node name="ControllerMusic" parent="." instance=ExtResource( 3 )]
 
 [node name="Tutorial 1" parent="." instance=ExtResource( 2 )]
 next_level_id = 2

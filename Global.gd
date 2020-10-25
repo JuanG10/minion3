@@ -17,14 +17,21 @@ func _ready():
 	$"Tutorial 1".connect("change_level", self, "on_change_level")
 
 func on_change_level(next_level_id:int)->void:
-	_remove_first_child()
+
+
 	var new_level = _instance_level(next_level_id)
 	new_level.next_level_id = next_level_id + 1
 	new_level.connect("change_level", self, "on_change_level")
-	add_child(new_level)
+	get_child(1).get_tree().change_scene(new_level.resource_path)
+	if new_level.name == "Nivel 1":
+		$ControllerMusic.start_bgm_level_1_y_2()
+	elif new_level.name == "Nivel 3":
+		$ControllerMusic.start_bgm_level_3()
 
+#get_tree().change_scene("res://Scenes/Levels/Level "+str(current_stage)+".xml")		
+		
 func _remove_first_child()->void:
-	var hijo_actual = get_child(0)
+	var hijo_actual = get_child(1)
 	remove_child(hijo_actual)
 	hijo_actual.queue_free()
 
