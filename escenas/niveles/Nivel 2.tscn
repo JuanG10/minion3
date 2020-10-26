@@ -431,6 +431,7 @@ points = PoolVector2Array( 0, 0, 4.93115, 0, 4.93115, 16, 0, 16 )
 
 [node name="Nivel 2" type="Node"]
 script = ExtResource( 12 )
+next_level_id = 7
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 14.2544, 217.379 )
@@ -476,7 +477,7 @@ position = Vector2( 37.3824, 140.674 )
 position = Vector2( 69.0273, 140.359 )
 
 [node name="Palanca_de_presion" parent="." instance=ExtResource( 6 )]
-position = Vector2( 70.4112, 135.257 )
+position = Vector2( 66.2398, 135.758 )
 accionar = "Rejilla"
 id = 3
 

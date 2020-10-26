@@ -413,6 +413,7 @@ points = PoolVector2Array( 16, 16, 10.9308, 16, 11.0307, 0, 16, 0 )
 
 [node name="Tutorial 3" type="Node"]
 script = ExtResource( 7 )
+next_level_id = 4
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 155.053, -22.7025 )

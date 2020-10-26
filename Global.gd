@@ -1,6 +1,8 @@
 extends Node
 
+const FIRST_lEVEL = 1
 const LAST_LEVEL = 8
+var actual_level
 
 var levels_map = {
 	0: preload("res://escenas/niveles/youwin.tscn"),
@@ -13,23 +15,15 @@ var levels_map = {
 	7: preload("res://escenas/niveles/Nivel 3.tscn")
 }
 
-func _ready():
-	$"Tutorial 1".connect("change_level", self, "on_change_level")
+func on_change_level(next_id)->void:
+	if next_id != null: actual_level = next_id
+	else : actual_level += 1
+	get_tree().change_scene_to(levels_map[actual_level])
+	if get_tree().get_root().name == "Nivel 1":
+		ControllerMusic.start_bgm_level_1_y_2()
+	elif get_tree().get_root().name == "Nivel 3":
+		ControllerMusic.start_bgm_level_3()
 
-func on_change_level(next_level_id:int)->void:
-
-
-	var new_level = _instance_level(next_level_id)
-	new_level.next_level_id = next_level_id + 1
-	new_level.connect("change_level", self, "on_change_level")
-	get_child(1).get_tree().change_scene(new_level.resource_path)
-	if new_level.name == "Nivel 1":
-		$ControllerMusic.start_bgm_level_1_y_2()
-	elif new_level.name == "Nivel 3":
-		$ControllerMusic.start_bgm_level_3()
-
-#get_tree().change_scene("res://Scenes/Levels/Level "+str(current_stage)+".xml")		
-		
 func _remove_first_child()->void:
 	var hijo_actual = get_child(1)
 	remove_child(hijo_actual)
