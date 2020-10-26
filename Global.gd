@@ -1,9 +1,5 @@
 extends Node
 
-const FIRST_lEVEL = 1
-const LAST_LEVEL = 8
-var actual_level
-
 var levels_map = {
 	0: preload("res://escenas/niveles/youwin.tscn"),
 	1: preload("res://escenas/niveles/Tutorial 1 mecanicas_basicas.tscn"),
@@ -16,21 +12,20 @@ var levels_map = {
 }
 
 func on_change_level(next_id)->void:
-	if next_id != null: actual_level = next_id
-	else : actual_level += 1
-	get_tree().change_scene_to(levels_map[actual_level])
-	if get_tree().get_root().name == "Nivel 1":
+	get_tree().change_scene_to(levels_map[next_id])
+	var level_node_name = get_tree().get_root().get_child(2).name
+	print(level_node_name)
+	if level_node_name == "Tutorial 4":
 		ControllerMusic.start_bgm_level_1_y_2()
-	elif get_tree().get_root().name == "Nivel 3":
+	elif level_node_name == "Nivel 2":
 		ControllerMusic.start_bgm_level_3()
 
-func _remove_first_child()->void:
-	var hijo_actual = get_child(1)
-	remove_child(hijo_actual)
-	hijo_actual.queue_free()
+# ControllerMusic.playSongFor(nivel)
+# [tuto1,tuto2,tuto3,tuto4] = mission,
+# [nivel1,nivel2] = pass_time, [nivel3] = B_3
+# Toca la canción de la lista correspondiente.
+# Si la música de la lista ya se está reproduciendo no hace nada.
 
-func _instance_level(level_id:int)->PackedScene:
-	if level_id == LAST_LEVEL:
-		return levels_map[0].instance() 
-	else: 
-		return levels_map[level_id].instance()
+# if lista1.has(level) && !lista1Music.estaReproduciendo:
+#	mission.play()
+# elif lista2.has...
