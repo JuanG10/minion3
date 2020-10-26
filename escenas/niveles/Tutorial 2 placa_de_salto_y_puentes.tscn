@@ -412,7 +412,9 @@ points = PoolVector2Array( 0, 0.000427246, 5.72879, 0.000427246, 5.72879, 16, 0,
 22/shapes = [  ]
 22/z_index = 0
 
-[node name="Tutorial 2" type="Node"]
+[node name="Tutorial 2" type="Node" groups=[
+"Niveles_tutoriales",
+]]
 script = ExtResource( 9 )
 next_level_id = 3
 
