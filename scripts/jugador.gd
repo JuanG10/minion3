@@ -3,7 +3,7 @@ extends "res://scripts/Signs.gd"
 export (int) var id
 
 # Variables internas.
-const SPEED:int = 100
+const SPEED:int = 300
 var vel_salto = 100
 var velocity:Vector2
 var impulso = false
