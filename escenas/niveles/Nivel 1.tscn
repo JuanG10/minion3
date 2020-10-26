@@ -462,7 +462,7 @@ acciono = "Rejilla"
 id = 3
 
 [node name="Puerta" parent="." instance=ExtResource( 2 )]
-position = Vector2( 679.437, 423.595 )
+position = Vector2( 690.937, 423.595 )
 scale = Vector2( 2.8, 2.4 )
 id = 1
 
@@ -478,5 +478,5 @@ activada = true
 id = 3
 
 [node name="Area_final" parent="." instance=ExtResource( 9 )]
-position = Vector2( 681.647, 423.688 )
+position = Vector2( 691.647, 422.688 )
 scale = Vector2( 2.8, 2.4 )
