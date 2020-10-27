@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://escenas/objetos/Suelo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://escenas/objetos/Puerta.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=7]
 [ext_resource path="res://escenas/objetos/Area_final.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scripts/level_name.gd" type="Script" id=9]
+[ext_resource path="res://scripts/Cable.gd" type="Script" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 4.51554, 0, 4.51554 )
@@ -492,3 +493,13 @@ scale = Vector2( 7, 5.8 )
 [node name="Area_final" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1238.43, 182.246 )
 scale = Vector2( 5.8, 5.5 )
+
+[node name="Line2D" type="Line2D" parent="." groups=[
+"Plataforma_de_salto",
+]]
+position = Vector2( 0, 109.756 )
+scale = Vector2( 1, 0.821619 )
+z_index = -1
+points = PoolVector2Array( 301.164, 626.058, 301.164, 701.96, 491.371, 701.96 )
+default_color = Color( 0.32549, 0.368627, 0.411765, 1 )
+script = ExtResource( 10 )

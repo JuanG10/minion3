@@ -8,6 +8,7 @@ func activar():
 
 func desactivar():
 	activado = false
+	play("normal"); stop()
 
 func _on_Area2D_body_entered(body):
 	if(get_tree().get_nodes_in_group("controllable_characters").has(body)): 

@@ -56,7 +56,3 @@ func cambiar_animacion():
 
 func _on_Timer_timeout():
 	cambiar_animacion()
-	
-
-			
-		
