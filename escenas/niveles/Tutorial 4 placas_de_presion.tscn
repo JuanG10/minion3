@@ -448,6 +448,8 @@ script = ExtResource( 10 )
 next_level_id = 5
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 21.5435, 696.574 )
+scale = Vector2( 4.8, 3.6 )
 tile_set = SubResource( 11 )
 cell_size = Vector2( 16, 16 )
 format = 1
@@ -457,32 +459,35 @@ __meta__ = {
 }
 
 [node name="Jugador" parent="." instance=ExtResource( 6 )]
-position = Vector2( 58.6449, -7.72338 )
+position = Vector2( 197.654, 650.14 )
+scale = Vector2( 5.5, 5.3 )
 
 [node name="Placa_de_presion" parent="." instance=ExtResource( 2 )]
-position = Vector2( 174.73, -1.94247 )
+position = Vector2( 687.495, 688.094 )
+scale = Vector2( 4.8, 3.6 )
 accionar = "Cadena"
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 130.58, -89.2421 )
-current = true
-zoom = Vector2( 0.3, 0.4 )
-
 [node name="Puerta" parent="." instance=ExtResource( 3 )]
-position = Vector2( 255.452, -112.106 )
+position = Vector2( 1254.1, 297.477 )
+scale = Vector2( 4.8, 3.6 )
 
 [node name="CadenaYGancho" parent="." instance=ExtResource( 1 )]
-position = Vector2( 92.041, -94.5 )
+position = Vector2( 460.643, 194.948 )
+scale = Vector2( 4.8, 3.6 )
 
 [node name="Palanca" parent="." instance=ExtResource( 5 )]
-position = Vector2( 45.036, -6.81379 )
+position = Vector2( 304.181, 671.073 )
+scale = Vector2( 4.8, 3.6 )
 acciono = "Puerta"
 
 [node name="Robot" parent="." instance=ExtResource( 4 )]
-position = Vector2( 240.019, -7.68413 )
+position = Vector2( 1158.44, 665.167 )
+scale = Vector2( 4.8, 3.6 )
 
 [node name="Robot_station" parent="." instance=ExtResource( 7 )]
-position = Vector2( 130.148, -17.5927 )
+position = Vector2( 921.894, 632.262 )
+scale = Vector2( 4.8, 3.6 )
 
 [node name="Area_final" parent="." instance=ExtResource( 9 )]
-position = Vector2( 257.942, -112.305 )
+position = Vector2( 1255.25, 293.274 )
+scale = Vector2( 4.8, 3.6 )

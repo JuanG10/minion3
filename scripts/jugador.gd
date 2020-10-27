@@ -3,8 +3,8 @@ extends "res://scripts/Signs.gd"
 export (int) var id
 
 # Variables internas.
-const SPEED:int = 300
-var vel_salto = 100
+const SPEED:int = 800
+var vel_salto = 800
 var velocity:Vector2
 var impulso = false
 var plataforma_de_salto 
@@ -46,7 +46,7 @@ func _get_input()->void: # Obtiene el input para moverse o caer.
 		else: player_spr.play("idle")
 		if _input_release(): player_spr.play("idle")
 		if Input.is_action_just_pressed("Impulso") && impulso:
-			velocity.y -= 110
+			velocity.y -= 900
 			plataforma_de_salto.cambiar_frame()
 			impulso = false
 			$character_rayCast.enabled = true
@@ -73,12 +73,12 @@ func _both_movement_key_pressed()->bool:
 	return Input.is_action_pressed('ui_right') && Input.is_action_pressed('ui_left')
 
 func _move_left()->void:
-	velocity.x += SPEED
+	velocity.x += SPEED - transform.get_scale().x
 	player_spr.play("movimiento_horizontal")
 	player_spr.flip_h = false
 	
 func _move_right()->void:
-	velocity.x -= SPEED
+	velocity.x -= SPEED - transform.get_scale().x
 	player_spr.play("movimiento_horizontal")
 	player_spr.flip_h = true
 
