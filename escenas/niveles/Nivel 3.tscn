@@ -14,8 +14,6 @@
 [ext_resource path="res://escenas/objetos/Area_final.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scripts/level_name.gd" type="Script" id=13]
 
-
-
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 4.51554, 0, 4.51554 )
 
@@ -495,111 +493,130 @@ points = PoolVector2Array( 0, 0, 5.21436, 0, 5.21436, 15.9829, 0, 15.9829 )
 script = ExtResource( 13 )
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2( -24.7, -89.6142 )
+scale = Vector2( 3.2, 3 )
 tile_set = SubResource( 11 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -65536, 20, 0, -65511, 21, 0, 0, 20, 0, 25, 21, 0, 65536, 20, 0, 65561, 21, 0, 131072, 20, 0, 131086, 1, 65538, 131087, 1, 65538, 131088, 1, 65538, 131089, 1, 65538, 131090, 1, 65538, 131091, 1, 65538, 131092, 1, 65538, 131097, 21, 0, 196608, 20, 0, 196609, 26, 0, 196618, 26, 0, 196622, 21, 0, 196633, 21, 0, 262144, 20, 0, 262147, 1, 65538, 262148, 1, 65538, 262149, 1, 65538, 262150, 1, 65538, 262151, 1, 65538, 262152, 1, 65538, 262153, 1, 65538, 262154, 1, 65538, 262155, 1, 65538, 262156, 1, 65538, 262157, 1, 65538, 262169, 21, 0, 327680, 20, 0, 327705, 21, 0, 393216, 20, 0, 393219, 26, 0, 393241, 21, 0, 458752, 20, 0, 458758, 1, 65538, 458759, 1, 65538, 458760, 1, 65538, 458761, 1, 65538, 458762, 1, 65538, 458763, 1, 65538, 458764, 1, 2, 458765, 23, 0, 458777, 21, 0, 524288, 20, 0, 524313, 21, 0, 589824, 20, 0, 589849, 21, 0, 655360, 20, 0, 655361, 29, 0, 655363, 1, 65538, 655364, 1, 65538, 655365, 1, 65538, 655366, 1, 65538, 655367, 1, 65538, 655368, 1, 65538, 655369, 1, 65538, 655370, 1, 65538, 655371, 1, 65538, 655372, 1, 65538, 655373, 1, 65538, 655374, 1, 65538, 655375, 1, 65538, 655376, 1, 65538, 655377, 1, 65538, 655378, 1, 65538, 655379, 1, 2, 655380, 1, 2, 655381, 1, 2, 655385, 21, 0, 720896, 20, 0, 720921, 21, 0, 786432, 20, 0, 786433, 25, 0, 786434, 25, 0, 786453, 26, 0, 786457, 21, 0, 851968, 20, 0, 851969, 25, 0, 851970, 25, 0, 851971, 25, 0, 851974, 23, 0, 851976, 27, 0, 851978, 27, 0, 851980, 23, 0, 851982, 27, 0, 851984, 23, 0, 851989, 1, 65538, 851990, 1, 65538, 851991, 1, 2, 851992, 1, 65538, 851993, 21, 0, 917504, 20, 0, 917505, 25, 0, 917506, 25, 0, 917507, 25, 0, 917508, 25, 0, 917509, 25, 0, 917528, 25, 0, 917529, 21, 0, 983040, 20, 0, 983041, 25, 0, 983042, 25, 0, 983043, 25, 0, 983044, 25, 0, 983045, 25, 0, 983046, 25, 0, 983063, 25, 0, 983064, 25, 0, 983065, 21, 0, 1048577, 1, 65538, 1048578, 1, 65538, 1048579, 1, 65538, 1048580, 1, 65538, 1048581, 1, 65538, 1048582, 1, 65538, 1048583, 1, 65538, 1048584, 1, 65538, 1048585, 1, 65538, 1048586, 1, 65538, 1048587, 1, 65538, 1048588, 1, 65538, 1048589, 1, 65538, 1048590, 1, 65538, 1048591, 1, 65538, 1048592, 1, 65538, 1048593, 1, 65538, 1048594, 1, 65538, 1048596, 1, 65538, 1048597, 1, 65538, 1048598, 1, 65538, 1048599, 1, 65538, 1048600, 1, 65538 )
+tile_data = PoolIntArray( -65536, 20, 0, -65511, 21, 0, 0, 20, 0, 25, 21, 0, 65536, 20, 0, 65561, 21, 0, 131072, 20, 0, 131097, 21, 0, 196608, 20, 0, 196609, 26, 0, 196618, 26, 0, 196622, 21, 0, 196633, 21, 0, 262144, 20, 0, 262147, 1, 65538, 262148, 1, 65538, 262149, 1, 65538, 262150, 1, 65538, 262151, 1, 65538, 262152, 1, 65538, 262153, 1, 65538, 262154, 1, 65538, 262155, 1, 65538, 262156, 1, 65538, 262157, 1, 65538, 262169, 21, 0, 327680, 20, 0, 327705, 21, 0, 393216, 20, 0, 393219, 26, 0, 393241, 21, 0, 458752, 20, 0, 458758, 1, 65538, 458759, 1, 65538, 458760, 1, 65538, 458761, 1, 65538, 458762, 1, 65538, 458763, 1, 65538, 458764, 1, 2, 458765, 23, 0, 458777, 21, 0, 524288, 20, 0, 524313, 21, 0, 589824, 20, 0, 589849, 21, 0, 655360, 20, 0, 655361, 29, 0, 655363, 1, 65538, 655364, 1, 65538, 655365, 1, 65538, 655366, 1, 65538, 655367, 1, 65538, 655368, 1, 65538, 655369, 1, 65538, 655370, 1, 65538, 655371, 1, 65538, 655372, 1, 65538, 655373, 1, 65538, 655374, 1, 65538, 655375, 1, 65538, 655376, 1, 65538, 655377, 1, 65538, 655378, 1, 65538, 655379, 1, 2, 655380, 1, 2, 655381, 1, 2, 655385, 21, 0, 720896, 20, 0, 720921, 21, 0, 786432, 20, 0, 786433, 25, 0, 786434, 25, 0, 786453, 26, 0, 786457, 21, 0, 851968, 20, 0, 851969, 25, 0, 851970, 25, 0, 851971, 25, 0, 851973, 29, 0, 851974, 23, 0, 851976, 27, 0, 851978, 27, 0, 851980, 23, 0, 851982, 27, 0, 851984, 23, 0, 851986, 29, 0, 851989, 1, 65538, 851990, 1, 65538, 851991, 1, 2, 851992, 1, 65538, 851993, 21, 0, 917504, 20, 0, 917505, 25, 0, 917506, 25, 0, 917507, 25, 0, 917508, 25, 0, 917509, 25, 0, 917528, 25, 0, 917529, 21, 0, 983040, 20, 0, 983041, 25, 0, 983042, 25, 0, 983043, 25, 0, 983044, 25, 0, 983045, 25, 0, 983046, 25, 0, 983063, 25, 0, 983064, 25, 0, 983065, 21, 0, 1048576, 1, 2, 1048577, 1, 65538, 1048578, 1, 65538, 1048579, 1, 65538, 1048580, 1, 65538, 1048581, 1, 65538, 1048582, 1, 65538, 1048583, 1, 65538, 1048584, 1, 65538, 1048585, 1, 65538, 1048586, 1, 65538, 1048587, 1, 65538, 1048588, 1, 65538, 1048589, 1, 65538, 1048590, 1, 65538, 1048591, 1, 65538, 1048592, 1, 65538, 1048593, 1, 65538, 1048594, 1, 65538, 1048596, 1, 65538, 1048597, 1, 65538, 1048598, 1, 65538, 1048599, 1, 65538, 1048600, 1, 65538, 1048601, 1, 2 )
 __meta__ = {
 "_editor_description_": ""
 }
 
 [node name="Robot_station" parent="." instance=ExtResource( 9 )]
-position = Vector2( 193.089, 142.698 )
+position = Vector2( 817.25, 338.516 )
+scale = Vector2( 3.2, 3 )
 
 [node name="Robot" parent="." instance=ExtResource( 3 )]
-position = Vector2( 135.75, 102.677 )
-
-[node name="Palanca4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 281.693, 24.6802 )
-acciono = "Puerta"
-id = 5
+position = Vector2( 510.4, 212.472 )
+scale = Vector2( 4, 4 )
 
 [node name="Palanca2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 278.459, 248.93 )
+position = Vector2( 926.096, 655.323 )
+scale = Vector2( 3.2, 3 )
 acciono = "Plataforma_de_salto"
 id = 1
 
 [node name="Palanca6" parent="." instance=ExtResource( 5 )]
-position = Vector2( 117.323, 153.143 )
+position = Vector2( 220.729, 369.506 )
+scale = Vector2( 3.2, 3 )
 acciono = "Plataforma_de_salto"
 id = 2
 
 [node name="Palanca7" parent="." instance=ExtResource( 5 )]
-position = Vector2( 91.0581, 56.8962 )
+position = Vector2( 224.248, 78.8499 )
+scale = Vector2( 3.2, 3 )
 acciono = "Rejilla"
 
 [node name="Palanca3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 348.114, 200.724 )
+position = Vector2( 1087.82, 511.009 )
+scale = Vector2( 3.2, 3 )
 acciono = "Cadena"
 id = 2
 
 [node name="Plataforma_de_salto" parent="." instance=ExtResource( 10 )]
-position = Vector2( 40.6922, 166.694 )
+position = Vector2( 103.045, 407.541 )
+scale = Vector2( 3.2, 3 )
 id = 2
 
 [node name="Plataforma_de_salto3" parent="." instance=ExtResource( 10 )]
-position = Vector2( 312.177, 262.701 )
+position = Vector2( 974.138, 696.048 )
+scale = Vector2( 3.2, 3 )
 id = 1
 
 [node name="Plataforma_de_salto2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 21.1729, 118.749 )
+position = Vector2( 35.2894, 264.3 )
+scale = Vector2( 3.2, 3 )
 id = 2
 
 [node name="Jugador" parent="." instance=ExtResource( 6 )]
-position = Vector2( 87.4382, 246.471 )
+position = Vector2( 577.695, 645.873 )
+scale = Vector2( 4, 4 )
 
 [node name="Puerta" parent="." instance=ExtResource( 7 )]
-position = Vector2( 74.0791, 144.72 )
+position = Vector2( 428.407, 341.594 )
+scale = Vector2( 3.2, 3 )
 id = 4
 
 [node name="Puerta2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 327.509, 16.3525 )
+position = Vector2( 661.176, 53.43 )
+scale = Vector2( 3.2, 3 )
 id = 5
 
 [node name="Palanca_de_presion" parent="." instance=ExtResource( 8 )]
-position = Vector2( 168.331, 110.71 )
+position = Vector2( 380.285, 238.411 )
+scale = Vector2( 3.2, 3 )
 accionar = "Puerta"
 id = 4
 
 [node name="Palanca_de_presion2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 120.023, 62.3078 )
-accionar = "Cadena"
+position = Vector2( 357.291, 95.5329 )
+scale = Vector2( 3.2, 3 )
+accionar = "Puerta"
 id = 5
 
 [node name="CadenaYGancho" parent="." instance=ExtResource( 4 )]
-position = Vector2( 375.2, 161 )
+position = Vector2( 1194.61, 286.972 )
+scale = Vector2( 3.2, 3 )
 id = 2
 
 [node name="CadenaYGancho2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 204.024, 33.3517 )
+position = Vector2( -149.74, 271.171 )
+scale = Vector2( 3.2, 3 )
 id = 5
 
 [node name="Suelo" parent="." instance=ExtResource( 2 )]
-position = Vector2( 325.156, 210.92 )
-scale = Vector2( 1.1, 1 )
+position = Vector2( 1017.08, 542.859 )
+scale = Vector2( 3.2, 3 )
 
 [node name="Suelo3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 40.0626, 114.959 )
+position = Vector2( 93.5095, 255.121 )
+scale = Vector2( 3.2, 3 )
 
 [node name="Suelo4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 20.0198, 66.9197 )
-scale = Vector2( 0.7, 1 )
+position = Vector2( 28.146, 110.668 )
+scale = Vector2( 3.2, 3 )
 
 [node name="Suelo7" parent="." instance=ExtResource( 2 )]
-position = Vector2( 37.9729, 66.916 )
+position = Vector2( 94.8982, 110.538 )
+scale = Vector2( 3.2, 3 )
 
 [node name="Suelo2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 301.253, 210.92 )
-scale = Vector2( 1.2, 1 )
+position = Vector2( 949.323, 542.783 )
+scale = Vector2( 3.2, 3 )
 
 [node name="Rejilla" parent="." instance=ExtResource( 11 )]
-position = Vector2( 89.0332, 118.985 )
+position = Vector2( 257.147, 267.312 )
+scale = Vector2( 3.2, 3 )
 
 [node name="Rejilla2" parent="." instance=ExtResource( 11 )]
-position = Vector2( 72.9799, 118.984 )
+position = Vector2( 153.346, 267.413 )
+scale = Vector2( 3.2, 3 )
 
 [node name="Rejilla3" parent="." instance=ExtResource( 11 )]
-position = Vector2( 56.9322, 118.984 )
+position = Vector2( 205.593, 267.339 )
+scale = Vector2( 3.2, 3 )
 
 [node name="Area_final" parent="." instance=ExtResource( 12 )]
-position = Vector2( 331.503, 16.2066 )
+position = Vector2( 663.677, 56.4705 )
+scale = Vector2( 3.2, 3 )

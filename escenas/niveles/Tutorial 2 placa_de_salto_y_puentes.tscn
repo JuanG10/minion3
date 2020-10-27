@@ -432,7 +432,7 @@ __meta__ = {
 
 [node name="Jugador" parent="." instance=ExtResource( 5 )]
 position = Vector2( 160.815, 580.512 )
-scale = Vector2( 5.8, 5.5 )
+scale = Vector2( 5.5, 5.3 )
 collision_layer = 1
 
 [node name="Plataforma_de_salto" parent="." instance=ExtResource( 6 )]
@@ -440,7 +440,7 @@ position = Vector2( 543.124, 651.585 )
 scale = Vector2( 6.6, 5.5 )
 
 [node name="Rejilla" parent="." instance=ExtResource( 3 )]
-position = Vector2( 822.54, 307.053 )
+position = Vector2( 821.979, 307.053 )
 scale = Vector2( 5.8, 5.5 )
 
 [node name="Rejilla2" parent="." instance=ExtResource( 3 )]
@@ -452,22 +452,22 @@ position = Vector2( 635.115, 306.512 )
 scale = Vector2( 5.8, 5.5 )
 
 [node name="Rejilla4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 916.153, 307.143 )
+position = Vector2( 913.908, 307.143 )
 scale = Vector2( 5.8, 5.5 )
 
 [node name="Palanca" parent="." instance=ExtResource( 4 )]
-position = Vector2( 303.003, 584.937 )
-scale = Vector2( 5.8, 5.5 )
+position = Vector2( 315.731, 583.523 )
+scale = Vector2( 5.5, 5.3 )
 acciono = "Plataforma_de_salto"
 
 [node name="Palanca2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1134.52, 578.453 )
-scale = Vector2( 5.8, 5.5 )
+position = Vector2( 1140.18, 584.11 )
+scale = Vector2( 5.5, 5.3 )
 acciono = "Rejilla"
 
 [node name="Palanca3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 353.802, 227.276 )
-scale = Vector2( 5.8, 5.5 )
+scale = Vector2( 5.5, 5.3 )
 acciono = "Puerta"
 
 [node name="Puerta" parent="." instance=ExtResource( 2 )]
