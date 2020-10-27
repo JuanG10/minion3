@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/question.png-819e32b4d8802e9446eb9732d082b871.stex"
+path="res://.import/Plataforma de salto activada.png-8ddacde9399f8cec0fdd36c360b4b7df.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/question.png"
-dest_files=[ "res://.import/question.png-819e32b4d8802e9446eb9732d082b871.stex" ]
+source_file="res://sprites/Plataforma de salto/Plataforma de salto activada.png"
+dest_files=[ "res://.import/Plataforma de salto activada.png-8ddacde9399f8cec0fdd36c360b4b7df.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

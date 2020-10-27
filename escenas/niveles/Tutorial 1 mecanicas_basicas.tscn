@@ -8,6 +8,8 @@
 [ext_resource path="res://escenas/objetos/Area_final.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/level_name.gd" type="Script" id=7]
 
+
+
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 4.51554, 0, 4.51554 )
 
