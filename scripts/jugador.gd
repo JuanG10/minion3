@@ -3,11 +3,14 @@ extends "res://scripts/Signs.gd"
 export (int) var id
 
 # Variables internas.
-const SPEED:int = 800
-var vel_salto = 800
+const SPEED:int = 400
+var vel_salto = 1000
 var velocity:Vector2
 var impulso = false
 var plataforma_de_salto 
+
+const FRICTION:int = 2000
+const FALL_SPEED:Vector2 = Vector2(0,-1)
 
 # Obtención de otros Nodos.
 onready var player_spr:AnimatedSprite = $character_col/character_spr
@@ -28,22 +31,20 @@ func _ready():
 	else:
 		player_spr.play("off")
 
-func _physics_process(delta): 
-	velocity.x = 0
+func _physics_process(delta):
 	velocity.y += SPEED * delta
-	velocity = velocity.normalized() * SPEED
-	_get_input()
-	move_and_slide(velocity,Vector2(0,-1))
+	_get_input(delta)
+	move_and_slide(velocity,FALL_SPEED)
 
-func _get_input()->void: # Obtiene el input para moverse o caer.
+func _get_input(delta)->void: # Obtiene el input para moverse o caer.
 	if Input.is_action_just_pressed("reload"):
 		_delete_old_signs()
 		get_tree().reload_current_scene()
 	if control_switch && is_on_floor():
-		if !_both_movement_key_pressed():
-			if Input.is_action_pressed('ui_right'): _move_left()
-			if Input.is_action_pressed('ui_left'): _move_right()
-		else: player_spr.play("idle")
+		if !_both_movement_key_pressed(): _horizontal_movement(delta)
+		else: 
+			velocity_to_zero()
+			player_spr.play("idle")
 		if _input_release(): player_spr.play("idle")
 		if Input.is_action_just_pressed("Impulso") && impulso:
 			velocity.y -= 900
@@ -51,7 +52,36 @@ func _get_input()->void: # Obtiene el input para moverse o caer.
 			impulso = false
 			$character_rayCast.enabled = true
 	elif control_switch && !is_on_floor():
+		velocity.x = 0
 		player_spr.play("idle")
+
+func _horizontal_movement(delta):
+	# Esta es la versión 2 con aceleración y fricción.
+	# Para un movimiento más simple buscar la función comentada del mismo nombre.
+	var input_vector:Vector2 = Vector2.ZERO
+	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	input_vector.normalized()
+	_quick_direction_change()
+	if input_vector != Vector2.ZERO:
+		velocity = velocity.move_toward(input_vector * SPEED, SPEED * delta)
+	else:
+		velocity_to_zero()
+	_change_sprite_on_movement()
+
+func _quick_direction_change(): # Para frenar al cambiar de dirección.
+	if Input.is_action_just_pressed("ui_right") || Input.is_action_just_pressed("ui_left"):
+		velocity_to_zero()
+
+func _change_sprite_on_movement():
+	if velocity.x > 0:
+		player_spr.play("movimiento_horizontal")
+		player_spr.flip_h = false
+	elif velocity.x < 0:
+		player_spr.play("movimiento_horizontal")
+		player_spr.flip_h = true
+	else: player_spr.play("idle")
+
+func velocity_to_zero(): velocity = Vector2.ZERO
 
 func _delete_old_signs(): # Para que no queden iconos sueltos al reiniciar.
 	var root = get_tree().get_root()
@@ -71,16 +101,6 @@ func _input_release()->bool: # Chequea si se sueltan teclas direccionales.
 
 func _both_movement_key_pressed()->bool:
 	return Input.is_action_pressed('ui_right') && Input.is_action_pressed('ui_left')
-
-func _move_left()->void:
-	velocity.x += SPEED - transform.get_scale().x
-	player_spr.play("movimiento_horizontal")
-	player_spr.flip_h = false
-	
-func _move_right()->void:
-	velocity.x -= SPEED - transform.get_scale().x
-	player_spr.play("movimiento_horizontal")
-	player_spr.flip_h = true
 
 func _unhandled_input(event)->void: # Atrapa el input y ve si cambia personajes.
 	if _press_next(event):
@@ -119,3 +139,19 @@ func activate(id_list:Array)->void: # Agrega al grupo de controlables si puede.
 		add_to_group("controllable_characters")
 		start_question_sign(position, _timer_name, _sign_name)
 		player_spr.play("idle")
+
+#func _horizontal_movement():
+# Versión 1 del movimiento de los personajes.
+
+# Siguientes dos lineas estaban en _phisics_process
+#	velocity.x = 0
+#	velocity = velocity.normalized() * SPEED
+
+#	if Input.is_action_pressed('ui_right'):
+#		velocity.x += SPEED - transform.get_scale().x
+#		player_spr.play("movimiento_horizontal")
+#		player_spr.flip_h = false
+#	if Input.is_action_pressed('ui_left'):
+#		velocity.x -= SPEED - transform.get_scale().x
+#		player_spr.play("movimiento_horizontal")
+#		player_spr.flip_h = true
