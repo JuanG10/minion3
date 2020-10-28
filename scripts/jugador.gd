@@ -8,6 +8,8 @@ const FRICTION:int = 2000
 const FALL_SPEED:Vector2 = Vector2(0,-1)
 var velocity:Vector2
 
+var is_on_platform:bool = false
+
 # Relacionado a la plataforma de salto.
 const vel_salto = 900
 var impulso = false
@@ -48,7 +50,7 @@ func _get_input(delta)->void: # Obtiene el input para moverse o caer.
 			player_spr.play("idle")
 		if _input_release(): player_spr.play("idle")
 		_realizar_impulso()
-	elif control_switch && !is_on_floor():
+	elif control_switch && !is_on_floor() && !is_on_platform:
 		velocity.x = 0
 		player_spr.play("idle")
 
