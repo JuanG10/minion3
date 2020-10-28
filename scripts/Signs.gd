@@ -3,7 +3,8 @@ extends KinematicBody2D
 onready var exclamation = preload("res://sprites/exclamation.png")
 onready var question = preload("res://sprites/question.png")
 
-const START_HEIGHT:Vector2 = Vector2(0,12)
+const START_HEIGHT:Vector2 = Vector2(0,60)
+const SIGN_SCALE:Vector2 = Vector2(4,4)
 const TIME_Q_SIGN:float = 0.75 # Tiempos para pasar al mensaje _create_sign,
 const TIME_E_SIGN:float = 0.4 # Son parámetros para que sea reutilizable.
 var timer_name:String
@@ -38,6 +39,7 @@ func _create_sprite(image)->Sprite:
 	var new_sign = Sprite.new()
 	new_sign.texture = image
 	new_sign.set_name(spr_name)
+	new_sign.scale = SIGN_SCALE
 	return new_sign
 
 func _delete_sprite_and_timer()->void:

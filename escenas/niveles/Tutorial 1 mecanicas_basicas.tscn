@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://escenas/objetos/CadenaYGancho.tscn" type="PackedScene" id=1]
 [ext_resource path="res://escenas/objetos/Puerta.tscn" type="PackedScene" id=2]
@@ -6,7 +6,8 @@
 [ext_resource path="res://escenas/objetos/Jugador.tscn" type="PackedScene" id=4]
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=5]
 [ext_resource path="res://escenas/objetos/Area_final.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scripts/Main - tut1.gd" type="Script" id=7]
+[ext_resource path="res://scripts/level_name.gd" type="Script" id=7]
+[ext_resource path="res://escenas/objetos/Cable.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 4.51554, 0, 4.51554 )
@@ -410,39 +411,54 @@ points = PoolVector2Array( 16, 16, 10.9885, 16, 10.9885, 0, 16, 0 )
 22/shapes = [  ]
 22/z_index = 0
 
-[node name="Tutorial 1" type="Node"]
+[node name="Tutorial 1" type="Node" groups=[
+"Niveles_tutoriales",
+]]
 script = ExtResource( 7 )
+next_level_id = 2
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 38.6813, 682.808 )
+scale = Vector2( 5.5, 6 )
 tile_set = SubResource( 11 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -589818, 10, 0, -524282, 10, 0, -393217, 21, 0, -458739, 21, 0, -327681, 21, 0, -393205, 20, 0, -262145, 21, 0, -327673, 22, 0, -327672, 22, 2, -327671, 22, 3, -327670, 20, 0, -327669, 20, 0, -327668, 20, 0, -196609, 21, 0, -262137, 1, 2, -262136, 1, 2, -262135, 1, 2, -262134, 1, 2, -262133, 1, 2, -262132, 1, 2, -262131, 1, 2, -131073, 21, 0, -196601, 21, 1, -65537, 21, 0, -131072, 20, 0, -131065, 21, 1, -1, 21, 0, -65536, 20, 0, -65535, 20, 0, -65534, 2, 131072, -65533, 22, 0, -65532, 22, 1, -65531, 22, 2, -65530, 22, 3, -65529, 21, 1, 0, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 2, 5, 1, 2, 6, 1, 2 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 106.588, -45.9426 )
-current = true
-zoom = Vector2( 0.23, 0.23 )
-
 [node name="Jugador" parent="." instance=ExtResource( 4 )]
-position = Vector2( 44.3864, -23.8898 )
+position = Vector2( 205.314, 643.264 )
+scale = Vector2( 5.5, 6 )
 
 [node name="Palanca" parent="." instance=ExtResource( 3 )]
-position = Vector2( 66.916, -6.88429 )
+position = Vector2( 419.563, 638.554 )
+scale = Vector2( 5.5, 6 )
 acciono = "Cadena"
 id = 1
 
 [node name="CadenaYGancho" parent="." instance=ExtResource( 1 )]
-position = Vector2( 91.7664, -62.4749 )
+position = Vector2( 550.025, 308.567 )
+scale = Vector2( 5, 5 )
 id = 1
 
 [node name="Palanca 2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 177.57, -71.1156 )
+position = Vector2( 897.377, 255.152 )
+scale = Vector2( 5.5, 6 )
 acciono = "Puerta"
-id = 2
+id = 1
 
 [node name="Puerta" parent="." instance=ExtResource( 2 )]
-position = Vector2( 215.675, -79.3809 )
-id = 2
+position = Vector2( 1248.3, 204.842 )
+scale = Vector2( 5.5, 6 )
+id = 1
 
 [node name="Area_final" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1251.88, 201.77 )
+scale = Vector2( 5.5, 6 )
+
+[node name="Cable" parent="." groups=[
+"Cadena",
+] instance=ExtResource( 8 )]
+position = Vector2( 116.868, 169.199 )
+scale = Vector2( 1, 0.781315 )
+points = PoolVector2Array( 301.164, 626.058, 301.164, 701.96, 218.801, 701.863, 218.449, -2.14038, 362.257, -2.05476 )
+id = 1

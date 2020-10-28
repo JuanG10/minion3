@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/activation.wav-5a455302d5ef4ecfc58857c58dfdb20b.sample"
+
+[deps]
+
+source_file="res://Music/SFX/activation.wav"
+dest_files=[ "res://.import/activation.wav-5a455302d5ef4ecfc58857c58dfdb20b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

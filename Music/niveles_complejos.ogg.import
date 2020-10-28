@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/niveles_complejos.ogg-ef0262fa4bf03fe00dd6189e1508d343.oggstr"
+
+[deps]
+
+source_file="res://Music/niveles_complejos.ogg"
+dest_files=[ "res://.import/niveles_complejos.ogg-ef0262fa4bf03fe00dd6189e1508d343.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

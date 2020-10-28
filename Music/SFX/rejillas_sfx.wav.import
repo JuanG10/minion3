@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/rejillas_sfx.wav-c0bbd6b32f45700c32afd5661594a836.sample"
+
+[deps]
+
+source_file="res://Music/SFX/rejillas_sfx.wav"
+dest_files=[ "res://.import/rejillas_sfx.wav-c0bbd6b32f45700c32afd5661594a836.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

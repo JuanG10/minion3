@@ -19,8 +19,6 @@ func activar_plataformas():
 func desactivar_plataformas():
 	for escena in escenas_a_accionar:
 		escena.desactivar()
-	
-
 
 
 func stop_animation(n):

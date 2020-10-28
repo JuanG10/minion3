@@ -5,7 +5,7 @@ export (int) var id
 func get_class(): return "plataforma_salto"
 
 func activar():
-	$Sprite.activar()
+	$AnimatedSprite.activar()
 	
 func desactivar():
-	$Sprite.desactivar()
+	$AnimatedSprite.desactivar()

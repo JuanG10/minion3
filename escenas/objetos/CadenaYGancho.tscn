@@ -14,21 +14,24 @@ extents = Vector2( 20.9434, 1.76563 )
 [node name="CadenaYGancho" type="Node2D" groups=[
 "Cadena",
 ]]
-position = Vector2( 61.1165, -105.79 )
+position = Vector2( 61.2216, -104.949 )
 script = ExtResource( 6 )
 
 [node name="Cadena" parent="." instance=ExtResource( 1 )]
-position = Vector2( -1.53746, -13.2332 )
+position = Vector2( -1.117, -13.6536 )
 
 [node name="Cadena_plataforma_spr" parent="." instance=ExtResource( 2 )]
-position = Vector2( -1.65716, -4.34177 )
+position = Vector2( -0.711145, 0.0729332 )
 scale = Vector2( 0.9, 1.031 )
 texture = ExtResource( 3 )
 script = ExtResource( 5 )
 
 [node name="Plataforma_body" type="KinematicBody2D" parent="Cadena_plataforma_spr"]
-position = Vector2( 2.80367, 1.205 )
+position = Vector2( 2.80367, 0.797194 )
 scale = Vector2( 1.14932, 1.43504 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Plataforma_col" type="CollisionShape2D" parent="Cadena_plataforma_spr/Plataforma_body"]
 position = Vector2( -2.45562, -0.437607 )

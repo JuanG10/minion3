@@ -21,6 +21,9 @@ animations = [ {
 "Puerta",
 ]]
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -28,3 +31,4 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "New Anim"
+[connection signal="sound" from="." to="." method="_on_Puerta_sound"]
