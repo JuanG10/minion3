@@ -4,13 +4,14 @@ export (int) var id
 
 # Variables internas.
 const SPEED:int = 400
-var vel_salto = 1000
-var velocity:Vector2
-var impulso = false
-var plataforma_de_salto 
-
 const FRICTION:int = 2000
 const FALL_SPEED:Vector2 = Vector2(0,-1)
+var velocity:Vector2
+
+# Relacionado a la plataforma de salto.
+const vel_salto = 900
+var impulso = false
+var plataforma_de_salto 
 
 # Obtención de otros Nodos.
 onready var player_spr:AnimatedSprite = $character_col/character_spr
@@ -55,7 +56,7 @@ func _get_input(delta)->void: # Obtiene el input para moverse o caer.
 		velocity.x = 0
 		player_spr.play("idle")
 
-func _horizontal_movement(delta):
+func _horizontal_movement(delta)->void:
 	# Esta es la versión 2 con aceleración y fricción.
 	# Para un movimiento más simple buscar la función comentada del mismo nombre.
 	var input_vector:Vector2 = Vector2.ZERO
@@ -68,11 +69,11 @@ func _horizontal_movement(delta):
 		velocity_to_zero()
 	_change_sprite_on_movement()
 
-func _quick_direction_change(): # Para frenar al cambiar de dirección.
+func _quick_direction_change()->void: # Para frenar al cambiar de dirección.
 	if Input.is_action_just_pressed("ui_right") || Input.is_action_just_pressed("ui_left"):
 		velocity_to_zero()
 
-func _change_sprite_on_movement():
+func _change_sprite_on_movement()->void:
 	if velocity.x > 0:
 		player_spr.play("movimiento_horizontal")
 		player_spr.flip_h = false
@@ -81,9 +82,9 @@ func _change_sprite_on_movement():
 		player_spr.flip_h = true
 	else: player_spr.play("idle")
 
-func velocity_to_zero(): velocity = Vector2.ZERO
+func velocity_to_zero()->void: velocity = Vector2.ZERO
 
-func _delete_old_signs(): # Para que no queden iconos sueltos al reiniciar.
+func _delete_old_signs()->void: # Para que no queden iconos sueltos al reiniciar.
 	var root = get_tree().get_root()
 	var old_sign = root.get_node(_sign_name)
 	var old_timer = root.get_node(_timer_name)
@@ -114,6 +115,7 @@ func _press_next(event)->bool: # Chequea input y variables de cambio de personaj
 
 func _state_change()->void: # Cambia variables del personaje.
 	control_switch = false
+	velocity_to_zero()
 	player_spr.play("idle")
 
 func _check_change_control(controllable_group:Array)->void: # Revisa a quien darle el control.
@@ -131,6 +133,7 @@ func change_control(next_id:int)->void: # Si es el siguiente se controla.
 	var root:Node = get_tree().get_root()
 	if id == next_id:
 		control_switch = true
+		velocity_to_zero()
 		if !root.has_node(_sign_name):
 			start_exclamation_sign(position, _timer_name, _sign_name)
 
