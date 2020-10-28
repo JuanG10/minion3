@@ -9,7 +9,7 @@
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=7]
 [ext_resource path="res://escenas/objetos/Area_final.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scripts/level_name.gd" type="Script" id=9]
-[ext_resource path="res://scripts/Cable.gd" type="Script" id=10]
+[ext_resource path="res://escenas/objetos/Cable.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 4.51554, 0, 4.51554 )
@@ -466,7 +466,7 @@ scale = Vector2( 5.5, 5.3 )
 acciono = "Rejilla"
 
 [node name="Palanca3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 353.802, 227.276 )
+position = Vector2( 352.388, 230.104 )
 scale = Vector2( 5.5, 5.3 )
 acciono = "Puerta"
 
@@ -494,12 +494,22 @@ scale = Vector2( 7, 5.8 )
 position = Vector2( 1238.43, 182.246 )
 scale = Vector2( 5.8, 5.5 )
 
-[node name="Line2D" type="Line2D" parent="." groups=[
+[node name="Cable" parent="." groups=[
 "Plataforma_de_salto",
-]]
-position = Vector2( 0, 109.756 )
-scale = Vector2( 1, 0.821619 )
-z_index = -1
-points = PoolVector2Array( 301.164, 626.058, 301.164, 701.96, 491.371, 701.96 )
-default_color = Color( 0.32549, 0.368627, 0.411765, 1 )
-script = ExtResource( 10 )
+] instance=ExtResource( 10 )]
+position = Vector2( 26.0735, 109.756 )
+scale = Vector2( 0.947996, 0.821619 )
+
+[node name="Cable2" parent="." groups=[
+"Puerta",
+] instance=ExtResource( 10 )]
+position = Vector2( -59.8443, -244.822 )
+scale = Vector2( 1.34934, 0.821619 )
+points = PoolVector2Array( 301.164, 626.058, 301.164, 701.96, 957.758, 701.446, 957.017, 625.377 )
+sharp_limit = 3.0
+
+[node name="Cable3" parent="." groups=[
+"Rejilla",
+] instance=ExtResource( 10 )]
+position = Vector2( 648.574, 113.32 )
+points = PoolVector2Array( 124.971, 202.934, 125.862, 702.806, 489.349, 702.806, 488.458, 619.313 )

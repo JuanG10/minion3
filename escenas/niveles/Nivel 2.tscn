@@ -436,7 +436,7 @@ script = ExtResource( 12 )
 next_level_id = 7
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2( 26.7556, 639.232 )
+position = Vector2( 26.7556, 654.946 )
 scale = Vector2( 5.45, 3.5 )
 tile_set = SubResource( 11 )
 cell_size = Vector2( 16, 16 )
@@ -447,103 +447,87 @@ __meta__ = {
 }
 
 [node name="Jugador" parent="." instance=ExtResource( 2 )]
-position = Vector2( 720.714, 600.59 )
+position = Vector2( 720.714, 616.305 )
 scale = Vector2( 5.5, 5.3 )
-collision_layer = 1
 
 [node name="Plataforma_de_salto" parent="." instance=ExtResource( 3 )]
-position = Vector2( 855.313, 669.499 )
+position = Vector2( 855.313, 685.214 )
 scale = Vector2( 5.5, 5.3 )
 id = 2
 
 [node name="Plataforma_de_salto2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 419.278, 669.499 )
+position = Vector2( 419.278, 685.214 )
 scale = Vector2( 5.5, 5.3 )
 id = 2
 
 [node name="Palanca" parent="." instance=ExtResource( 4 )]
-position = Vector2( 596.983, 600.631 )
+position = Vector2( 596.983, 616.345 )
 scale = Vector2( 5.5, 5.3 )
 acciono = "Plataforma_de_salto"
 id = 2
 
-[node name="StaticBody2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( 37.7589, 562.546 )
-scale = Vector2( 5.45, 3.5 )
-
-[node name="StaticBody2D2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 94.3234, 562.241 )
-scale = Vector2( 5.45, 3.5 )
-
 [node name="StaticBody2D7" parent="." instance=ExtResource( 5 )]
-position = Vector2( 816.757, 368.627 )
-scale = Vector2( 5.45, 3.5 )
-
-[node name="StaticBody2D3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 49.8837, 562.527 )
-scale = Vector2( 5.45, 3.5 )
-
-[node name="StaticBody2D4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 81.5286, 562.212 )
-scale = Vector2( 5.45, 3.5 )
+position = Vector2( 790.825, 385.163 )
+scale = Vector2( 6.3, 3.5 )
 
 [node name="Palanca_de_presion" parent="." instance=ExtResource( 6 )]
-position = Vector2( 388.424, 349.376 )
+position = Vector2( 326.548, 366.905 )
 scale = Vector2( 5.5, 5.3 )
+z_index = 1
 accionar = "Rejilla"
 id = 3
 
 [node name="Rejilla" parent="." instance=ExtResource( 7 )]
-position = Vector2( 773.595, 116.387 )
+position = Vector2( 773.595, 132.101 )
 scale = Vector2( 5.45, 5.3 )
 id = 3
 
 [node name="Rejilla4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 686.372, 116.554 )
+position = Vector2( 686.372, 132.268 )
 scale = Vector2( 5.5, 5.3 )
 id = 3
 
 [node name="Rejilla3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 506.568, 116.352 )
+position = Vector2( 506.568, 132.066 )
 scale = Vector2( 5.5, 5.3 )
 id = 3
 
 [node name="Rejilla2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 596.182, 116.675 )
+position = Vector2( 596.182, 132.389 )
 scale = Vector2( 5.5, 5.3 )
 id = 3
 
 [node name="Puerta" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1257.8, 558.641 )
+position = Vector2( 1257.8, 574.355 )
 scale = Vector2( 5.5, 5.3 )
 id = 1
 
 [node name="Palanca2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1153.28, 40.9213 )
+position = Vector2( 1153.28, 56.6358 )
 scale = Vector2( 5.5, 5.3 )
 acciono = "Puerta"
 id = 1
 
 [node name="Robot_station" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1151.94, 297.858 )
+position = Vector2( 1151.94, 313.572 )
 scale = Vector2( 4, 3.5 )
 
 [node name="Robot" parent="." instance=ExtResource( 10 )]
-position = Vector2( 124.409, 39.7993 )
+position = Vector2( 124.409, 55.5138 )
 scale = Vector2( 5.45, 5.3 )
 
 [node name="StaticBody2D5" parent="." instance=ExtResource( 5 )]
-position = Vector2( 462.375, 368.614 )
-scale = Vector2( 5.45, 3.5 )
+position = Vector2( 485.859, 385.106 )
+scale = Vector2( 6.2, 3.5 )
 
 [node name="StaticBody2D6" parent="." instance=ExtResource( 5 )]
-position = Vector2( 347.022, 368.608 )
-scale = Vector2( 5.45, 3.5 )
+position = Vector2( 354.541, 385.185 )
+scale = Vector2( 6.2, 3.5 )
 
 [node name="StaticBody2D8" parent="." instance=ExtResource( 5 )]
-position = Vector2( 930.352, 368.633 )
-scale = Vector2( 5.45, 3.5 )
+position = Vector2( 921.901, 385.199 )
+scale = Vector2( 6.3, 3.5 )
 
 [node name="Area_final" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1256.69, 554.27 )
+position = Vector2( 1256.69, 569.984 )
 scale = Vector2( 5.5, 5.3 )

@@ -12,5 +12,4 @@ var levels_map = {
 }
 
 func on_change_level(next_id)->void:
-	print("llega aqui")
 	get_tree().change_scene_to(levels_map[next_id])

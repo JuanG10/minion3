@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://escenas/objetos/Puerta.tscn" type="PackedScene" id=1]
 [ext_resource path="res://escenas/objetos/Robot.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=6]
 [ext_resource path="res://scripts/level_name.gd" type="Script" id=7]
 [ext_resource path="res://escenas/objetos/Area_final.tscn" type="PackedScene" id=8]
+[ext_resource path="res://escenas/objetos/Cable.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 4.51554, 0, 4.51554 )
@@ -418,7 +419,7 @@ script = ExtResource( 7 )
 next_level_id = 4
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2( 19.2114, 684.522 )
+position = Vector2( 19.2114, 681.347 )
 scale = Vector2( 5.5, 5.3 )
 tile_set = SubResource( 11 )
 cell_size = Vector2( 16, 16 )
@@ -429,26 +430,33 @@ __meta__ = {
 }
 
 [node name="Jugador" parent="." instance=ExtResource( 4 )]
-position = Vector2( 172.353, 640.344 )
+position = Vector2( 172.353, 637.169 )
 scale = Vector2( 5.5, 5.3 )
 
 [node name="Robot" parent="." instance=ExtResource( 2 )]
-position = Vector2( 81.1815, 131.074 )
+position = Vector2( 81.1815, 127.899 )
 scale = Vector2( 5.5, 5.3 )
 
 [node name="Robot_station" parent="." instance=ExtResource( 5 )]
-position = Vector2( 595.758, 588.013 )
+position = Vector2( 595.758, 584.838 )
 scale = Vector2( 5.5, 5.3 )
 
 [node name="Palanca" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1095.73, 137.906 )
+position = Vector2( 1095.73, 134.731 )
 scale = Vector2( 5.5, 5.3 )
 acciono = "Puerta"
 
 [node name="Puerta" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1239.86, 598.04 )
+position = Vector2( 1239.33, 596.455 )
 scale = Vector2( 5.5, 5.3 )
 
 [node name="Area_final" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1240.96, 596.746 )
+position = Vector2( 1240.43, 595.16 )
 scale = Vector2( 5.5, 5.3 )
+
+[node name="Cable" parent="." groups=[
+"Puerta",
+] instance=ExtResource( 9 )]
+position = Vector2( 792.293, -694.294 )
+scale = Vector2( 1, 1.38198 )
+points = PoolVector2Array( 301.164, 626.058, 301.018, 1019.67, 442.795, 1019.94, 442.711, 992.366 )

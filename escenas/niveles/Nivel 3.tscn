@@ -502,12 +502,12 @@ points = PoolVector2Array( 0, 0, 5.21436, 0, 5.21436, 15.9829, 0, 15.9829 )
 30/z_index = 0
 
 [node name="Nivel 3" type="Node" groups=[
-"Niveles_basicos",
+"Niveles_complejos",
 ]]
 script = ExtResource( 13 )
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2( -13.5864, 17.3271 )
+position = Vector2( -13.5864, -5.12213 )
 scale = Vector2( 3.2, 2.7 )
 tile_set = SubResource( 11 )
 cell_size = Vector2( 16, 16 )
@@ -518,129 +518,129 @@ __meta__ = {
 }
 
 [node name="Robot_station" parent="." instance=ExtResource( 9 )]
-position = Vector2( 852.414, 402.276 )
+position = Vector2( 852.414, 379.827 )
 scale = Vector2( 3.2, 2.7 )
 
 [node name="Robot" parent="." instance=ExtResource( 3 )]
-position = Vector2( 528.585, 293.379 )
+position = Vector2( 528.585, 270.93 )
 scale = Vector2( 3.2, 2.7 )
 
 [node name="Palanca2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 876.36, 689.223 )
+position = Vector2( 876.36, 666.774 )
 scale = Vector2( 3.2, 2.7 )
 acciono = "Plataforma_de_salto"
 id = 1
 
 [node name="Palanca6" parent="." instance=ExtResource( 5 )]
-position = Vector2( 282.835, 431.418 )
+position = Vector2( 282.835, 408.969 )
 scale = Vector2( 3.2, 2.7 )
 acciono = "Plataforma_de_salto"
 id = 2
 
 [node name="Palanca7" parent="." instance=ExtResource( 5 )]
-position = Vector2( 330.815, 171.11 )
+position = Vector2( 330.815, 148.661 )
 scale = Vector2( 3.2, 2.7 )
 acciono = "Rejilla"
 
 [node name="Palanca8" parent="." instance=ExtResource( 5 )]
-position = Vector2( 788.92, 86.614 )
+position = Vector2( 788.92, 64.1647 )
 scale = Vector2( 3.2, 2.7 )
 acciono = "Puerta"
 id = 5
 
 [node name="Palanca3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1128.51, 561.117 )
+position = Vector2( 1128.51, 538.668 )
 scale = Vector2( 3.2, 2.7 )
 acciono = "Cadena"
 id = 2
 
 [node name="Plataforma_de_salto" parent="." instance=ExtResource( 10 )]
-position = Vector2( 114.545, 464.775 )
+position = Vector2( 114.545, 442.326 )
 scale = Vector2( 3.2, 2.7 )
 id = 2
 
 [node name="Plataforma_de_salto3" parent="." instance=ExtResource( 10 )]
-position = Vector2( 984.586, 723.952 )
+position = Vector2( 984.586, 701.502 )
 scale = Vector2( 3.2, 2.7 )
 id = 1
 
 [node name="Plataforma_de_salto2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 53.6965, 334.985 )
+position = Vector2( 53.6965, 312.536 )
 scale = Vector2( 3.2, 2.7 )
 id = 2
 
 [node name="Jugador" parent="." instance=ExtResource( 6 )]
-position = Vector2( 608.43, 674.598 )
+position = Vector2( 608.43, 652.148 )
 scale = Vector2( 3.2, 2.7 )
 
 [node name="Puerta" parent="." instance=ExtResource( 7 )]
-position = Vector2( 416.03, 407.648 )
+position = Vector2( 416.03, 385.199 )
 scale = Vector2( 3.2, 2.7 )
 id = 4
 
 [node name="Puerta2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 939.89, 65.962 )
+position = Vector2( 939.891, 43.5128 )
 scale = Vector2( 3.2, 2.7 )
 id = 5
 
 [node name="Palanca_de_presion" parent="." instance=ExtResource( 8 )]
-position = Vector2( 414.996, 315.527 )
+position = Vector2( 414.996, 293.078 )
 scale = Vector2( 3.2, 2.7 )
 accionar = "Puerta"
 id = 4
 
 [node name="Palanca_de_presion2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 420.344, 185.535 )
+position = Vector2( 420.344, 163.086 )
 scale = Vector2( 3.2, 2.7 )
 accionar = "Cadena"
 id = 5
 
 [node name="CadenaYGancho" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1190.53, 455.466 )
+position = Vector2( 1190.53, 433.017 )
 scale = Vector2( 3.2, 2.7 )
 id = 2
 
 [node name="CadenaYGancho2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 636.139, 108.507 )
+position = Vector2( 636.139, 86.0573 )
 scale = Vector2( 3.2, 2.7 )
 id = 5
 
 [node name="Suelo" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1027.54, 586.895 )
+position = Vector2( 1027.54, 564.446 )
 scale = Vector2( 3.2, 2.7 )
 
 [node name="Suelo3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 109.25, 327.51 )
+position = Vector2( 109.25, 305.061 )
 scale = Vector2( 2.8, 2.7 )
 
 [node name="Suelo4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 56.334, 197.989 )
+position = Vector2( 56.334, 175.539 )
 scale = Vector2( 2.7, 2.7 )
 
 [node name="Suelo5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1090.05, 457.3 )
+position = Vector2( 1090.05, 434.851 )
 scale = Vector2( 2.7, 2.7 )
 
 [node name="Suelo7" parent="." instance=ExtResource( 2 )]
-position = Vector2( 112.287, 198.017 )
+position = Vector2( 112.287, 175.567 )
 scale = Vector2( 2.6, 2.7 )
 
 [node name="Suelo2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 959.224, 586.89 )
+position = Vector2( 959.224, 564.441 )
 scale = Vector2( 3.2, 2.7 )
 
 [node name="Rejilla" parent="." instance=ExtResource( 11 )]
-position = Vector2( 268.557, 338.442 )
+position = Vector2( 268.557, 315.993 )
 scale = Vector2( 3.2, 2.7 )
 
 [node name="Rejilla2" parent="." instance=ExtResource( 11 )]
-position = Vector2( 164.756, 338.543 )
+position = Vector2( 164.756, 316.094 )
 scale = Vector2( 3.2, 2.7 )
 
 [node name="Rejilla3" parent="." instance=ExtResource( 11 )]
-position = Vector2( 217.003, 338.469 )
+position = Vector2( 217.003, 316.02 )
 scale = Vector2( 3.2, 2.7 )
 
 [node name="Area_final" parent="." instance=ExtResource( 12 )]
-position = Vector2( 941.995, 66.6219 )
+position = Vector2( 941.995, 44.1727 )
 scale = Vector2( 3.2, 2.7 )

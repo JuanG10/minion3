@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/Cable.gd" type="Script" id=1]
+
+[node name="Cable" type="Line2D"]
+position = Vector2( 0, 109.756 )
+scale = Vector2( 1, 0.821619 )
+z_index = -1
+points = PoolVector2Array( 301.164, 626.058, 301.164, 701.96, 491.371, 701.96 )
+default_color = Color( 0.32549, 0.368627, 0.411765, 1 )
+script = ExtResource( 1 )

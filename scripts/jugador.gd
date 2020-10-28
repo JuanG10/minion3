@@ -63,13 +63,13 @@ func _horizontal_movement(delta)->void:
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.normalized()
 	_quick_direction_change()
-	if input_vector != Vector2.ZERO:
+	if input_vector != Vector2.ZERO && is_on_floor():
 		velocity = velocity.move_toward(input_vector * SPEED, SPEED * delta)
 	else:
 		velocity_to_zero()
 	_change_sprite_on_movement()
 
-func _quick_direction_change()->void: # Para frenar al cambiar de dirección.
+func _quick_direction_change()->void: # Para frenar al cambiar de dirección o caer.
 	if Input.is_action_just_pressed("ui_right") || Input.is_action_just_pressed("ui_left"):
 		velocity_to_zero()
 
@@ -80,7 +80,6 @@ func _change_sprite_on_movement()->void:
 	elif velocity.x < 0:
 		player_spr.play("movimiento_horizontal")
 		player_spr.flip_h = true
-	else: player_spr.play("idle")
 
 func velocity_to_zero()->void: velocity = Vector2.ZERO
 

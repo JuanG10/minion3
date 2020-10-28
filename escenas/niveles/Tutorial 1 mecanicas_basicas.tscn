@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://escenas/objetos/CadenaYGancho.tscn" type="PackedScene" id=1]
 [ext_resource path="res://escenas/objetos/Puerta.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://sprites/nuestrosSprites.png" type="Texture" id=5]
 [ext_resource path="res://escenas/objetos/Area_final.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/level_name.gd" type="Script" id=7]
+[ext_resource path="res://escenas/objetos/Cable.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 4.51554, 0, 4.51554 )
@@ -435,7 +436,7 @@ acciono = "Cadena"
 id = 1
 
 [node name="CadenaYGancho" parent="." instance=ExtResource( 1 )]
-position = Vector2( 571.527, 233.496 )
+position = Vector2( 550.025, 308.567 )
 scale = Vector2( 5, 5 )
 id = 1
 
@@ -453,3 +454,11 @@ id = 1
 [node name="Area_final" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1251.88, 201.77 )
 scale = Vector2( 5.5, 6 )
+
+[node name="Cable" parent="." groups=[
+"Cadena",
+] instance=ExtResource( 8 )]
+position = Vector2( 116.868, 169.199 )
+scale = Vector2( 1, 0.781315 )
+points = PoolVector2Array( 301.164, 626.058, 301.164, 701.96, 218.801, 701.863, 218.449, -2.14038, 362.257, -2.05476 )
+id = 1

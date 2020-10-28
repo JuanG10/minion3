@@ -21,8 +21,6 @@ func desactivar_plataformas():
 		escena.desactivar()
 
 
-
-
 func stop_animation(n):
 	if $AnimatedSprite.frame == n:
 		$AnimatedSprite.stop()

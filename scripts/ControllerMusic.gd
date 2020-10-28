@@ -1,37 +1,20 @@
 extends Node
 
-
-func song_music_level():
+func _start_tutorial_bgm():
 	$Music_tutoriales.play()
 
-func start_bgm_level_1_y_2():
+func _start_basic_bgm():
 	$Music_tutoriales.stop()
-	$Music_level_1.play()
+	$Music_basicos.play()
 
-
-func start_bgm_level_3():
-	$Music_level_1.stop()
-	$Music_level_3.play()
+func _start_complex_bgm():
+	$Music_basicos.stop()
+	$Music_complejos.play()
 
 func playSongFor(nivel):
 	if get_tree().get_nodes_in_group('Niveles_tutoriales').has(nivel) && !$Music_tutoriales.playing:
-		song_music_level()
-	elif get_tree().get_nodes_in_group('Niveles_basicos').has(nivel) && !$Music_level_1.playing:
-		start_bgm_level_1_y_2()	
-
-
-
-
-
-
-
-	
-# ControllerMusic.playSongFor(nivel)
-# [tuto1,tuto2,tuto3,tuto4] = mission,
-# [nivel1,nivel2] = pass_time, [nivel3] = B_3
-# Toca la canción de la lista correspondiente.
-# Si la música de la lista ya se está reproduciendo no hace nada.
-
-# if lista1.has(level) && !lista1Music.estaReproduciendo:
-#	mission.play()
-# elif lista2.has...
+		_start_tutorial_bgm()
+	elif get_tree().get_nodes_in_group('Niveles_basicos').has(nivel) && !$Music_basicos.playing:
+		_start_basic_bgm()
+	elif get_tree().get_nodes_in_group('Niveles_complejos').has(nivel) && !$Music_complejos.playing:
+		_start_complex_bgm()
