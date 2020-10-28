@@ -496,6 +496,7 @@ id = 3
 [node name="Rejilla2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 595.712, 163.417 )
 scale = Vector2( 5.5, 5.3 )
+
 id = 3
 
 [node name="Puerta" parent="." instance=ExtResource( 8 )]
