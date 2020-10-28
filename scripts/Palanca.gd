@@ -29,11 +29,13 @@ func escenas_a_accionar():
  
 func _physics_process(delta):
 	if body_actual != null:
-		if  body_actual.control_switch && puedo_accionar && !puedo_desactivar && Input.is_action_just_pressed("Accionar_palanca") :
+		if body_actual.control_switch && puedo_accionar && !puedo_desactivar && Input.is_action_just_pressed("Accionar_palanca") :
+			ControllerMusic.start_switch_sfx()
 			puedo_desactivar = true
 			$AnimatedSprite.frame=2 
 			activar_plataformas()
 		elif body_actual.control_switch && puedo_desactivar && Input.is_action_just_pressed("Accionar_palanca"):
+			ControllerMusic.start_switch_sfx()
 			$AnimatedSprite.frame = 4
 			desactivar_plataformas()
 			puedo_desactivar = false

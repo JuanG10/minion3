@@ -3,8 +3,8 @@ extends KinematicBody2D
 onready var exclamation = preload("res://sprites/exclamation.png")
 onready var question = preload("res://sprites/question.png")
 
-const START_HEIGHT:Vector2 = Vector2(0,70)
-const SIGN_SCALE:Vector2 = Vector2(5,5)
+const START_HEIGHT:Vector2 = Vector2(0,60)
+const SIGN_SCALE:Vector2 = Vector2(4,4)
 const TIME_Q_SIGN:float = 0.75 # Tiempos para pasar al mensaje _create_sign,
 const TIME_E_SIGN:float = 0.4 # Son parámetros para que sea reutilizable.
 var timer_name:String

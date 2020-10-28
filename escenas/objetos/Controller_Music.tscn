@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Music/niveles_tutoriales.ogg" type="AudioStream" id=1]
 [ext_resource path="res://scripts/ControllerMusic.gd" type="Script" id=2]
 [ext_resource path="res://Music/niveles_basicos.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Music/niveles_complejos.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Music/SFX/change_sfx.wav" type="AudioStream" id=5]
+[ext_resource path="res://Music/SFX/jump_sfx.wav" type="AudioStream" id=6]
+[ext_resource path="res://Music/SFX/switch_sfx.wav" type="AudioStream" id=7]
+[ext_resource path="res://Music/SFX/rejillas_sfx.wav" type="AudioStream" id=8]
+[ext_resource path="res://Music/SFX/mechanical-door.wav" type="AudioStream" id=9]
+[ext_resource path="res://Music/SFX/activation.wav" type="AudioStream" id=10]
 
 [node name="ControllerMusic" type="Node"]
 script = ExtResource( 2 )
@@ -16,3 +22,21 @@ stream = ExtResource( 3 )
 
 [node name="Music_complejos" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+
+[node name="change_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="jump_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="switch_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="rejillas_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="mechanical_door_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="activation_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )

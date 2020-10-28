@@ -3,7 +3,7 @@ extends "res://scripts/Signs.gd"
 export (int) var id
 
 # Variables internas.
-const SPEED:int = 400
+const SPEED:int = 500
 const FRICTION:int = 2000
 const FALL_SPEED:Vector2 = Vector2(0,-1)
 var velocity:Vector2
@@ -47,11 +47,7 @@ func _get_input(delta)->void: # Obtiene el input para moverse o caer.
 			velocity_to_zero()
 			player_spr.play("idle")
 		if _input_release(): player_spr.play("idle")
-		if Input.is_action_just_pressed("Impulso") && impulso:
-			velocity.y -= 900
-			plataforma_de_salto.cambiar_frame()
-			impulso = false
-			$character_rayCast.enabled = true
+		_realizar_impulso()
 	elif control_switch && !is_on_floor():
 		velocity.x = 0
 		player_spr.play("idle")
@@ -92,6 +88,14 @@ func _delete_old_signs()->void: # Para que no queden iconos sueltos al reiniciar
 	if old_timer != null:
 		old_timer.queue_free()
 
+func _realizar_impulso():
+	if Input.is_action_just_pressed("Impulso") && impulso:
+		ControllerMusic.start_jump_sfx()
+		velocity.y -= 900
+		plataforma_de_salto.cambiar_frame()
+		impulso = false
+		$character_rayCast.enabled = true
+
 func impulso(plataforma)->void: # Lo llama la plataforma de salto.
 	impulso = true
 	plataforma_de_salto = plataforma
@@ -115,6 +119,7 @@ func _press_next(event)->bool: # Chequea input y variables de cambio de personaj
 func _state_change()->void: # Cambia variables del personaje.
 	control_switch = false
 	velocity_to_zero()
+	ControllerMusic.start_change_sfx()
 	player_spr.play("idle")
 
 func _check_change_control(controllable_group:Array)->void: # Revisa a quien darle el control.
@@ -139,6 +144,7 @@ func change_control(next_id:int)->void: # Si es el siguiente se controla.
 func activate(id_list:Array)->void: # Agrega al grupo de controlables si puede.
 	if id_list.has(id): 
 		add_to_group("controllable_characters")
+		ControllerMusic.start_activation_sfx()
 		start_question_sign(position, _timer_name, _sign_name)
 		player_spr.play("idle")
 

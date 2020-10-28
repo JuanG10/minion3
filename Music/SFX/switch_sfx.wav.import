@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/tiny-select.wav-23799c055d56b636fee428bd264c1173.sample"
+path="res://.import/switch_sfx.wav-d3335a9950f9825a105cf34d2b062214.sample"
 
 [deps]
 
-source_file="res://Music/SFX/tiny-select.wav"
-dest_files=[ "res://.import/tiny-select.wav-23799c055d56b636fee428bd264c1173.sample" ]
+source_file="res://Music/SFX/switch_sfx.wav"
+dest_files=[ "res://.import/switch_sfx.wav-d3335a9950f9825a105cf34d2b062214.sample" ]
 
 [params]
 

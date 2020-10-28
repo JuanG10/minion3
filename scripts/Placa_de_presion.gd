@@ -36,6 +36,7 @@ func _physics_process(delta):
 
 func _on_Area2D_body_entered(body):
 	if(get_tree().get_nodes_in_group("characters").has(body)):
+		ControllerMusic.start_switch_sfx()
 		gente_sobre_placa.push_front(0) # No paso el body por costo.
 		puede_accionar = true
 
@@ -49,5 +50,6 @@ func desactivar():
 
 func _on_Area2D_body_exited(body):
 	if(get_tree().get_nodes_in_group("characters").has(body)) && gente_sobre_placa.size() == 1:
+		ControllerMusic.start_switch_sfx()
 		puede_accionar = false
 	gente_sobre_placa.pop_front()

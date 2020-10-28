@@ -18,3 +18,15 @@ func playSongFor(nivel):
 		_start_basic_bgm()
 	elif get_tree().get_nodes_in_group('Niveles_complejos').has(nivel) && !$Music_complejos.playing:
 		_start_complex_bgm()
+
+func start_change_sfx(): $change_sfx.play()
+
+func start_jump_sfx(): $jump_sfx.play()
+
+func start_switch_sfx(): $switch_sfx.play()
+
+func start_rejillas_sfx(): $rejillas_sfx.play()
+
+func start_mechanical_door_sfx(): $mechanical_door_sfx.play()
+
+func start_activation_sfx(): $activation_sfx.play()
